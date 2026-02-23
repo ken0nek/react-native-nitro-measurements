@@ -174,6 +174,81 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
     case .hectopascals:             return UnitPressure.hectopascals
     case .inchesofmercury:          return UnitPressure.inchesOfMercury
     case .millimetersofmercury:     return UnitPressure.millimetersOfMercury
+    // Acceleration
+    case .meterspersecondsquared:   return UnitAcceleration.metersPerSecondSquared
+    case .gravity:                  return UnitAcceleration.gravity
+    // ConcentrationMass
+    case .gramsperliter:            return UnitConcentrationMass.gramsPerLiter
+    case .milligramsperdeciliter:   return UnitConcentrationMass.milligramsPerDeciliter
+    // Dispersion
+    case .partspermillion:          return UnitDispersion.partsPerMillion
+    // ElectricCharge
+    case .coulombs:                 return UnitElectricCharge.coulombs
+    case .megaamperehours:          return UnitElectricCharge.megaampereHours
+    case .kiloamperehours:          return UnitElectricCharge.kiloampereHours
+    case .amperehours:              return UnitElectricCharge.ampereHours
+    case .milliamperehours:         return UnitElectricCharge.milliampereHours
+    case .microamperehours:         return UnitElectricCharge.microampereHours
+    // ElectricCurrent
+    case .megaamperes:              return UnitElectricCurrent.megaamperes
+    case .kiloamperes:              return UnitElectricCurrent.kiloamperes
+    case .amperes:                  return UnitElectricCurrent.amperes
+    case .milliamperes:             return UnitElectricCurrent.milliamperes
+    case .microamperes:             return UnitElectricCurrent.microamperes
+    // ElectricPotentialDifference
+    case .megavolts:                return UnitElectricPotentialDifference.megavolts
+    case .kilovolts:                return UnitElectricPotentialDifference.kilovolts
+    case .volts:                    return UnitElectricPotentialDifference.volts
+    case .millivolts:               return UnitElectricPotentialDifference.millivolts
+    case .microvolts:               return UnitElectricPotentialDifference.microvolts
+    // ElectricResistance
+    case .megaohms:                 return UnitElectricResistance.megaohms
+    case .kiloohms:                 return UnitElectricResistance.kiloohms
+    case .ohms:                     return UnitElectricResistance.ohms
+    case .milliohms:                return UnitElectricResistance.milliohms
+    case .microohms:                return UnitElectricResistance.microohms
+    // FuelEfficiency
+    case .litersper100kilometers:   return UnitFuelEfficiency.litersPer100Kilometers
+    case .milesperimperialgallon:   return UnitFuelEfficiency.milesPerImperialGallon
+    case .milespergallon:           return UnitFuelEfficiency.milesPerGallon
+    // Illuminance
+    case .lux:                      return UnitIlluminance.lux
+    // InformationStorage
+    case .bytes:                    return UnitInformationStorage.bytes
+    case .bits:                     return UnitInformationStorage.bits
+    case .nibbles:                  return UnitInformationStorage.nibbles
+    case .yottabytes:               return UnitInformationStorage.yottabytes
+    case .zettabytes:               return UnitInformationStorage.zettabytes
+    case .exabytes:                 return UnitInformationStorage.exabytes
+    case .petabytes:                return UnitInformationStorage.petabytes
+    case .terabytes:                return UnitInformationStorage.terabytes
+    case .gigabytes:                return UnitInformationStorage.gigabytes
+    case .megabytes:                return UnitInformationStorage.megabytes
+    case .kilobytes:                return UnitInformationStorage.kilobytes
+    case .yottabits:                return UnitInformationStorage.yottabits
+    case .zettabits:                return UnitInformationStorage.zettabits
+    case .exabits:                  return UnitInformationStorage.exabits
+    case .petabits:                 return UnitInformationStorage.petabits
+    case .terabits:                 return UnitInformationStorage.terabits
+    case .gigabits:                 return UnitInformationStorage.gigabits
+    case .megabits:                 return UnitInformationStorage.megabits
+    case .kilobits:                 return UnitInformationStorage.kilobits
+    case .yobibytes:                return UnitInformationStorage.yobibytes
+    case .zebibytes:                return UnitInformationStorage.zebibytes
+    case .exbibytes:                return UnitInformationStorage.exbibytes
+    case .pebibytes:                return UnitInformationStorage.pebibytes
+    case .tebibytes:                return UnitInformationStorage.tebibytes
+    case .gibibytes:                return UnitInformationStorage.gibibytes
+    case .mebibytes:                return UnitInformationStorage.mebibytes
+    case .kibibytes:                return UnitInformationStorage.kibibytes
+    case .yobibits:                 return UnitInformationStorage.yobibits
+    case .zebibits:                 return UnitInformationStorage.zebibits
+    case .exbibits:                 return UnitInformationStorage.exbibits
+    case .pebibits:                 return UnitInformationStorage.pebibits
+    case .tebibits:                 return UnitInformationStorage.tebibits
+    case .gibibits:                 return UnitInformationStorage.gibibits
+    case .mebibits:                 return UnitInformationStorage.mebibits
+    case .kibibits:                 return UnitInformationStorage.kibibits
     }
   }
 
@@ -216,6 +291,30 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
     case .newtonspermeterssquared, .bars, .millibars, .atmospheres, .poundspersquareinch,
          .gigapascals, .megapascals, .kilopascals, .hectopascals, .inchesofmercury, .millimetersofmercury:
       return .pressure
+    case .meterspersecondsquared, .gravity:
+      return .acceleration
+    case .gramsperliter, .milligramsperdeciliter:
+      return .concentrationmass
+    case .partspermillion:
+      return .dispersion
+    case .coulombs, .megaamperehours, .kiloamperehours, .amperehours, .milliamperehours, .microamperehours:
+      return .electriccharge
+    case .megaamperes, .kiloamperes, .amperes, .milliamperes, .microamperes:
+      return .electriccurrent
+    case .megavolts, .kilovolts, .volts, .millivolts, .microvolts:
+      return .electricpotentialdifference
+    case .megaohms, .kiloohms, .ohms, .milliohms, .microohms:
+      return .electricresistance
+    case .litersper100kilometers, .milesperimperialgallon, .milespergallon:
+      return .fuelefficiency
+    case .lux:
+      return .illuminance
+    case .bytes, .bits, .nibbles,
+         .yottabytes, .zettabytes, .exabytes, .petabytes, .terabytes, .gigabytes, .megabytes, .kilobytes,
+         .yottabits, .zettabits, .exabits, .petabits, .terabits, .gigabits, .megabits, .kilobits,
+         .yobibytes, .zebibytes, .exbibytes, .pebibytes, .tebibytes, .gibibytes, .mebibytes, .kibibytes,
+         .yobibits, .zebibits, .exbibits, .pebibits, .tebibits, .gibibits, .mebibits, .kibibits:
+      return .informationstorage
     }
   }
 
@@ -259,11 +358,32 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
       .newtonspermeterssquared, .bars, .millibars, .atmospheres, .poundspersquareinch,
       .gigapascals, .megapascals, .kilopascals, .hectopascals, .inchesofmercury, .millimetersofmercury,
     ],
+    .acceleration: [.meterspersecondsquared, .gravity],
+    .concentrationmass: [.gramsperliter, .milligramsperdeciliter],
+    .dispersion: [.partspermillion],
+    .electriccharge: [
+      .coulombs, .megaamperehours, .kiloamperehours, .amperehours, .milliamperehours, .microamperehours,
+    ],
+    .electriccurrent: [.megaamperes, .kiloamperes, .amperes, .milliamperes, .microamperes],
+    .electricpotentialdifference: [.megavolts, .kilovolts, .volts, .millivolts, .microvolts],
+    .electricresistance: [.megaohms, .kiloohms, .ohms, .milliohms, .microohms],
+    .fuelefficiency: [.litersper100kilometers, .milesperimperialgallon, .milespergallon],
+    .illuminance: [.lux],
+    .informationstorage: [
+      .bytes, .bits, .nibbles,
+      .yottabytes, .zettabytes, .exabytes, .petabytes, .terabytes, .gigabytes, .megabytes, .kilobytes,
+      .yottabits, .zettabits, .exabits, .petabits, .terabits, .gigabits, .megabits, .kilobits,
+      .yobibytes, .zebibytes, .exbibytes, .pebibytes, .tebibytes, .gibibytes, .mebibytes, .kibibytes,
+      .yobibits, .zebibits, .exbibits, .pebibits, .tebibits, .gibibits, .mebibits, .kibibits,
+    ],
   ]
 
   private static let allCategories: [UnitCategory] = [
     .length, .mass, .duration, .speed, .temperature, .area,
     .volume, .energy, .power, .frequency, .angle, .pressure,
+    .acceleration, .concentrationmass, .dispersion, .electriccharge,
+    .electriccurrent, .electricpotentialdifference, .electricresistance,
+    .fuelefficiency, .illuminance, .informationstorage,
   ]
 
   // SI 7-vector: [L, M, T, I, Θ, N, J]
@@ -279,7 +399,17 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
     .power:       [2, 1, -3, 0, 0, 0, 0],
     .frequency:   [0, 0, -1, 0, 0, 0, 0],
     .angle:       [0, 0, 0, 0, 0, 0, 0],
-    .pressure:    [-1, 1, -2, 0, 0, 0, 0],
+    .pressure:                    [-1, 1, -2, 0, 0, 0, 0],
+    .acceleration:                [1, 0, -2, 0, 0, 0, 0],
+    .concentrationmass:           [-3, 1, 0, 0, 0, 0, 0],
+    .dispersion:                  [0, 0, 0, 0, 0, 0, 0],
+    .electriccharge:              [0, 0, 1, 1, 0, 0, 0],
+    .electriccurrent:             [0, 0, 0, 1, 0, 0, 0],
+    .electricpotentialdifference: [2, 1, -3, -1, 0, 0, 0],
+    .electricresistance:          [2, 1, -3, -2, 0, 0, 0],
+    .fuelefficiency:              [-2, 0, 0, 0, 0, 0, 0],
+    .illuminance:                 [-2, 0, 0, 0, 0, 0, 1],
+    .informationstorage:          [0, 0, 0, 0, 0, 0, 0],
   ]
 
   private static let dimensionLabels = ["L", "M", "T", "I", "Θ", "N", "J"]

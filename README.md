@@ -5,11 +5,11 @@ Type-safe unit conversion and dimensional analysis for React Native, powered by 
 ## Features
 
 - **Compile-time category safety** — TypeScript overloads prevent cross-category conversions (`miles` to `celsius` is a TS error, not a runtime crash)
-- **12 unit categories, 138 units** — length, mass, duration, speed, temperature, area, volume, energy, power, frequency, angle, pressure
+- **22 unit categories, 203 units** — length, mass, duration, speed, temperature, area, volume, energy, power, frequency, angle, pressure, acceleration, concentration mass, dispersion, electric charge, electric current, electric potential difference, electric resistance, fuel efficiency, illuminance, information storage
 - **SI dimensional analysis** — `speed * time = distance` with full dimension tracking
 - **Zero JS bundle cost** — all conversion logic runs in native code (Swift Foundation)
 - **Synchronous JSI** — no bridge serialization, no async overhead
-- **Autocomplete** — `as const satisfies` objects provide full IDE support (`Length.` shows all 22 length units)
+- **Autocomplete** — `as const satisfies` objects provide full IDE support (`Length.` shows all 22 length units, `InformationStorage.` shows all 35 storage units)
 
 ## Installation
 
@@ -192,6 +192,16 @@ The `as const satisfies` objects (`Length`, `Mass`, `Speed`, etc.) provide full 
 | **Frequency** | 8 | hertz, kilohertz, megahertz, gigahertz, terahertz, millihertz, microhertz, nanohertz |
 | **Angle** | 6 | degrees, radians, arcMinutes, arcSeconds, gradians, revolutions |
 | **Pressure** | 11 | newtonsPerMetersSquared, bars, millibars, atmospheres, poundsPerSquareInch, gigapascals, megapascals, kilopascals, hectopascals, inchesOfMercury, millimetersOfMercury |
+| **Acceleration** | 2 | metersPerSecondSquared, gravity |
+| **ConcentrationMass** | 2 | gramsPerLiter, milligramsPerDeciliter |
+| **Dispersion** | 1 | partsPerMillion |
+| **ElectricCharge** | 6 | coulombs, megaampereHours, kiloampereHours, ampereHours, milliampereHours, microampereHours |
+| **ElectricCurrent** | 5 | megaamperes, kiloamperes, amperes, milliamperes, microamperes |
+| **ElectricPotentialDifference** | 5 | megavolts, kilovolts, volts, millivolts, microvolts |
+| **ElectricResistance** | 5 | megaohms, kiloohms, ohms, milliohms, microohms |
+| **FuelEfficiency** | 3 | litersPer100Kilometers, milesPerImperialGallon, milesPerGallon |
+| **Illuminance** | 1 | lux |
+| **InformationStorage** | 35 | bytes, bits, nibbles, yottabytes, zettabytes, exabytes, petabytes, terabytes, gigabytes, megabytes, kilobytes, yottabits, zettabits, exabits, petabits, terabits, gigabits, megabits, kilobits, yobibytes, zebibytes, exbibytes, pebibytes, tebibytes, gibibytes, mebibytes, kibibytes, yobibits, zebibits, exbibits, pebibits, tebibits, gibibits, mebibits, kibibits |
 
 ## License
 

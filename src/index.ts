@@ -13,6 +13,16 @@ import type {
   FrequencyUnit,
   AngleUnit,
   PressureUnit,
+  AccelerationUnit,
+  ConcentrationMassUnit,
+  DispersionUnit,
+  ElectricChargeUnit,
+  ElectricCurrentUnit,
+  ElectricPotentialDifferenceUnit,
+  ElectricResistanceUnit,
+  FuelEfficiencyUnit,
+  IlluminanceUnit,
+  InformationStorageUnit,
   AnyUnit,
   UnitCategory,
 } from './specs/Units.nitro'
@@ -30,6 +40,16 @@ export type {
   FrequencyUnit,
   AngleUnit,
   PressureUnit,
+  AccelerationUnit,
+  ConcentrationMassUnit,
+  DispersionUnit,
+  ElectricChargeUnit,
+  ElectricCurrentUnit,
+  ElectricPotentialDifferenceUnit,
+  ElectricResistanceUnit,
+  FuelEfficiencyUnit,
+  IlluminanceUnit,
+  InformationStorageUnit,
   AnyUnit,
   UnitCategory,
   MeasurementResult,
@@ -212,6 +232,101 @@ export const Pressure = {
   millimetersOfMercury: 'millimetersOfMercury',
 } as const satisfies Record<string, PressureUnit>
 
+export const Acceleration = {
+  metersPerSecondSquared: 'metersPerSecondSquared',
+  gravity: 'gravity',
+} as const satisfies Record<string, AccelerationUnit>
+
+export const ConcentrationMass = {
+  gramsPerLiter: 'gramsPerLiter',
+  milligramsPerDeciliter: 'milligramsPerDeciliter',
+} as const satisfies Record<string, ConcentrationMassUnit>
+
+export const Dispersion = {
+  partsPerMillion: 'partsPerMillion',
+} as const satisfies Record<string, DispersionUnit>
+
+export const ElectricCharge = {
+  coulombs: 'coulombs',
+  megaampereHours: 'megaampereHours',
+  kiloampereHours: 'kiloampereHours',
+  ampereHours: 'ampereHours',
+  milliampereHours: 'milliampereHours',
+  microampereHours: 'microampereHours',
+} as const satisfies Record<string, ElectricChargeUnit>
+
+export const ElectricCurrent = {
+  megaamperes: 'megaamperes',
+  kiloamperes: 'kiloamperes',
+  amperes: 'amperes',
+  milliamperes: 'milliamperes',
+  microamperes: 'microamperes',
+} as const satisfies Record<string, ElectricCurrentUnit>
+
+export const ElectricPotentialDifference = {
+  megavolts: 'megavolts',
+  kilovolts: 'kilovolts',
+  volts: 'volts',
+  millivolts: 'millivolts',
+  microvolts: 'microvolts',
+} as const satisfies Record<string, ElectricPotentialDifferenceUnit>
+
+export const ElectricResistance = {
+  megaohms: 'megaohms',
+  kiloohms: 'kiloohms',
+  ohms: 'ohms',
+  milliohms: 'milliohms',
+  microohms: 'microohms',
+} as const satisfies Record<string, ElectricResistanceUnit>
+
+export const FuelEfficiency = {
+  litersPer100Kilometers: 'litersPer100Kilometers',
+  milesPerImperialGallon: 'milesPerImperialGallon',
+  milesPerGallon: 'milesPerGallon',
+} as const satisfies Record<string, FuelEfficiencyUnit>
+
+export const Illuminance = {
+  lux: 'lux',
+} as const satisfies Record<string, IlluminanceUnit>
+
+export const InformationStorage = {
+  bytes: 'bytes',
+  bits: 'bits',
+  nibbles: 'nibbles',
+  yottabytes: 'yottabytes',
+  zettabytes: 'zettabytes',
+  exabytes: 'exabytes',
+  petabytes: 'petabytes',
+  terabytes: 'terabytes',
+  gigabytes: 'gigabytes',
+  megabytes: 'megabytes',
+  kilobytes: 'kilobytes',
+  yottabits: 'yottabits',
+  zettabits: 'zettabits',
+  exabits: 'exabits',
+  petabits: 'petabits',
+  terabits: 'terabits',
+  gigabits: 'gigabits',
+  megabits: 'megabits',
+  kilobits: 'kilobits',
+  yobibytes: 'yobibytes',
+  zebibytes: 'zebibytes',
+  exbibytes: 'exbibytes',
+  pebibytes: 'pebibytes',
+  tebibytes: 'tebibytes',
+  gibibytes: 'gibibytes',
+  mebibytes: 'mebibytes',
+  kibibytes: 'kibibytes',
+  yobibits: 'yobibits',
+  zebibits: 'zebibits',
+  exbibits: 'exbibits',
+  pebibits: 'pebibits',
+  tebibits: 'tebibits',
+  gibibits: 'gibibits',
+  mebibits: 'mebibits',
+  kibibits: 'kibibits',
+} as const satisfies Record<string, InformationStorageUnit>
+
 const _module =
   NitroModules.createHybridObject<MeasurementModule>('MeasurementModule')
 
@@ -229,6 +344,16 @@ export function convert(value: number, from: PowerUnit, to: PowerUnit): number
 export function convert(value: number, from: FrequencyUnit, to: FrequencyUnit): number
 export function convert(value: number, from: AngleUnit, to: AngleUnit): number
 export function convert(value: number, from: PressureUnit, to: PressureUnit): number
+export function convert(value: number, from: AccelerationUnit, to: AccelerationUnit): number
+export function convert(value: number, from: ConcentrationMassUnit, to: ConcentrationMassUnit): number
+export function convert(value: number, from: DispersionUnit, to: DispersionUnit): number
+export function convert(value: number, from: ElectricChargeUnit, to: ElectricChargeUnit): number
+export function convert(value: number, from: ElectricCurrentUnit, to: ElectricCurrentUnit): number
+export function convert(value: number, from: ElectricPotentialDifferenceUnit, to: ElectricPotentialDifferenceUnit): number
+export function convert(value: number, from: ElectricResistanceUnit, to: ElectricResistanceUnit): number
+export function convert(value: number, from: FuelEfficiencyUnit, to: FuelEfficiencyUnit): number
+export function convert(value: number, from: IlluminanceUnit, to: IlluminanceUnit): number
+export function convert(value: number, from: InformationStorageUnit, to: InformationStorageUnit): number
 export function convert(value: number, from: AnyUnit, to: AnyUnit): number {
   return _module.convert(value, from, to)
 }
@@ -245,6 +370,16 @@ export function convertFull(value: number, from: PowerUnit, to: PowerUnit): Meas
 export function convertFull(value: number, from: FrequencyUnit, to: FrequencyUnit): MeasurementResult
 export function convertFull(value: number, from: AngleUnit, to: AngleUnit): MeasurementResult
 export function convertFull(value: number, from: PressureUnit, to: PressureUnit): MeasurementResult
+export function convertFull(value: number, from: AccelerationUnit, to: AccelerationUnit): MeasurementResult
+export function convertFull(value: number, from: ConcentrationMassUnit, to: ConcentrationMassUnit): MeasurementResult
+export function convertFull(value: number, from: DispersionUnit, to: DispersionUnit): MeasurementResult
+export function convertFull(value: number, from: ElectricChargeUnit, to: ElectricChargeUnit): MeasurementResult
+export function convertFull(value: number, from: ElectricCurrentUnit, to: ElectricCurrentUnit): MeasurementResult
+export function convertFull(value: number, from: ElectricPotentialDifferenceUnit, to: ElectricPotentialDifferenceUnit): MeasurementResult
+export function convertFull(value: number, from: ElectricResistanceUnit, to: ElectricResistanceUnit): MeasurementResult
+export function convertFull(value: number, from: FuelEfficiencyUnit, to: FuelEfficiencyUnit): MeasurementResult
+export function convertFull(value: number, from: IlluminanceUnit, to: IlluminanceUnit): MeasurementResult
+export function convertFull(value: number, from: InformationStorageUnit, to: InformationStorageUnit): MeasurementResult
 export function convertFull(
   value: number,
   from: AnyUnit,
@@ -277,6 +412,16 @@ export function add(valueA: number, unitA: PowerUnit, valueB: number, unitB: Pow
 export function add(valueA: number, unitA: FrequencyUnit, valueB: number, unitB: FrequencyUnit, resultUnit: FrequencyUnit): number
 export function add(valueA: number, unitA: AngleUnit, valueB: number, unitB: AngleUnit, resultUnit: AngleUnit): number
 export function add(valueA: number, unitA: PressureUnit, valueB: number, unitB: PressureUnit, resultUnit: PressureUnit): number
+export function add(valueA: number, unitA: AccelerationUnit, valueB: number, unitB: AccelerationUnit, resultUnit: AccelerationUnit): number
+export function add(valueA: number, unitA: ConcentrationMassUnit, valueB: number, unitB: ConcentrationMassUnit, resultUnit: ConcentrationMassUnit): number
+export function add(valueA: number, unitA: DispersionUnit, valueB: number, unitB: DispersionUnit, resultUnit: DispersionUnit): number
+export function add(valueA: number, unitA: ElectricChargeUnit, valueB: number, unitB: ElectricChargeUnit, resultUnit: ElectricChargeUnit): number
+export function add(valueA: number, unitA: ElectricCurrentUnit, valueB: number, unitB: ElectricCurrentUnit, resultUnit: ElectricCurrentUnit): number
+export function add(valueA: number, unitA: ElectricPotentialDifferenceUnit, valueB: number, unitB: ElectricPotentialDifferenceUnit, resultUnit: ElectricPotentialDifferenceUnit): number
+export function add(valueA: number, unitA: ElectricResistanceUnit, valueB: number, unitB: ElectricResistanceUnit, resultUnit: ElectricResistanceUnit): number
+export function add(valueA: number, unitA: FuelEfficiencyUnit, valueB: number, unitB: FuelEfficiencyUnit, resultUnit: FuelEfficiencyUnit): number
+export function add(valueA: number, unitA: IlluminanceUnit, valueB: number, unitB: IlluminanceUnit, resultUnit: IlluminanceUnit): number
+export function add(valueA: number, unitA: InformationStorageUnit, valueB: number, unitB: InformationStorageUnit, resultUnit: InformationStorageUnit): number
 export function add(
   valueA: number,
   unitA: AnyUnit,
@@ -299,6 +444,16 @@ export function subtract(valueA: number, unitA: PowerUnit, valueB: number, unitB
 export function subtract(valueA: number, unitA: FrequencyUnit, valueB: number, unitB: FrequencyUnit, resultUnit: FrequencyUnit): number
 export function subtract(valueA: number, unitA: AngleUnit, valueB: number, unitB: AngleUnit, resultUnit: AngleUnit): number
 export function subtract(valueA: number, unitA: PressureUnit, valueB: number, unitB: PressureUnit, resultUnit: PressureUnit): number
+export function subtract(valueA: number, unitA: AccelerationUnit, valueB: number, unitB: AccelerationUnit, resultUnit: AccelerationUnit): number
+export function subtract(valueA: number, unitA: ConcentrationMassUnit, valueB: number, unitB: ConcentrationMassUnit, resultUnit: ConcentrationMassUnit): number
+export function subtract(valueA: number, unitA: DispersionUnit, valueB: number, unitB: DispersionUnit, resultUnit: DispersionUnit): number
+export function subtract(valueA: number, unitA: ElectricChargeUnit, valueB: number, unitB: ElectricChargeUnit, resultUnit: ElectricChargeUnit): number
+export function subtract(valueA: number, unitA: ElectricCurrentUnit, valueB: number, unitB: ElectricCurrentUnit, resultUnit: ElectricCurrentUnit): number
+export function subtract(valueA: number, unitA: ElectricPotentialDifferenceUnit, valueB: number, unitB: ElectricPotentialDifferenceUnit, resultUnit: ElectricPotentialDifferenceUnit): number
+export function subtract(valueA: number, unitA: ElectricResistanceUnit, valueB: number, unitB: ElectricResistanceUnit, resultUnit: ElectricResistanceUnit): number
+export function subtract(valueA: number, unitA: FuelEfficiencyUnit, valueB: number, unitB: FuelEfficiencyUnit, resultUnit: FuelEfficiencyUnit): number
+export function subtract(valueA: number, unitA: IlluminanceUnit, valueB: number, unitB: IlluminanceUnit, resultUnit: IlluminanceUnit): number
+export function subtract(valueA: number, unitA: InformationStorageUnit, valueB: number, unitB: InformationStorageUnit, resultUnit: InformationStorageUnit): number
 export function subtract(
   valueA: number,
   unitA: AnyUnit,

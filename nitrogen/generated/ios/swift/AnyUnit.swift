@@ -293,6 +293,136 @@ public extension AnyUnit {
         self = .inchesofmercury
       case "millimetersOfMercury":
         self = .millimetersofmercury
+      case "metersPerSecondSquared":
+        self = .meterspersecondsquared
+      case "gravity":
+        self = .gravity
+      case "gramsPerLiter":
+        self = .gramsperliter
+      case "milligramsPerDeciliter":
+        self = .milligramsperdeciliter
+      case "partsPerMillion":
+        self = .partspermillion
+      case "coulombs":
+        self = .coulombs
+      case "megaampereHours":
+        self = .megaamperehours
+      case "kiloampereHours":
+        self = .kiloamperehours
+      case "ampereHours":
+        self = .amperehours
+      case "milliampereHours":
+        self = .milliamperehours
+      case "microampereHours":
+        self = .microamperehours
+      case "megaamperes":
+        self = .megaamperes
+      case "kiloamperes":
+        self = .kiloamperes
+      case "amperes":
+        self = .amperes
+      case "milliamperes":
+        self = .milliamperes
+      case "microamperes":
+        self = .microamperes
+      case "megavolts":
+        self = .megavolts
+      case "kilovolts":
+        self = .kilovolts
+      case "volts":
+        self = .volts
+      case "millivolts":
+        self = .millivolts
+      case "microvolts":
+        self = .microvolts
+      case "megaohms":
+        self = .megaohms
+      case "kiloohms":
+        self = .kiloohms
+      case "ohms":
+        self = .ohms
+      case "milliohms":
+        self = .milliohms
+      case "microohms":
+        self = .microohms
+      case "litersPer100Kilometers":
+        self = .litersper100kilometers
+      case "milesPerImperialGallon":
+        self = .milesperimperialgallon
+      case "milesPerGallon":
+        self = .milespergallon
+      case "lux":
+        self = .lux
+      case "bytes":
+        self = .bytes
+      case "bits":
+        self = .bits
+      case "nibbles":
+        self = .nibbles
+      case "yottabytes":
+        self = .yottabytes
+      case "zettabytes":
+        self = .zettabytes
+      case "exabytes":
+        self = .exabytes
+      case "petabytes":
+        self = .petabytes
+      case "terabytes":
+        self = .terabytes
+      case "gigabytes":
+        self = .gigabytes
+      case "megabytes":
+        self = .megabytes
+      case "kilobytes":
+        self = .kilobytes
+      case "yottabits":
+        self = .yottabits
+      case "zettabits":
+        self = .zettabits
+      case "exabits":
+        self = .exabits
+      case "petabits":
+        self = .petabits
+      case "terabits":
+        self = .terabits
+      case "gigabits":
+        self = .gigabits
+      case "megabits":
+        self = .megabits
+      case "kilobits":
+        self = .kilobits
+      case "yobibytes":
+        self = .yobibytes
+      case "zebibytes":
+        self = .zebibytes
+      case "exbibytes":
+        self = .exbibytes
+      case "pebibytes":
+        self = .pebibytes
+      case "tebibytes":
+        self = .tebibytes
+      case "gibibytes":
+        self = .gibibytes
+      case "mebibytes":
+        self = .mebibytes
+      case "kibibytes":
+        self = .kibibytes
+      case "yobibits":
+        self = .yobibits
+      case "zebibits":
+        self = .zebibits
+      case "exbibits":
+        self = .exbibits
+      case "pebibits":
+        self = .pebibits
+      case "tebibits":
+        self = .tebibits
+      case "gibibits":
+        self = .gibibits
+      case "mebibits":
+        self = .mebibits
+      case "kibibits":
+        self = .kibibits
       default:
         return nil
     }
@@ -579,6 +709,136 @@ public extension AnyUnit {
         return "inchesOfMercury"
       case .millimetersofmercury:
         return "millimetersOfMercury"
+      case .meterspersecondsquared:
+        return "metersPerSecondSquared"
+      case .gravity:
+        return "gravity"
+      case .gramsperliter:
+        return "gramsPerLiter"
+      case .milligramsperdeciliter:
+        return "milligramsPerDeciliter"
+      case .partspermillion:
+        return "partsPerMillion"
+      case .coulombs:
+        return "coulombs"
+      case .megaamperehours:
+        return "megaampereHours"
+      case .kiloamperehours:
+        return "kiloampereHours"
+      case .amperehours:
+        return "ampereHours"
+      case .milliamperehours:
+        return "milliampereHours"
+      case .microamperehours:
+        return "microampereHours"
+      case .megaamperes:
+        return "megaamperes"
+      case .kiloamperes:
+        return "kiloamperes"
+      case .amperes:
+        return "amperes"
+      case .milliamperes:
+        return "milliamperes"
+      case .microamperes:
+        return "microamperes"
+      case .megavolts:
+        return "megavolts"
+      case .kilovolts:
+        return "kilovolts"
+      case .volts:
+        return "volts"
+      case .millivolts:
+        return "millivolts"
+      case .microvolts:
+        return "microvolts"
+      case .megaohms:
+        return "megaohms"
+      case .kiloohms:
+        return "kiloohms"
+      case .ohms:
+        return "ohms"
+      case .milliohms:
+        return "milliohms"
+      case .microohms:
+        return "microohms"
+      case .litersper100kilometers:
+        return "litersPer100Kilometers"
+      case .milesperimperialgallon:
+        return "milesPerImperialGallon"
+      case .milespergallon:
+        return "milesPerGallon"
+      case .lux:
+        return "lux"
+      case .bytes:
+        return "bytes"
+      case .bits:
+        return "bits"
+      case .nibbles:
+        return "nibbles"
+      case .yottabytes:
+        return "yottabytes"
+      case .zettabytes:
+        return "zettabytes"
+      case .exabytes:
+        return "exabytes"
+      case .petabytes:
+        return "petabytes"
+      case .terabytes:
+        return "terabytes"
+      case .gigabytes:
+        return "gigabytes"
+      case .megabytes:
+        return "megabytes"
+      case .kilobytes:
+        return "kilobytes"
+      case .yottabits:
+        return "yottabits"
+      case .zettabits:
+        return "zettabits"
+      case .exabits:
+        return "exabits"
+      case .petabits:
+        return "petabits"
+      case .terabits:
+        return "terabits"
+      case .gigabits:
+        return "gigabits"
+      case .megabits:
+        return "megabits"
+      case .kilobits:
+        return "kilobits"
+      case .yobibytes:
+        return "yobibytes"
+      case .zebibytes:
+        return "zebibytes"
+      case .exbibytes:
+        return "exbibytes"
+      case .pebibytes:
+        return "pebibytes"
+      case .tebibytes:
+        return "tebibytes"
+      case .gibibytes:
+        return "gibibytes"
+      case .mebibytes:
+        return "mebibytes"
+      case .kibibytes:
+        return "kibibytes"
+      case .yobibits:
+        return "yobibits"
+      case .zebibits:
+        return "zebibits"
+      case .exbibits:
+        return "exbibits"
+      case .pebibits:
+        return "pebibits"
+      case .tebibits:
+        return "tebibits"
+      case .gibibits:
+        return "gibibits"
+      case .mebibits:
+        return "mebibits"
+      case .kibibits:
+        return "kibibits"
     }
   }
 }

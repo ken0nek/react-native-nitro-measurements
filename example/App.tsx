@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import { convert, convertFull, getSymbol, getUnitsForCategory, getCategories, add, subtract, multiply, divide, resolveDimension, Length, Mass, Speed, Temperature, Duration, Area, Volume, Energy, Power, Frequency, Angle, Pressure, measurement } from 'react-native-nitro-measurements';
+import { convert, convertFull, getSymbol, getUnitsForCategory, getCategories, add, subtract, multiply, divide, resolveDimension, Length, Mass, Speed, Temperature, Duration, Area, Volume, Energy, Power, Frequency, Angle, Pressure, Acceleration, ConcentrationMass, Dispersion, ElectricCharge, ElectricCurrent, ElectricPotentialDifference, ElectricResistance, FuelEfficiency, Illuminance, InformationStorage, measurement } from 'react-native-nitro-measurements';
 
 const results = [
   // Length
@@ -95,6 +95,20 @@ const m8aResults = [
   { label: '1 kPa → N/m²', value: convert(1, 'kilopascals', 'newtonsPerMetersSquared') },
 ];
 
+// M8b: New unit categories (one conversion per new category)
+const m8bResults = [
+  { label: '1 g → m/s²', value: convert(1, 'gravity', 'metersPerSecondSquared') },
+  { label: '1 g/L → mg/dL', value: convert(1, 'gramsPerLiter', 'milligramsPerDeciliter') },
+  { label: '1 ppm → ppm', value: convert(1, 'partsPerMillion', 'partsPerMillion') },
+  { label: '1 Ah → C', value: convert(1, 'ampereHours', 'coulombs') },
+  { label: '1 A → mA', value: convert(1, 'amperes', 'milliamperes') },
+  { label: '1 V → mV', value: convert(1, 'volts', 'millivolts') },
+  { label: '1 Ω → mΩ', value: convert(1, 'ohms', 'milliohms') },
+  { label: '10 L/100km → mpg', value: convert(10, 'litersPer100Kilometers', 'milesPerGallon') },
+  { label: '1 lux → lux', value: convert(1, 'lux', 'lux') },
+  { label: '1 GB → MB', value: convert(1, 'gigabytes', 'megabytes') },
+];
+
 export default function App() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -175,6 +189,13 @@ export default function App() {
 
       <Text style={styles.subtitle}>M8a: Expanded Units</Text>
       {m8aResults.map((r) => (
+        <Text key={r.label} style={styles.row}>
+          {r.label}: {r.value}
+        </Text>
+      ))}
+
+      <Text style={styles.subtitle}>M8b: New Categories</Text>
+      {m8bResults.map((r) => (
         <Text key={r.label} style={styles.row}>
           {r.label}: {r.value}
         </Text>

@@ -167,6 +167,71 @@ namespace margelo::nitro::nitromeasurements {
     HECTOPASCALS      SWIFT_NAME(hectopascals) = 135,
     INCHESOFMERCURY      SWIFT_NAME(inchesofmercury) = 136,
     MILLIMETERSOFMERCURY      SWIFT_NAME(millimetersofmercury) = 137,
+    METERSPERSECONDSQUARED      SWIFT_NAME(meterspersecondsquared) = 138,
+    GRAVITY      SWIFT_NAME(gravity) = 139,
+    GRAMSPERLITER      SWIFT_NAME(gramsperliter) = 140,
+    MILLIGRAMSPERDECILITER      SWIFT_NAME(milligramsperdeciliter) = 141,
+    PARTSPERMILLION      SWIFT_NAME(partspermillion) = 142,
+    COULOMBS      SWIFT_NAME(coulombs) = 143,
+    MEGAAMPEREHOURS      SWIFT_NAME(megaamperehours) = 144,
+    KILOAMPEREHOURS      SWIFT_NAME(kiloamperehours) = 145,
+    AMPEREHOURS      SWIFT_NAME(amperehours) = 146,
+    MILLIAMPEREHOURS      SWIFT_NAME(milliamperehours) = 147,
+    MICROAMPEREHOURS      SWIFT_NAME(microamperehours) = 148,
+    MEGAAMPERES      SWIFT_NAME(megaamperes) = 149,
+    KILOAMPERES      SWIFT_NAME(kiloamperes) = 150,
+    AMPERES      SWIFT_NAME(amperes) = 151,
+    MILLIAMPERES      SWIFT_NAME(milliamperes) = 152,
+    MICROAMPERES      SWIFT_NAME(microamperes) = 153,
+    MEGAVOLTS      SWIFT_NAME(megavolts) = 154,
+    KILOVOLTS      SWIFT_NAME(kilovolts) = 155,
+    VOLTS      SWIFT_NAME(volts) = 156,
+    MILLIVOLTS      SWIFT_NAME(millivolts) = 157,
+    MICROVOLTS      SWIFT_NAME(microvolts) = 158,
+    MEGAOHMS      SWIFT_NAME(megaohms) = 159,
+    KILOOHMS      SWIFT_NAME(kiloohms) = 160,
+    OHMS      SWIFT_NAME(ohms) = 161,
+    MILLIOHMS      SWIFT_NAME(milliohms) = 162,
+    MICROOHMS      SWIFT_NAME(microohms) = 163,
+    LITERSPER100KILOMETERS      SWIFT_NAME(litersper100kilometers) = 164,
+    MILESPERIMPERIALGALLON      SWIFT_NAME(milesperimperialgallon) = 165,
+    MILESPERGALLON      SWIFT_NAME(milespergallon) = 166,
+    LUX      SWIFT_NAME(lux) = 167,
+    BYTES      SWIFT_NAME(bytes) = 168,
+    BITS      SWIFT_NAME(bits) = 169,
+    NIBBLES      SWIFT_NAME(nibbles) = 170,
+    YOTTABYTES      SWIFT_NAME(yottabytes) = 171,
+    ZETTABYTES      SWIFT_NAME(zettabytes) = 172,
+    EXABYTES      SWIFT_NAME(exabytes) = 173,
+    PETABYTES      SWIFT_NAME(petabytes) = 174,
+    TERABYTES      SWIFT_NAME(terabytes) = 175,
+    GIGABYTES      SWIFT_NAME(gigabytes) = 176,
+    MEGABYTES      SWIFT_NAME(megabytes) = 177,
+    KILOBYTES      SWIFT_NAME(kilobytes) = 178,
+    YOTTABITS      SWIFT_NAME(yottabits) = 179,
+    ZETTABITS      SWIFT_NAME(zettabits) = 180,
+    EXABITS      SWIFT_NAME(exabits) = 181,
+    PETABITS      SWIFT_NAME(petabits) = 182,
+    TERABITS      SWIFT_NAME(terabits) = 183,
+    GIGABITS      SWIFT_NAME(gigabits) = 184,
+    MEGABITS      SWIFT_NAME(megabits) = 185,
+    KILOBITS      SWIFT_NAME(kilobits) = 186,
+    YOBIBYTES      SWIFT_NAME(yobibytes) = 187,
+    ZEBIBYTES      SWIFT_NAME(zebibytes) = 188,
+    EXBIBYTES      SWIFT_NAME(exbibytes) = 189,
+    PEBIBYTES      SWIFT_NAME(pebibytes) = 190,
+    TEBIBYTES      SWIFT_NAME(tebibytes) = 191,
+    GIBIBYTES      SWIFT_NAME(gibibytes) = 192,
+    MEBIBYTES      SWIFT_NAME(mebibytes) = 193,
+    KIBIBYTES      SWIFT_NAME(kibibytes) = 194,
+    YOBIBITS      SWIFT_NAME(yobibits) = 195,
+    ZEBIBITS      SWIFT_NAME(zebibits) = 196,
+    EXBIBITS      SWIFT_NAME(exbibits) = 197,
+    PEBIBITS      SWIFT_NAME(pebibits) = 198,
+    TEBIBITS      SWIFT_NAME(tebibits) = 199,
+    GIBIBITS      SWIFT_NAME(gibibits) = 200,
+    MEBIBITS      SWIFT_NAME(mebibits) = 201,
+    KIBIBITS      SWIFT_NAME(kibibits) = 202,
   } CLOSED_ENUM;
 
 } // namespace margelo::nitro::nitromeasurements
@@ -317,6 +382,71 @@ namespace margelo::nitro {
         case hashString("hectopascals"): return margelo::nitro::nitromeasurements::AnyUnit::HECTOPASCALS;
         case hashString("inchesOfMercury"): return margelo::nitro::nitromeasurements::AnyUnit::INCHESOFMERCURY;
         case hashString("millimetersOfMercury"): return margelo::nitro::nitromeasurements::AnyUnit::MILLIMETERSOFMERCURY;
+        case hashString("metersPerSecondSquared"): return margelo::nitro::nitromeasurements::AnyUnit::METERSPERSECONDSQUARED;
+        case hashString("gravity"): return margelo::nitro::nitromeasurements::AnyUnit::GRAVITY;
+        case hashString("gramsPerLiter"): return margelo::nitro::nitromeasurements::AnyUnit::GRAMSPERLITER;
+        case hashString("milligramsPerDeciliter"): return margelo::nitro::nitromeasurements::AnyUnit::MILLIGRAMSPERDECILITER;
+        case hashString("partsPerMillion"): return margelo::nitro::nitromeasurements::AnyUnit::PARTSPERMILLION;
+        case hashString("coulombs"): return margelo::nitro::nitromeasurements::AnyUnit::COULOMBS;
+        case hashString("megaampereHours"): return margelo::nitro::nitromeasurements::AnyUnit::MEGAAMPEREHOURS;
+        case hashString("kiloampereHours"): return margelo::nitro::nitromeasurements::AnyUnit::KILOAMPEREHOURS;
+        case hashString("ampereHours"): return margelo::nitro::nitromeasurements::AnyUnit::AMPEREHOURS;
+        case hashString("milliampereHours"): return margelo::nitro::nitromeasurements::AnyUnit::MILLIAMPEREHOURS;
+        case hashString("microampereHours"): return margelo::nitro::nitromeasurements::AnyUnit::MICROAMPEREHOURS;
+        case hashString("megaamperes"): return margelo::nitro::nitromeasurements::AnyUnit::MEGAAMPERES;
+        case hashString("kiloamperes"): return margelo::nitro::nitromeasurements::AnyUnit::KILOAMPERES;
+        case hashString("amperes"): return margelo::nitro::nitromeasurements::AnyUnit::AMPERES;
+        case hashString("milliamperes"): return margelo::nitro::nitromeasurements::AnyUnit::MILLIAMPERES;
+        case hashString("microamperes"): return margelo::nitro::nitromeasurements::AnyUnit::MICROAMPERES;
+        case hashString("megavolts"): return margelo::nitro::nitromeasurements::AnyUnit::MEGAVOLTS;
+        case hashString("kilovolts"): return margelo::nitro::nitromeasurements::AnyUnit::KILOVOLTS;
+        case hashString("volts"): return margelo::nitro::nitromeasurements::AnyUnit::VOLTS;
+        case hashString("millivolts"): return margelo::nitro::nitromeasurements::AnyUnit::MILLIVOLTS;
+        case hashString("microvolts"): return margelo::nitro::nitromeasurements::AnyUnit::MICROVOLTS;
+        case hashString("megaohms"): return margelo::nitro::nitromeasurements::AnyUnit::MEGAOHMS;
+        case hashString("kiloohms"): return margelo::nitro::nitromeasurements::AnyUnit::KILOOHMS;
+        case hashString("ohms"): return margelo::nitro::nitromeasurements::AnyUnit::OHMS;
+        case hashString("milliohms"): return margelo::nitro::nitromeasurements::AnyUnit::MILLIOHMS;
+        case hashString("microohms"): return margelo::nitro::nitromeasurements::AnyUnit::MICROOHMS;
+        case hashString("litersPer100Kilometers"): return margelo::nitro::nitromeasurements::AnyUnit::LITERSPER100KILOMETERS;
+        case hashString("milesPerImperialGallon"): return margelo::nitro::nitromeasurements::AnyUnit::MILESPERIMPERIALGALLON;
+        case hashString("milesPerGallon"): return margelo::nitro::nitromeasurements::AnyUnit::MILESPERGALLON;
+        case hashString("lux"): return margelo::nitro::nitromeasurements::AnyUnit::LUX;
+        case hashString("bytes"): return margelo::nitro::nitromeasurements::AnyUnit::BYTES;
+        case hashString("bits"): return margelo::nitro::nitromeasurements::AnyUnit::BITS;
+        case hashString("nibbles"): return margelo::nitro::nitromeasurements::AnyUnit::NIBBLES;
+        case hashString("yottabytes"): return margelo::nitro::nitromeasurements::AnyUnit::YOTTABYTES;
+        case hashString("zettabytes"): return margelo::nitro::nitromeasurements::AnyUnit::ZETTABYTES;
+        case hashString("exabytes"): return margelo::nitro::nitromeasurements::AnyUnit::EXABYTES;
+        case hashString("petabytes"): return margelo::nitro::nitromeasurements::AnyUnit::PETABYTES;
+        case hashString("terabytes"): return margelo::nitro::nitromeasurements::AnyUnit::TERABYTES;
+        case hashString("gigabytes"): return margelo::nitro::nitromeasurements::AnyUnit::GIGABYTES;
+        case hashString("megabytes"): return margelo::nitro::nitromeasurements::AnyUnit::MEGABYTES;
+        case hashString("kilobytes"): return margelo::nitro::nitromeasurements::AnyUnit::KILOBYTES;
+        case hashString("yottabits"): return margelo::nitro::nitromeasurements::AnyUnit::YOTTABITS;
+        case hashString("zettabits"): return margelo::nitro::nitromeasurements::AnyUnit::ZETTABITS;
+        case hashString("exabits"): return margelo::nitro::nitromeasurements::AnyUnit::EXABITS;
+        case hashString("petabits"): return margelo::nitro::nitromeasurements::AnyUnit::PETABITS;
+        case hashString("terabits"): return margelo::nitro::nitromeasurements::AnyUnit::TERABITS;
+        case hashString("gigabits"): return margelo::nitro::nitromeasurements::AnyUnit::GIGABITS;
+        case hashString("megabits"): return margelo::nitro::nitromeasurements::AnyUnit::MEGABITS;
+        case hashString("kilobits"): return margelo::nitro::nitromeasurements::AnyUnit::KILOBITS;
+        case hashString("yobibytes"): return margelo::nitro::nitromeasurements::AnyUnit::YOBIBYTES;
+        case hashString("zebibytes"): return margelo::nitro::nitromeasurements::AnyUnit::ZEBIBYTES;
+        case hashString("exbibytes"): return margelo::nitro::nitromeasurements::AnyUnit::EXBIBYTES;
+        case hashString("pebibytes"): return margelo::nitro::nitromeasurements::AnyUnit::PEBIBYTES;
+        case hashString("tebibytes"): return margelo::nitro::nitromeasurements::AnyUnit::TEBIBYTES;
+        case hashString("gibibytes"): return margelo::nitro::nitromeasurements::AnyUnit::GIBIBYTES;
+        case hashString("mebibytes"): return margelo::nitro::nitromeasurements::AnyUnit::MEBIBYTES;
+        case hashString("kibibytes"): return margelo::nitro::nitromeasurements::AnyUnit::KIBIBYTES;
+        case hashString("yobibits"): return margelo::nitro::nitromeasurements::AnyUnit::YOBIBITS;
+        case hashString("zebibits"): return margelo::nitro::nitromeasurements::AnyUnit::ZEBIBITS;
+        case hashString("exbibits"): return margelo::nitro::nitromeasurements::AnyUnit::EXBIBITS;
+        case hashString("pebibits"): return margelo::nitro::nitromeasurements::AnyUnit::PEBIBITS;
+        case hashString("tebibits"): return margelo::nitro::nitromeasurements::AnyUnit::TEBIBITS;
+        case hashString("gibibits"): return margelo::nitro::nitromeasurements::AnyUnit::GIBIBITS;
+        case hashString("mebibits"): return margelo::nitro::nitromeasurements::AnyUnit::MEBIBITS;
+        case hashString("kibibits"): return margelo::nitro::nitromeasurements::AnyUnit::KIBIBITS;
         default: [[unlikely]]
           throw std::invalid_argument("Cannot convert \"" + unionValue + "\" to enum AnyUnit - invalid value!");
       }
@@ -461,6 +591,71 @@ namespace margelo::nitro {
         case margelo::nitro::nitromeasurements::AnyUnit::HECTOPASCALS: return JSIConverter<std::string>::toJSI(runtime, "hectopascals");
         case margelo::nitro::nitromeasurements::AnyUnit::INCHESOFMERCURY: return JSIConverter<std::string>::toJSI(runtime, "inchesOfMercury");
         case margelo::nitro::nitromeasurements::AnyUnit::MILLIMETERSOFMERCURY: return JSIConverter<std::string>::toJSI(runtime, "millimetersOfMercury");
+        case margelo::nitro::nitromeasurements::AnyUnit::METERSPERSECONDSQUARED: return JSIConverter<std::string>::toJSI(runtime, "metersPerSecondSquared");
+        case margelo::nitro::nitromeasurements::AnyUnit::GRAVITY: return JSIConverter<std::string>::toJSI(runtime, "gravity");
+        case margelo::nitro::nitromeasurements::AnyUnit::GRAMSPERLITER: return JSIConverter<std::string>::toJSI(runtime, "gramsPerLiter");
+        case margelo::nitro::nitromeasurements::AnyUnit::MILLIGRAMSPERDECILITER: return JSIConverter<std::string>::toJSI(runtime, "milligramsPerDeciliter");
+        case margelo::nitro::nitromeasurements::AnyUnit::PARTSPERMILLION: return JSIConverter<std::string>::toJSI(runtime, "partsPerMillion");
+        case margelo::nitro::nitromeasurements::AnyUnit::COULOMBS: return JSIConverter<std::string>::toJSI(runtime, "coulombs");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEGAAMPEREHOURS: return JSIConverter<std::string>::toJSI(runtime, "megaampereHours");
+        case margelo::nitro::nitromeasurements::AnyUnit::KILOAMPEREHOURS: return JSIConverter<std::string>::toJSI(runtime, "kiloampereHours");
+        case margelo::nitro::nitromeasurements::AnyUnit::AMPEREHOURS: return JSIConverter<std::string>::toJSI(runtime, "ampereHours");
+        case margelo::nitro::nitromeasurements::AnyUnit::MILLIAMPEREHOURS: return JSIConverter<std::string>::toJSI(runtime, "milliampereHours");
+        case margelo::nitro::nitromeasurements::AnyUnit::MICROAMPEREHOURS: return JSIConverter<std::string>::toJSI(runtime, "microampereHours");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEGAAMPERES: return JSIConverter<std::string>::toJSI(runtime, "megaamperes");
+        case margelo::nitro::nitromeasurements::AnyUnit::KILOAMPERES: return JSIConverter<std::string>::toJSI(runtime, "kiloamperes");
+        case margelo::nitro::nitromeasurements::AnyUnit::AMPERES: return JSIConverter<std::string>::toJSI(runtime, "amperes");
+        case margelo::nitro::nitromeasurements::AnyUnit::MILLIAMPERES: return JSIConverter<std::string>::toJSI(runtime, "milliamperes");
+        case margelo::nitro::nitromeasurements::AnyUnit::MICROAMPERES: return JSIConverter<std::string>::toJSI(runtime, "microamperes");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEGAVOLTS: return JSIConverter<std::string>::toJSI(runtime, "megavolts");
+        case margelo::nitro::nitromeasurements::AnyUnit::KILOVOLTS: return JSIConverter<std::string>::toJSI(runtime, "kilovolts");
+        case margelo::nitro::nitromeasurements::AnyUnit::VOLTS: return JSIConverter<std::string>::toJSI(runtime, "volts");
+        case margelo::nitro::nitromeasurements::AnyUnit::MILLIVOLTS: return JSIConverter<std::string>::toJSI(runtime, "millivolts");
+        case margelo::nitro::nitromeasurements::AnyUnit::MICROVOLTS: return JSIConverter<std::string>::toJSI(runtime, "microvolts");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEGAOHMS: return JSIConverter<std::string>::toJSI(runtime, "megaohms");
+        case margelo::nitro::nitromeasurements::AnyUnit::KILOOHMS: return JSIConverter<std::string>::toJSI(runtime, "kiloohms");
+        case margelo::nitro::nitromeasurements::AnyUnit::OHMS: return JSIConverter<std::string>::toJSI(runtime, "ohms");
+        case margelo::nitro::nitromeasurements::AnyUnit::MILLIOHMS: return JSIConverter<std::string>::toJSI(runtime, "milliohms");
+        case margelo::nitro::nitromeasurements::AnyUnit::MICROOHMS: return JSIConverter<std::string>::toJSI(runtime, "microohms");
+        case margelo::nitro::nitromeasurements::AnyUnit::LITERSPER100KILOMETERS: return JSIConverter<std::string>::toJSI(runtime, "litersPer100Kilometers");
+        case margelo::nitro::nitromeasurements::AnyUnit::MILESPERIMPERIALGALLON: return JSIConverter<std::string>::toJSI(runtime, "milesPerImperialGallon");
+        case margelo::nitro::nitromeasurements::AnyUnit::MILESPERGALLON: return JSIConverter<std::string>::toJSI(runtime, "milesPerGallon");
+        case margelo::nitro::nitromeasurements::AnyUnit::LUX: return JSIConverter<std::string>::toJSI(runtime, "lux");
+        case margelo::nitro::nitromeasurements::AnyUnit::BYTES: return JSIConverter<std::string>::toJSI(runtime, "bytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::BITS: return JSIConverter<std::string>::toJSI(runtime, "bits");
+        case margelo::nitro::nitromeasurements::AnyUnit::NIBBLES: return JSIConverter<std::string>::toJSI(runtime, "nibbles");
+        case margelo::nitro::nitromeasurements::AnyUnit::YOTTABYTES: return JSIConverter<std::string>::toJSI(runtime, "yottabytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::ZETTABYTES: return JSIConverter<std::string>::toJSI(runtime, "zettabytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::EXABYTES: return JSIConverter<std::string>::toJSI(runtime, "exabytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::PETABYTES: return JSIConverter<std::string>::toJSI(runtime, "petabytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::TERABYTES: return JSIConverter<std::string>::toJSI(runtime, "terabytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::GIGABYTES: return JSIConverter<std::string>::toJSI(runtime, "gigabytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEGABYTES: return JSIConverter<std::string>::toJSI(runtime, "megabytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::KILOBYTES: return JSIConverter<std::string>::toJSI(runtime, "kilobytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::YOTTABITS: return JSIConverter<std::string>::toJSI(runtime, "yottabits");
+        case margelo::nitro::nitromeasurements::AnyUnit::ZETTABITS: return JSIConverter<std::string>::toJSI(runtime, "zettabits");
+        case margelo::nitro::nitromeasurements::AnyUnit::EXABITS: return JSIConverter<std::string>::toJSI(runtime, "exabits");
+        case margelo::nitro::nitromeasurements::AnyUnit::PETABITS: return JSIConverter<std::string>::toJSI(runtime, "petabits");
+        case margelo::nitro::nitromeasurements::AnyUnit::TERABITS: return JSIConverter<std::string>::toJSI(runtime, "terabits");
+        case margelo::nitro::nitromeasurements::AnyUnit::GIGABITS: return JSIConverter<std::string>::toJSI(runtime, "gigabits");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEGABITS: return JSIConverter<std::string>::toJSI(runtime, "megabits");
+        case margelo::nitro::nitromeasurements::AnyUnit::KILOBITS: return JSIConverter<std::string>::toJSI(runtime, "kilobits");
+        case margelo::nitro::nitromeasurements::AnyUnit::YOBIBYTES: return JSIConverter<std::string>::toJSI(runtime, "yobibytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::ZEBIBYTES: return JSIConverter<std::string>::toJSI(runtime, "zebibytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::EXBIBYTES: return JSIConverter<std::string>::toJSI(runtime, "exbibytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::PEBIBYTES: return JSIConverter<std::string>::toJSI(runtime, "pebibytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::TEBIBYTES: return JSIConverter<std::string>::toJSI(runtime, "tebibytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::GIBIBYTES: return JSIConverter<std::string>::toJSI(runtime, "gibibytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEBIBYTES: return JSIConverter<std::string>::toJSI(runtime, "mebibytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::KIBIBYTES: return JSIConverter<std::string>::toJSI(runtime, "kibibytes");
+        case margelo::nitro::nitromeasurements::AnyUnit::YOBIBITS: return JSIConverter<std::string>::toJSI(runtime, "yobibits");
+        case margelo::nitro::nitromeasurements::AnyUnit::ZEBIBITS: return JSIConverter<std::string>::toJSI(runtime, "zebibits");
+        case margelo::nitro::nitromeasurements::AnyUnit::EXBIBITS: return JSIConverter<std::string>::toJSI(runtime, "exbibits");
+        case margelo::nitro::nitromeasurements::AnyUnit::PEBIBITS: return JSIConverter<std::string>::toJSI(runtime, "pebibits");
+        case margelo::nitro::nitromeasurements::AnyUnit::TEBIBITS: return JSIConverter<std::string>::toJSI(runtime, "tebibits");
+        case margelo::nitro::nitromeasurements::AnyUnit::GIBIBITS: return JSIConverter<std::string>::toJSI(runtime, "gibibits");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEBIBITS: return JSIConverter<std::string>::toJSI(runtime, "mebibits");
+        case margelo::nitro::nitromeasurements::AnyUnit::KIBIBITS: return JSIConverter<std::string>::toJSI(runtime, "kibibits");
         default: [[unlikely]]
           throw std::invalid_argument("Cannot convert AnyUnit to JS - invalid value: "
                                     + std::to_string(static_cast<int>(arg)) + "!");
@@ -610,6 +805,71 @@ namespace margelo::nitro {
         case hashString("hectopascals"):
         case hashString("inchesOfMercury"):
         case hashString("millimetersOfMercury"):
+        case hashString("metersPerSecondSquared"):
+        case hashString("gravity"):
+        case hashString("gramsPerLiter"):
+        case hashString("milligramsPerDeciliter"):
+        case hashString("partsPerMillion"):
+        case hashString("coulombs"):
+        case hashString("megaampereHours"):
+        case hashString("kiloampereHours"):
+        case hashString("ampereHours"):
+        case hashString("milliampereHours"):
+        case hashString("microampereHours"):
+        case hashString("megaamperes"):
+        case hashString("kiloamperes"):
+        case hashString("amperes"):
+        case hashString("milliamperes"):
+        case hashString("microamperes"):
+        case hashString("megavolts"):
+        case hashString("kilovolts"):
+        case hashString("volts"):
+        case hashString("millivolts"):
+        case hashString("microvolts"):
+        case hashString("megaohms"):
+        case hashString("kiloohms"):
+        case hashString("ohms"):
+        case hashString("milliohms"):
+        case hashString("microohms"):
+        case hashString("litersPer100Kilometers"):
+        case hashString("milesPerImperialGallon"):
+        case hashString("milesPerGallon"):
+        case hashString("lux"):
+        case hashString("bytes"):
+        case hashString("bits"):
+        case hashString("nibbles"):
+        case hashString("yottabytes"):
+        case hashString("zettabytes"):
+        case hashString("exabytes"):
+        case hashString("petabytes"):
+        case hashString("terabytes"):
+        case hashString("gigabytes"):
+        case hashString("megabytes"):
+        case hashString("kilobytes"):
+        case hashString("yottabits"):
+        case hashString("zettabits"):
+        case hashString("exabits"):
+        case hashString("petabits"):
+        case hashString("terabits"):
+        case hashString("gigabits"):
+        case hashString("megabits"):
+        case hashString("kilobits"):
+        case hashString("yobibytes"):
+        case hashString("zebibytes"):
+        case hashString("exbibytes"):
+        case hashString("pebibytes"):
+        case hashString("tebibytes"):
+        case hashString("gibibytes"):
+        case hashString("mebibytes"):
+        case hashString("kibibytes"):
+        case hashString("yobibits"):
+        case hashString("zebibits"):
+        case hashString("exbibits"):
+        case hashString("pebibits"):
+        case hashString("tebibits"):
+        case hashString("gibibits"):
+        case hashString("mebibits"):
+        case hashString("kibibits"):
           return true;
         default:
           return false;

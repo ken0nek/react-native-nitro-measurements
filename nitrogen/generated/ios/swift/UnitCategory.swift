@@ -41,6 +41,26 @@ public extension UnitCategory {
         self = .angle
       case "pressure":
         self = .pressure
+      case "acceleration":
+        self = .acceleration
+      case "concentrationMass":
+        self = .concentrationmass
+      case "dispersion":
+        self = .dispersion
+      case "electricCharge":
+        self = .electriccharge
+      case "electricCurrent":
+        self = .electriccurrent
+      case "electricPotentialDifference":
+        self = .electricpotentialdifference
+      case "electricResistance":
+        self = .electricresistance
+      case "fuelEfficiency":
+        self = .fuelefficiency
+      case "illuminance":
+        self = .illuminance
+      case "informationStorage":
+        self = .informationstorage
       default:
         return nil
     }
@@ -75,6 +95,26 @@ public extension UnitCategory {
         return "angle"
       case .pressure:
         return "pressure"
+      case .acceleration:
+        return "acceleration"
+      case .concentrationmass:
+        return "concentrationMass"
+      case .dispersion:
+        return "dispersion"
+      case .electriccharge:
+        return "electricCharge"
+      case .electriccurrent:
+        return "electricCurrent"
+      case .electricpotentialdifference:
+        return "electricPotentialDifference"
+      case .electricresistance:
+        return "electricResistance"
+      case .fuelefficiency:
+        return "fuelEfficiency"
+      case .illuminance:
+        return "illuminance"
+      case .informationstorage:
+        return "informationStorage"
     }
   }
 }

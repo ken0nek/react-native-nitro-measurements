@@ -160,6 +160,91 @@ export type PressureUnit =
   | 'inchesOfMercury'
   | 'millimetersOfMercury'
 
+export type AccelerationUnit =
+  | 'metersPerSecondSquared'
+  | 'gravity'
+
+export type ConcentrationMassUnit =
+  | 'gramsPerLiter'
+  | 'milligramsPerDeciliter'
+
+export type DispersionUnit =
+  | 'partsPerMillion'
+
+export type ElectricChargeUnit =
+  | 'coulombs'
+  | 'megaampereHours'
+  | 'kiloampereHours'
+  | 'ampereHours'
+  | 'milliampereHours'
+  | 'microampereHours'
+
+export type ElectricCurrentUnit =
+  | 'megaamperes'
+  | 'kiloamperes'
+  | 'amperes'
+  | 'milliamperes'
+  | 'microamperes'
+
+export type ElectricPotentialDifferenceUnit =
+  | 'megavolts'
+  | 'kilovolts'
+  | 'volts'
+  | 'millivolts'
+  | 'microvolts'
+
+export type ElectricResistanceUnit =
+  | 'megaohms'
+  | 'kiloohms'
+  | 'ohms'
+  | 'milliohms'
+  | 'microohms'
+
+export type FuelEfficiencyUnit =
+  | 'litersPer100Kilometers'
+  | 'milesPerImperialGallon'
+  | 'milesPerGallon'
+
+export type IlluminanceUnit =
+  | 'lux'
+
+export type InformationStorageUnit =
+  | 'bytes'
+  | 'bits'
+  | 'nibbles'
+  | 'yottabytes'
+  | 'zettabytes'
+  | 'exabytes'
+  | 'petabytes'
+  | 'terabytes'
+  | 'gigabytes'
+  | 'megabytes'
+  | 'kilobytes'
+  | 'yottabits'
+  | 'zettabits'
+  | 'exabits'
+  | 'petabits'
+  | 'terabits'
+  | 'gigabits'
+  | 'megabits'
+  | 'kilobits'
+  | 'yobibytes'
+  | 'zebibytes'
+  | 'exbibytes'
+  | 'pebibytes'
+  | 'tebibytes'
+  | 'gibibytes'
+  | 'mebibytes'
+  | 'kibibytes'
+  | 'yobibits'
+  | 'zebibits'
+  | 'exbibits'
+  | 'pebibits'
+  | 'tebibits'
+  | 'gibibits'
+  | 'mebibits'
+  | 'kibibits'
+
 export type AnyUnit =
   | LengthUnit
   | MassUnit
@@ -173,6 +258,16 @@ export type AnyUnit =
   | FrequencyUnit
   | AngleUnit
   | PressureUnit
+  | AccelerationUnit
+  | ConcentrationMassUnit
+  | DispersionUnit
+  | ElectricChargeUnit
+  | ElectricCurrentUnit
+  | ElectricPotentialDifferenceUnit
+  | ElectricResistanceUnit
+  | FuelEfficiencyUnit
+  | IlluminanceUnit
+  | InformationStorageUnit
 
 export type UnitCategory =
   | 'length'
@@ -187,3 +282,13 @@ export type UnitCategory =
   | 'frequency'
   | 'angle'
   | 'pressure'
+  | 'acceleration'
+  | 'concentrationMass'
+  | 'dispersion'
+  | 'electricCharge'
+  | 'electricCurrent'
+  | 'electricPotentialDifference'
+  | 'electricResistance'
+  | 'fuelEfficiency'
+  | 'illuminance'
+  | 'informationStorage'

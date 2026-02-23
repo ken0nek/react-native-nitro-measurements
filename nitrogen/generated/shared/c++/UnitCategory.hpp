@@ -41,6 +41,16 @@ namespace margelo::nitro::nitromeasurements {
     FREQUENCY      SWIFT_NAME(frequency) = 9,
     ANGLE      SWIFT_NAME(angle) = 10,
     PRESSURE      SWIFT_NAME(pressure) = 11,
+    ACCELERATION      SWIFT_NAME(acceleration) = 12,
+    CONCENTRATIONMASS      SWIFT_NAME(concentrationmass) = 13,
+    DISPERSION      SWIFT_NAME(dispersion) = 14,
+    ELECTRICCHARGE      SWIFT_NAME(electriccharge) = 15,
+    ELECTRICCURRENT      SWIFT_NAME(electriccurrent) = 16,
+    ELECTRICPOTENTIALDIFFERENCE      SWIFT_NAME(electricpotentialdifference) = 17,
+    ELECTRICRESISTANCE      SWIFT_NAME(electricresistance) = 18,
+    FUELEFFICIENCY      SWIFT_NAME(fuelefficiency) = 19,
+    ILLUMINANCE      SWIFT_NAME(illuminance) = 20,
+    INFORMATIONSTORAGE      SWIFT_NAME(informationstorage) = 21,
   } CLOSED_ENUM;
 
 } // namespace margelo::nitro::nitromeasurements
@@ -65,6 +75,16 @@ namespace margelo::nitro {
         case hashString("frequency"): return margelo::nitro::nitromeasurements::UnitCategory::FREQUENCY;
         case hashString("angle"): return margelo::nitro::nitromeasurements::UnitCategory::ANGLE;
         case hashString("pressure"): return margelo::nitro::nitromeasurements::UnitCategory::PRESSURE;
+        case hashString("acceleration"): return margelo::nitro::nitromeasurements::UnitCategory::ACCELERATION;
+        case hashString("concentrationMass"): return margelo::nitro::nitromeasurements::UnitCategory::CONCENTRATIONMASS;
+        case hashString("dispersion"): return margelo::nitro::nitromeasurements::UnitCategory::DISPERSION;
+        case hashString("electricCharge"): return margelo::nitro::nitromeasurements::UnitCategory::ELECTRICCHARGE;
+        case hashString("electricCurrent"): return margelo::nitro::nitromeasurements::UnitCategory::ELECTRICCURRENT;
+        case hashString("electricPotentialDifference"): return margelo::nitro::nitromeasurements::UnitCategory::ELECTRICPOTENTIALDIFFERENCE;
+        case hashString("electricResistance"): return margelo::nitro::nitromeasurements::UnitCategory::ELECTRICRESISTANCE;
+        case hashString("fuelEfficiency"): return margelo::nitro::nitromeasurements::UnitCategory::FUELEFFICIENCY;
+        case hashString("illuminance"): return margelo::nitro::nitromeasurements::UnitCategory::ILLUMINANCE;
+        case hashString("informationStorage"): return margelo::nitro::nitromeasurements::UnitCategory::INFORMATIONSTORAGE;
         default: [[unlikely]]
           throw std::invalid_argument("Cannot convert \"" + unionValue + "\" to enum UnitCategory - invalid value!");
       }
@@ -83,6 +103,16 @@ namespace margelo::nitro {
         case margelo::nitro::nitromeasurements::UnitCategory::FREQUENCY: return JSIConverter<std::string>::toJSI(runtime, "frequency");
         case margelo::nitro::nitromeasurements::UnitCategory::ANGLE: return JSIConverter<std::string>::toJSI(runtime, "angle");
         case margelo::nitro::nitromeasurements::UnitCategory::PRESSURE: return JSIConverter<std::string>::toJSI(runtime, "pressure");
+        case margelo::nitro::nitromeasurements::UnitCategory::ACCELERATION: return JSIConverter<std::string>::toJSI(runtime, "acceleration");
+        case margelo::nitro::nitromeasurements::UnitCategory::CONCENTRATIONMASS: return JSIConverter<std::string>::toJSI(runtime, "concentrationMass");
+        case margelo::nitro::nitromeasurements::UnitCategory::DISPERSION: return JSIConverter<std::string>::toJSI(runtime, "dispersion");
+        case margelo::nitro::nitromeasurements::UnitCategory::ELECTRICCHARGE: return JSIConverter<std::string>::toJSI(runtime, "electricCharge");
+        case margelo::nitro::nitromeasurements::UnitCategory::ELECTRICCURRENT: return JSIConverter<std::string>::toJSI(runtime, "electricCurrent");
+        case margelo::nitro::nitromeasurements::UnitCategory::ELECTRICPOTENTIALDIFFERENCE: return JSIConverter<std::string>::toJSI(runtime, "electricPotentialDifference");
+        case margelo::nitro::nitromeasurements::UnitCategory::ELECTRICRESISTANCE: return JSIConverter<std::string>::toJSI(runtime, "electricResistance");
+        case margelo::nitro::nitromeasurements::UnitCategory::FUELEFFICIENCY: return JSIConverter<std::string>::toJSI(runtime, "fuelEfficiency");
+        case margelo::nitro::nitromeasurements::UnitCategory::ILLUMINANCE: return JSIConverter<std::string>::toJSI(runtime, "illuminance");
+        case margelo::nitro::nitromeasurements::UnitCategory::INFORMATIONSTORAGE: return JSIConverter<std::string>::toJSI(runtime, "informationStorage");
         default: [[unlikely]]
           throw std::invalid_argument("Cannot convert UnitCategory to JS - invalid value: "
                                     + std::to_string(static_cast<int>(arg)) + "!");
@@ -106,6 +136,16 @@ namespace margelo::nitro {
         case hashString("frequency"):
         case hashString("angle"):
         case hashString("pressure"):
+        case hashString("acceleration"):
+        case hashString("concentrationMass"):
+        case hashString("dispersion"):
+        case hashString("electricCharge"):
+        case hashString("electricCurrent"):
+        case hashString("electricPotentialDifference"):
+        case hashString("electricResistance"):
+        case hashString("fuelEfficiency"):
+        case hashString("illuminance"):
+        case hashString("informationStorage"):
           return true;
         default:
           return false;
