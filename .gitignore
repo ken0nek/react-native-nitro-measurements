@@ -81,3 +81,7 @@ lib/
 .eslintcache
 .cache
 *.tsbuildinfo
+
+# Internal docs
+CLAUDE.md
+docs
