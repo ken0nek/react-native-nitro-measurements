@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import { convert, convertFull, getSymbol, getUnitsForCategory, getCategories, add, subtract, multiply, divide, resolveDimension } from 'react-native-nitro-measurements';
+import { convert, convertFull, getSymbol, getUnitsForCategory, getCategories, add, subtract, multiply, divide, resolveDimension, Length, Mass, Speed, Temperature, Duration, Area, Volume, Energy, Power, Frequency, Angle, Pressure, measurement } from 'react-native-nitro-measurements';
 
 const results = [
   // Length
@@ -33,7 +33,8 @@ const results = [
 
 let crossCategoryError = '';
 try {
-  convert(1, 'miles', 'celsius');
+  // Cast to bypass overload safety — intentionally testing runtime guard
+  convert(1, 'miles' as any, 'celsius' as any);
 } catch (e: any) {
   crossCategoryError = e.message;
 }
@@ -51,7 +52,8 @@ const tempAddResult = add(0, 'celsius', 100, 'celsius', 'fahrenheit');
 
 let crossCategoryAddError = '';
 try {
-  add(1, 'miles', 1, 'celsius', 'meters');
+  // Cast to bypass overload safety — intentionally testing runtime guard
+  add(1, 'miles' as any, 1, 'celsius' as any, 'meters' as any);
 } catch (e: any) {
   crossCategoryAddError = e.message;
 }
@@ -68,6 +70,16 @@ try {
 } catch (e: any) {
   divisionByZeroError = e.message;
 }
+
+// M6: Type safety layer
+const typeSafeConvert = convert(5, Length.miles, Length.kilometers);
+const typeSafeFull = convertFull(5, Mass.pounds, Mass.kilograms);
+const fluentResult = measurement(100, Speed.kilometersPerHour).to(Speed.milesPerHour);
+const fluentSymbol = measurement(5, Length.miles).symbol();
+const fluentAdd = measurement(1, Length.kilometers).add(500, Length.meters, Length.meters);
+const fluentDimResult = measurement(60, Speed.kilometersPerHour).times(2, Duration.hours);
+
+// Type safety: convert(42, Length.miles, Temperature.celsius) is a compile-time error!
 
 export default function App() {
   return (
@@ -125,6 +137,26 @@ export default function App() {
       </Text>
       <Text style={[styles.row, styles.error]}>
         divide by zero: {divisionByZeroError}
+      </Text>
+
+      <Text style={styles.subtitle}>M6: Type Safety</Text>
+      <Text style={styles.row}>
+        convert(5, Length.miles, Length.km): {typeSafeConvert}
+      </Text>
+      <Text style={styles.row}>
+        convertFull(5, Mass.lbs, Mass.kg): {typeSafeFull.value} {typeSafeFull.symbol}
+      </Text>
+      <Text style={styles.row}>
+        measurement(100, km/h).to(mph): {fluentResult}
+      </Text>
+      <Text style={styles.row}>
+        measurement(5, miles).symbol(): {fluentSymbol}
+      </Text>
+      <Text style={styles.row}>
+        measurement(1km).add(500m, m): {fluentAdd}
+      </Text>
+      <Text style={styles.row}>
+        fluent 60 km/h × 2 h: {fluentDimResult.value} ({fluentDimResult.dimensionLabel})
       </Text>
 
       <StatusBar style="auto" />
