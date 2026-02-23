@@ -32,7 +32,6 @@ export type {
   PressureUnit,
   AnyUnit,
   UnitCategory,
-  MeasurementModule,
   MeasurementResult,
   DimensionalResult,
 }

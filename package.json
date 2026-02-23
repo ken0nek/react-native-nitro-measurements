@@ -1,7 +1,7 @@
 {
   "name": "react-native-nitro-measurements",
   "version": "0.0.1",
-  "description": "react-native-nitro-measurements",
+  "description": "Type-safe unit conversion and dimensional analysis for React Native via NitroModules",
   "main": "lib/index",
   "module": "lib/index",
   "types": "lib/index.d.ts",
@@ -28,6 +28,7 @@
     "README.md"
   ],
   "scripts": {
+    "test": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf android/build node_modules/**/android/build lib",
     "lint": "eslint \"**/*.{js,ts,tsx}\" --fix",
@@ -37,18 +38,23 @@
   },
   "keywords": [
     "react-native",
-    "nitro"
+    "nitro",
+    "unit-conversion",
+    "measurement",
+    "dimensional-analysis",
+    "nitro-modules",
+    "jsi"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mrousavy/nitro.git"
+    "url": "git+https://github.com/ken0nek/react-native-nitro-measurements.git"
   },
-  "author": "Marc Rousavy <me@mrousavy.com> (https://github.com/mrousavy)",
+  "author": "ken0nek",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mrousavy/nitro/issues"
+    "url": "https://github.com/ken0nek/react-native-nitro-measurements/issues"
   },
-  "homepage": "https://github.com/mrousavy/nitro#readme",
+  "homepage": "https://github.com/ken0nek/react-native-nitro-measurements#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
