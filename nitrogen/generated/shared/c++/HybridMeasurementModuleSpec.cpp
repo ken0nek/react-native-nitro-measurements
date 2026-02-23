@@ -15,6 +15,10 @@ namespace margelo::nitro::nitromeasurements {
     // load custom methods/properties
     registerHybrids(this, [](Prototype& prototype) {
       prototype.registerHybridMethod("convert", &HybridMeasurementModuleSpec::convert);
+      prototype.registerHybridMethod("convertFull", &HybridMeasurementModuleSpec::convertFull);
+      prototype.registerHybridMethod("getSymbol", &HybridMeasurementModuleSpec::getSymbol);
+      prototype.registerHybridMethod("getUnitsForCategory", &HybridMeasurementModuleSpec::getUnitsForCategory);
+      prototype.registerHybridMethod("getCategories", &HybridMeasurementModuleSpec::getCategories);
     });
   }
 

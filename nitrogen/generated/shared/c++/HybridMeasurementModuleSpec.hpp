@@ -15,8 +15,16 @@
 
 // Forward declaration of `AnyUnit` to properly resolve imports.
 namespace margelo::nitro::nitromeasurements { enum class AnyUnit; }
+// Forward declaration of `MeasurementResult` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { struct MeasurementResult; }
+// Forward declaration of `UnitCategory` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { enum class UnitCategory; }
 
 #include "AnyUnit.hpp"
+#include "MeasurementResult.hpp"
+#include <string>
+#include <vector>
+#include "UnitCategory.hpp"
 
 namespace margelo::nitro::nitromeasurements {
 
@@ -50,6 +58,10 @@ namespace margelo::nitro::nitromeasurements {
     public:
       // Methods
       virtual double convert(double value, AnyUnit from, AnyUnit to) = 0;
+      virtual MeasurementResult convertFull(double value, AnyUnit from, AnyUnit to) = 0;
+      virtual std::string getSymbol(AnyUnit unit) = 0;
+      virtual std::vector<AnyUnit> getUnitsForCategory(UnitCategory category) = 0;
+      virtual std::vector<UnitCategory> getCategories() = 0;
 
     protected:
       // Hybrid Setup

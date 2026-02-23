@@ -92,44 +92,83 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
     }
   }
 
-  private func categoryFor(_ unit: AnyUnit) -> String {
+  private func categoryFor(_ unit: AnyUnit) -> UnitCategory {
     switch unit {
     case .meters, .kilometers, .centimeters, .millimeters, .miles, .yards, .feet, .inches, .nauticalmiles:
-      return "length"
+      return .length
     case .kilograms, .grams, .milligrams, .pounds, .ounces, .stones, .metrictons:
-      return "mass"
+      return .mass
     case .seconds, .minutes, .hours:
-      return "duration"
+      return .duration
     case .meterspersecond, .kilometersperhour, .milesperhour, .knots:
-      return "speed"
+      return .speed
     case .celsius, .fahrenheit, .kelvin:
-      return "temperature"
+      return .temperature
     case .squaremeters, .squarekilometers, .squaremiles, .squarefeet, .hectares, .acres:
-      return "area"
+      return .area
     case .liters, .milliliters, .gallons, .cups, .fluidounces, .cubicmeters:
-      return "volume"
+      return .volume
     case .joules, .calories, .kilocalories, .kilowatthours:
-      return "energy"
+      return .energy
     case .watts, .kilowatts, .horsepower:
-      return "power"
+      return .power
     case .hertz, .kilohertz, .megahertz, .gigahertz:
-      return "frequency"
+      return .frequency
     case .degrees, .radians:
-      return "angle"
+      return .angle
     case .newtonspermeterssquared, .bars, .millibars, .atmospheres, .poundspersquareinch:
-      return "pressure"
+      return .pressure
     }
   }
+
+  private static let unitsByCategory: [UnitCategory: [AnyUnit]] = [
+    .length: [.meters, .kilometers, .centimeters, .millimeters, .miles, .yards, .feet, .inches, .nauticalmiles],
+    .mass: [.kilograms, .grams, .milligrams, .pounds, .ounces, .stones, .metrictons],
+    .duration: [.seconds, .minutes, .hours],
+    .speed: [.meterspersecond, .kilometersperhour, .milesperhour, .knots],
+    .temperature: [.celsius, .fahrenheit, .kelvin],
+    .area: [.squaremeters, .squarekilometers, .squaremiles, .squarefeet, .hectares, .acres],
+    .volume: [.liters, .milliliters, .gallons, .cups, .fluidounces, .cubicmeters],
+    .energy: [.joules, .calories, .kilocalories, .kilowatthours],
+    .power: [.watts, .kilowatts, .horsepower],
+    .frequency: [.hertz, .kilohertz, .megahertz, .gigahertz],
+    .angle: [.degrees, .radians],
+    .pressure: [.newtonspermeterssquared, .bars, .millibars, .atmospheres, .poundspersquareinch],
+  ]
+
+  private static let allCategories: [UnitCategory] = [
+    .length, .mass, .duration, .speed, .temperature, .area,
+    .volume, .energy, .power, .frequency, .angle, .pressure,
+  ]
 
   func convert(value: Double, from fromUnit: AnyUnit, to toUnit: AnyUnit) throws -> Double {
     let fromCategory = categoryFor(fromUnit)
     let toCategory = categoryFor(toUnit)
     guard fromCategory == toCategory else {
-      throw MeasurementError.categoryMismatch(from: fromCategory, to: toCategory)
+      throw MeasurementError.categoryMismatch(from: fromCategory.stringValue, to: toCategory.stringValue)
     }
 
     let from = resolveUnit(fromUnit)
     let to = resolveUnit(toUnit)
     return Measurement(value: value, unit: from).converted(to: to).value
+  }
+
+  func convertFull(value: Double, from fromUnit: AnyUnit, to toUnit: AnyUnit) throws -> MeasurementResult {
+    let converted = try convert(value: value, from: fromUnit, to: toUnit)
+    let symbol = resolveUnit(toUnit).symbol
+    let category = categoryFor(toUnit)
+    return MeasurementResult(value: converted, unit: toUnit, category: category, symbol: symbol)
+  }
+
+  func getSymbol(unit: AnyUnit) throws -> String {
+    return resolveUnit(unit).symbol
+  }
+
+  func getUnitsForCategory(category: UnitCategory) throws -> [AnyUnit] {
+    return Self.unitsByCategory[category] ?? []
+  }
+
+  func getCategories() throws -> [UnitCategory] {
+    return Self.allCategories
   }
 }

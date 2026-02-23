@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import { convert } from 'react-native-nitro-measurements';
+import { convert, convertFull, getSymbol, getUnitsForCategory, getCategories } from 'react-native-nitro-measurements';
 
 const results = [
   // Length
@@ -38,6 +38,12 @@ try {
   crossCategoryError = e.message;
 }
 
+// M3: Rich results & discovery APIs
+const fullResult = convertFull(5, 'miles', 'kilometers');
+const nmiSymbol = getSymbol('nauticalMiles');
+const lengthUnits = getUnitsForCategory('length');
+const allCategories = getCategories();
+
 export default function App() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -50,6 +56,21 @@ export default function App() {
       <Text style={[styles.row, styles.error]}>
         miles → celsius: {crossCategoryError}
       </Text>
+
+      <Text style={styles.subtitle}>M3: Rich Results</Text>
+      <Text style={styles.row}>
+        convertFull(5, miles, km): {fullResult.value} {fullResult.symbol} [{fullResult.category}]
+      </Text>
+      <Text style={styles.row}>
+        getSymbol(nauticalMiles): {nmiSymbol}
+      </Text>
+      <Text style={styles.row}>
+        length units ({lengthUnits.length}): {lengthUnits.join(', ')}
+      </Text>
+      <Text style={styles.row}>
+        categories ({allCategories.length}): {allCategories.join(', ')}
+      </Text>
+
       <StatusBar style="auto" />
     </ScrollView>
   );
@@ -67,6 +88,12 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+  },
+  subtitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginTop: 20,
+    marginBottom: 10,
   },
   row: {
     fontSize: 18,

@@ -12,13 +12,21 @@
 namespace margelo::nitro::nitromeasurements { enum class AnyUnit; }
 // Forward declaration of `HybridMeasurementModuleSpec` to properly resolve imports.
 namespace margelo::nitro::nitromeasurements { class HybridMeasurementModuleSpec; }
+// Forward declaration of `MeasurementResult` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { struct MeasurementResult; }
+// Forward declaration of `UnitCategory` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { enum class UnitCategory; }
 
 // Include C++ defined types
 #include "AnyUnit.hpp"
 #include "HybridMeasurementModuleSpec.hpp"
+#include "MeasurementResult.hpp"
+#include "UnitCategory.hpp"
 #include <NitroModules/Result.hpp>
 #include <exception>
 #include <memory>
+#include <string>
+#include <vector>
 
 // C++ helpers for Swift
 #include "NitroMeasurements-Swift-Cxx-Bridge.hpp"

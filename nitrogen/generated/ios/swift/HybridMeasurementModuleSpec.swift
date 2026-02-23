@@ -14,6 +14,10 @@ public protocol HybridMeasurementModuleSpec_protocol: HybridObject {
 
   // Methods
   func convert(value: Double, from: AnyUnit, to: AnyUnit) throws -> Double
+  func convertFull(value: Double, from: AnyUnit, to: AnyUnit) throws -> MeasurementResult
+  func getSymbol(unit: AnyUnit) throws -> String
+  func getUnitsForCategory(category: UnitCategory) throws -> [AnyUnit]
+  func getCategories() throws -> [UnitCategory]
 }
 
 public extension HybridMeasurementModuleSpec_protocol {

@@ -8,18 +8,29 @@
 #pragma once
 
 // Forward declarations of C++ defined types
+// Forward declaration of `AnyUnit` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { enum class AnyUnit; }
 // Forward declaration of `HybridMeasurementModuleSpec` to properly resolve imports.
 namespace margelo::nitro::nitromeasurements { class HybridMeasurementModuleSpec; }
+// Forward declaration of `MeasurementResult` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { struct MeasurementResult; }
+// Forward declaration of `UnitCategory` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { enum class UnitCategory; }
 
 // Forward declarations of Swift defined types
 // Forward declaration of `HybridMeasurementModuleSpec_cxx` to properly resolve imports.
 namespace NitroMeasurements { class HybridMeasurementModuleSpec_cxx; }
 
 // Include C++ defined types
+#include "AnyUnit.hpp"
 #include "HybridMeasurementModuleSpec.hpp"
+#include "MeasurementResult.hpp"
+#include "UnitCategory.hpp"
 #include <NitroModules/Result.hpp>
 #include <exception>
 #include <memory>
+#include <string>
+#include <vector>
 
 /**
  * Contains specialized versions of C++ templated types so they can be accessed from Swift,
@@ -27,6 +38,28 @@ namespace NitroMeasurements { class HybridMeasurementModuleSpec_cxx; }
  */
 namespace margelo::nitro::nitromeasurements::bridge::swift {
 
+  // pragma MARK: std::vector<AnyUnit>
+  /**
+   * Specialized version of `std::vector<AnyUnit>`.
+   */
+  using std__vector_AnyUnit_ = std::vector<AnyUnit>;
+  inline std::vector<AnyUnit> create_std__vector_AnyUnit_(size_t size) noexcept {
+    std::vector<AnyUnit> vector;
+    vector.reserve(size);
+    return vector;
+  }
+  
+  // pragma MARK: std::vector<UnitCategory>
+  /**
+   * Specialized version of `std::vector<UnitCategory>`.
+   */
+  using std__vector_UnitCategory_ = std::vector<UnitCategory>;
+  inline std::vector<UnitCategory> create_std__vector_UnitCategory_(size_t size) noexcept {
+    std::vector<UnitCategory> vector;
+    vector.reserve(size);
+    return vector;
+  }
+  
   // pragma MARK: std::shared_ptr<HybridMeasurementModuleSpec>
   /**
    * Specialized version of `std::shared_ptr<HybridMeasurementModuleSpec>`.
@@ -46,6 +79,42 @@ namespace margelo::nitro::nitromeasurements::bridge::swift {
   }
   inline Result_double_ create_Result_double_(const std::exception_ptr& error) noexcept {
     return Result<double>::withError(error);
+  }
+  
+  // pragma MARK: Result<MeasurementResult>
+  using Result_MeasurementResult_ = Result<MeasurementResult>;
+  inline Result_MeasurementResult_ create_Result_MeasurementResult_(const MeasurementResult& value) noexcept {
+    return Result<MeasurementResult>::withValue(value);
+  }
+  inline Result_MeasurementResult_ create_Result_MeasurementResult_(const std::exception_ptr& error) noexcept {
+    return Result<MeasurementResult>::withError(error);
+  }
+  
+  // pragma MARK: Result<std::string>
+  using Result_std__string_ = Result<std::string>;
+  inline Result_std__string_ create_Result_std__string_(const std::string& value) noexcept {
+    return Result<std::string>::withValue(value);
+  }
+  inline Result_std__string_ create_Result_std__string_(const std::exception_ptr& error) noexcept {
+    return Result<std::string>::withError(error);
+  }
+  
+  // pragma MARK: Result<std::vector<AnyUnit>>
+  using Result_std__vector_AnyUnit__ = Result<std::vector<AnyUnit>>;
+  inline Result_std__vector_AnyUnit__ create_Result_std__vector_AnyUnit__(const std::vector<AnyUnit>& value) noexcept {
+    return Result<std::vector<AnyUnit>>::withValue(value);
+  }
+  inline Result_std__vector_AnyUnit__ create_Result_std__vector_AnyUnit__(const std::exception_ptr& error) noexcept {
+    return Result<std::vector<AnyUnit>>::withError(error);
+  }
+  
+  // pragma MARK: Result<std::vector<UnitCategory>>
+  using Result_std__vector_UnitCategory__ = Result<std::vector<UnitCategory>>;
+  inline Result_std__vector_UnitCategory__ create_Result_std__vector_UnitCategory__(const std::vector<UnitCategory>& value) noexcept {
+    return Result<std::vector<UnitCategory>>::withValue(value);
+  }
+  inline Result_std__vector_UnitCategory__ create_Result_std__vector_UnitCategory__(const std::exception_ptr& error) noexcept {
+    return Result<std::vector<UnitCategory>>::withError(error);
   }
 
 } // namespace margelo::nitro::nitromeasurements::bridge::swift

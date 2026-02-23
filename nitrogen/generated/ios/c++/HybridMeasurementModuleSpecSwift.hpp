@@ -14,8 +14,16 @@ namespace NitroMeasurements { class HybridMeasurementModuleSpec_cxx; }
 
 // Forward declaration of `AnyUnit` to properly resolve imports.
 namespace margelo::nitro::nitromeasurements { enum class AnyUnit; }
+// Forward declaration of `MeasurementResult` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { struct MeasurementResult; }
+// Forward declaration of `UnitCategory` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { enum class UnitCategory; }
 
 #include "AnyUnit.hpp"
+#include "MeasurementResult.hpp"
+#include "UnitCategory.hpp"
+#include <string>
+#include <vector>
 
 #include "NitroMeasurements-Swift-Cxx-Umbrella.hpp"
 
@@ -69,6 +77,38 @@ namespace margelo::nitro::nitromeasurements {
     // Methods
     inline double convert(double value, AnyUnit from, AnyUnit to) override {
       auto __result = _swiftPart.convert(std::forward<decltype(value)>(value), static_cast<int>(from), static_cast<int>(to));
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
+      auto __value = std::move(__result.value());
+      return __value;
+    }
+    inline MeasurementResult convertFull(double value, AnyUnit from, AnyUnit to) override {
+      auto __result = _swiftPart.convertFull(std::forward<decltype(value)>(value), static_cast<int>(from), static_cast<int>(to));
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
+      auto __value = std::move(__result.value());
+      return __value;
+    }
+    inline std::string getSymbol(AnyUnit unit) override {
+      auto __result = _swiftPart.getSymbol(static_cast<int>(unit));
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
+      auto __value = std::move(__result.value());
+      return __value;
+    }
+    inline std::vector<AnyUnit> getUnitsForCategory(UnitCategory category) override {
+      auto __result = _swiftPart.getUnitsForCategory(static_cast<int>(category));
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
+      auto __value = std::move(__result.value());
+      return __value;
+    }
+    inline std::vector<UnitCategory> getCategories() override {
+      auto __result = _swiftPart.getCategories();
       if (__result.hasError()) [[unlikely]] {
         std::rethrow_exception(__result.error());
       }

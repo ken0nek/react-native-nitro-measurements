@@ -1,5 +1,5 @@
 import { NitroModules } from 'react-native-nitro-modules'
-import type { MeasurementModule } from './specs/Measurement.nitro'
+import type { MeasurementModule, MeasurementResult } from './specs/Measurement.nitro'
 import type {
   LengthUnit,
   MassUnit,
@@ -33,6 +33,7 @@ export type {
   AnyUnit,
   UnitCategory,
   MeasurementModule,
+  MeasurementResult,
 }
 
 const _module =
@@ -44,6 +45,26 @@ export function convert(
   to: AnyUnit
 ): number {
   return _module.convert(value, from, to)
+}
+
+export function convertFull(
+  value: number,
+  from: AnyUnit,
+  to: AnyUnit
+): MeasurementResult {
+  return _module.convertFull(value, from, to)
+}
+
+export function getSymbol(unit: AnyUnit): string {
+  return _module.getSymbol(unit)
+}
+
+export function getUnitsForCategory(category: UnitCategory): AnyUnit[] {
+  return _module.getUnitsForCategory(category)
+}
+
+export function getCategories(): UnitCategory[] {
+  return _module.getCategories()
 }
 
 export { _module as MeasurementModule }

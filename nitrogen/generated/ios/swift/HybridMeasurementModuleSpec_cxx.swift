@@ -135,4 +135,64 @@ open class HybridMeasurementModuleSpec_cxx {
       return bridge.create_Result_double_(__exceptionPtr)
     }
   }
+  
+  @inline(__always)
+  public final func convertFull(value: Double, from: Int32, to: Int32) -> bridge.Result_MeasurementResult_ {
+    do {
+      let __result = try self.__implementation.convertFull(value: value, from: margelo.nitro.nitromeasurements.AnyUnit(rawValue: from)!, to: margelo.nitro.nitromeasurements.AnyUnit(rawValue: to)!)
+      let __resultCpp = __result
+      return bridge.create_Result_MeasurementResult_(__resultCpp)
+    } catch (let __error) {
+      let __exceptionPtr = __error.toCpp()
+      return bridge.create_Result_MeasurementResult_(__exceptionPtr)
+    }
+  }
+  
+  @inline(__always)
+  public final func getSymbol(unit: Int32) -> bridge.Result_std__string_ {
+    do {
+      let __result = try self.__implementation.getSymbol(unit: margelo.nitro.nitromeasurements.AnyUnit(rawValue: unit)!)
+      let __resultCpp = std.string(__result)
+      return bridge.create_Result_std__string_(__resultCpp)
+    } catch (let __error) {
+      let __exceptionPtr = __error.toCpp()
+      return bridge.create_Result_std__string_(__exceptionPtr)
+    }
+  }
+  
+  @inline(__always)
+  public final func getUnitsForCategory(category: Int32) -> bridge.Result_std__vector_AnyUnit__ {
+    do {
+      let __result = try self.__implementation.getUnitsForCategory(category: margelo.nitro.nitromeasurements.UnitCategory(rawValue: category)!)
+      let __resultCpp = { () -> bridge.std__vector_AnyUnit_ in
+        var __vector = bridge.create_std__vector_AnyUnit_(__result.count)
+        for __item in __result {
+          __vector.push_back(__item)
+        }
+        return __vector
+      }()
+      return bridge.create_Result_std__vector_AnyUnit__(__resultCpp)
+    } catch (let __error) {
+      let __exceptionPtr = __error.toCpp()
+      return bridge.create_Result_std__vector_AnyUnit__(__exceptionPtr)
+    }
+  }
+  
+  @inline(__always)
+  public final func getCategories() -> bridge.Result_std__vector_UnitCategory__ {
+    do {
+      let __result = try self.__implementation.getCategories()
+      let __resultCpp = { () -> bridge.std__vector_UnitCategory_ in
+        var __vector = bridge.create_std__vector_UnitCategory_(__result.count)
+        for __item in __result {
+          __vector.push_back(__item)
+        }
+        return __vector
+      }()
+      return bridge.create_Result_std__vector_UnitCategory__(__resultCpp)
+    } catch (let __error) {
+      let __exceptionPtr = __error.toCpp()
+      return bridge.create_Result_std__vector_UnitCategory__(__exceptionPtr)
+    }
+  }
 }
