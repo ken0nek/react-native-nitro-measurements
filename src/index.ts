@@ -48,6 +48,19 @@ export const Length = {
   feet: 'feet',
   inches: 'inches',
   nauticalMiles: 'nauticalMiles',
+  micrometers: 'micrometers',
+  nanometers: 'nanometers',
+  picometers: 'picometers',
+  megameters: 'megameters',
+  hectometers: 'hectometers',
+  decameters: 'decameters',
+  decimeters: 'decimeters',
+  scandinavianMiles: 'scandinavianMiles',
+  lightyears: 'lightyears',
+  fathoms: 'fathoms',
+  furlongs: 'furlongs',
+  astronomicalUnits: 'astronomicalUnits',
+  parsecs: 'parsecs',
 } as const satisfies Record<string, LengthUnit>
 
 export const Mass = {
@@ -58,12 +71,25 @@ export const Mass = {
   ounces: 'ounces',
   stones: 'stones',
   metricTons: 'metricTons',
+  decigrams: 'decigrams',
+  centigrams: 'centigrams',
+  micrograms: 'micrograms',
+  nanograms: 'nanograms',
+  picograms: 'picograms',
+  shortTons: 'shortTons',
+  carats: 'carats',
+  ouncesTroy: 'ouncesTroy',
+  slugs: 'slugs',
 } as const satisfies Record<string, MassUnit>
 
 export const Duration = {
   seconds: 'seconds',
   minutes: 'minutes',
   hours: 'hours',
+  milliseconds: 'milliseconds',
+  microseconds: 'microseconds',
+  nanoseconds: 'nanoseconds',
+  picoseconds: 'picoseconds',
 } as const satisfies Record<string, DurationUnit>
 
 export const Speed = {
@@ -86,6 +112,14 @@ export const Area = {
   squareFeet: 'squareFeet',
   hectares: 'hectares',
   acres: 'acres',
+  squareMegameters: 'squareMegameters',
+  squareCentimeters: 'squareCentimeters',
+  squareMillimeters: 'squareMillimeters',
+  squareMicrometers: 'squareMicrometers',
+  squareNanometers: 'squareNanometers',
+  squareInches: 'squareInches',
+  squareYards: 'squareYards',
+  ares: 'ares',
 } as const satisfies Record<string, AreaUnit>
 
 export const Volume = {
@@ -95,6 +129,31 @@ export const Volume = {
   cups: 'cups',
   fluidOunces: 'fluidOunces',
   cubicMeters: 'cubicMeters',
+  megaliters: 'megaliters',
+  kiloliters: 'kiloliters',
+  deciliters: 'deciliters',
+  centiliters: 'centiliters',
+  cubicKilometers: 'cubicKilometers',
+  cubicDecimeters: 'cubicDecimeters',
+  cubicCentimeters: 'cubicCentimeters',
+  cubicMillimeters: 'cubicMillimeters',
+  cubicInches: 'cubicInches',
+  cubicFeet: 'cubicFeet',
+  cubicYards: 'cubicYards',
+  cubicMiles: 'cubicMiles',
+  acreFeet: 'acreFeet',
+  bushels: 'bushels',
+  teaspoons: 'teaspoons',
+  tablespoons: 'tablespoons',
+  pints: 'pints',
+  quarts: 'quarts',
+  imperialTeaspoons: 'imperialTeaspoons',
+  imperialTablespoons: 'imperialTablespoons',
+  imperialFluidOunces: 'imperialFluidOunces',
+  imperialPints: 'imperialPints',
+  imperialQuarts: 'imperialQuarts',
+  imperialGallons: 'imperialGallons',
+  metricCups: 'metricCups',
 } as const satisfies Record<string, VolumeUnit>
 
 export const Energy = {
@@ -102,12 +161,21 @@ export const Energy = {
   calories: 'calories',
   kilocalories: 'kilocalories',
   kilowattHours: 'kilowattHours',
+  kilojoules: 'kilojoules',
 } as const satisfies Record<string, EnergyUnit>
 
 export const Power = {
   watts: 'watts',
   kilowatts: 'kilowatts',
   horsepower: 'horsepower',
+  terawatts: 'terawatts',
+  gigawatts: 'gigawatts',
+  megawatts: 'megawatts',
+  milliwatts: 'milliwatts',
+  microwatts: 'microwatts',
+  nanowatts: 'nanowatts',
+  picowatts: 'picowatts',
+  femtowatts: 'femtowatts',
 } as const satisfies Record<string, PowerUnit>
 
 export const Frequency = {
@@ -115,11 +183,19 @@ export const Frequency = {
   kilohertz: 'kilohertz',
   megahertz: 'megahertz',
   gigahertz: 'gigahertz',
+  terahertz: 'terahertz',
+  millihertz: 'millihertz',
+  microhertz: 'microhertz',
+  nanohertz: 'nanohertz',
 } as const satisfies Record<string, FrequencyUnit>
 
 export const Angle = {
   degrees: 'degrees',
   radians: 'radians',
+  arcMinutes: 'arcMinutes',
+  arcSeconds: 'arcSeconds',
+  gradians: 'gradians',
+  revolutions: 'revolutions',
 } as const satisfies Record<string, AngleUnit>
 
 export const Pressure = {
@@ -128,6 +204,12 @@ export const Pressure = {
   millibars: 'millibars',
   atmospheres: 'atmospheres',
   poundsPerSquareInch: 'poundsPerSquareInch',
+  gigapascals: 'gigapascals',
+  megapascals: 'megapascals',
+  kilopascals: 'kilopascals',
+  hectopascals: 'hectopascals',
+  inchesOfMercury: 'inchesOfMercury',
+  millimetersOfMercury: 'millimetersOfMercury',
 } as const satisfies Record<string, PressureUnit>
 
 const _module =

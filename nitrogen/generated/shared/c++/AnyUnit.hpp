@@ -38,53 +38,135 @@ namespace margelo::nitro::nitromeasurements {
     FEET      SWIFT_NAME(feet) = 6,
     INCHES      SWIFT_NAME(inches) = 7,
     NAUTICALMILES      SWIFT_NAME(nauticalmiles) = 8,
-    KILOGRAMS      SWIFT_NAME(kilograms) = 9,
-    GRAMS      SWIFT_NAME(grams) = 10,
-    MILLIGRAMS      SWIFT_NAME(milligrams) = 11,
-    POUNDS      SWIFT_NAME(pounds) = 12,
-    OUNCES      SWIFT_NAME(ounces) = 13,
-    STONES      SWIFT_NAME(stones) = 14,
-    METRICTONS      SWIFT_NAME(metrictons) = 15,
-    SECONDS      SWIFT_NAME(seconds) = 16,
-    MINUTES      SWIFT_NAME(minutes) = 17,
-    HOURS      SWIFT_NAME(hours) = 18,
-    METERSPERSECOND      SWIFT_NAME(meterspersecond) = 19,
-    KILOMETERSPERHOUR      SWIFT_NAME(kilometersperhour) = 20,
-    MILESPERHOUR      SWIFT_NAME(milesperhour) = 21,
-    KNOTS      SWIFT_NAME(knots) = 22,
-    CELSIUS      SWIFT_NAME(celsius) = 23,
-    FAHRENHEIT      SWIFT_NAME(fahrenheit) = 24,
-    KELVIN      SWIFT_NAME(kelvin) = 25,
-    SQUAREMETERS      SWIFT_NAME(squaremeters) = 26,
-    SQUAREKILOMETERS      SWIFT_NAME(squarekilometers) = 27,
-    SQUAREMILES      SWIFT_NAME(squaremiles) = 28,
-    SQUAREFEET      SWIFT_NAME(squarefeet) = 29,
-    HECTARES      SWIFT_NAME(hectares) = 30,
-    ACRES      SWIFT_NAME(acres) = 31,
-    LITERS      SWIFT_NAME(liters) = 32,
-    MILLILITERS      SWIFT_NAME(milliliters) = 33,
-    GALLONS      SWIFT_NAME(gallons) = 34,
-    CUPS      SWIFT_NAME(cups) = 35,
-    FLUIDOUNCES      SWIFT_NAME(fluidounces) = 36,
-    CUBICMETERS      SWIFT_NAME(cubicmeters) = 37,
-    JOULES      SWIFT_NAME(joules) = 38,
-    CALORIES      SWIFT_NAME(calories) = 39,
-    KILOCALORIES      SWIFT_NAME(kilocalories) = 40,
-    KILOWATTHOURS      SWIFT_NAME(kilowatthours) = 41,
-    WATTS      SWIFT_NAME(watts) = 42,
-    KILOWATTS      SWIFT_NAME(kilowatts) = 43,
-    HORSEPOWER      SWIFT_NAME(horsepower) = 44,
-    HERTZ      SWIFT_NAME(hertz) = 45,
-    KILOHERTZ      SWIFT_NAME(kilohertz) = 46,
-    MEGAHERTZ      SWIFT_NAME(megahertz) = 47,
-    GIGAHERTZ      SWIFT_NAME(gigahertz) = 48,
-    DEGREES      SWIFT_NAME(degrees) = 49,
-    RADIANS      SWIFT_NAME(radians) = 50,
-    NEWTONSPERMETERSSQUARED      SWIFT_NAME(newtonspermeterssquared) = 51,
-    BARS      SWIFT_NAME(bars) = 52,
-    MILLIBARS      SWIFT_NAME(millibars) = 53,
-    ATMOSPHERES      SWIFT_NAME(atmospheres) = 54,
-    POUNDSPERSQUAREINCH      SWIFT_NAME(poundspersquareinch) = 55,
+    MICROMETERS      SWIFT_NAME(micrometers) = 9,
+    NANOMETERS      SWIFT_NAME(nanometers) = 10,
+    PICOMETERS      SWIFT_NAME(picometers) = 11,
+    MEGAMETERS      SWIFT_NAME(megameters) = 12,
+    HECTOMETERS      SWIFT_NAME(hectometers) = 13,
+    DECAMETERS      SWIFT_NAME(decameters) = 14,
+    DECIMETERS      SWIFT_NAME(decimeters) = 15,
+    SCANDINAVIANMILES      SWIFT_NAME(scandinavianmiles) = 16,
+    LIGHTYEARS      SWIFT_NAME(lightyears) = 17,
+    FATHOMS      SWIFT_NAME(fathoms) = 18,
+    FURLONGS      SWIFT_NAME(furlongs) = 19,
+    ASTRONOMICALUNITS      SWIFT_NAME(astronomicalunits) = 20,
+    PARSECS      SWIFT_NAME(parsecs) = 21,
+    KILOGRAMS      SWIFT_NAME(kilograms) = 22,
+    GRAMS      SWIFT_NAME(grams) = 23,
+    MILLIGRAMS      SWIFT_NAME(milligrams) = 24,
+    POUNDS      SWIFT_NAME(pounds) = 25,
+    OUNCES      SWIFT_NAME(ounces) = 26,
+    STONES      SWIFT_NAME(stones) = 27,
+    METRICTONS      SWIFT_NAME(metrictons) = 28,
+    DECIGRAMS      SWIFT_NAME(decigrams) = 29,
+    CENTIGRAMS      SWIFT_NAME(centigrams) = 30,
+    MICROGRAMS      SWIFT_NAME(micrograms) = 31,
+    NANOGRAMS      SWIFT_NAME(nanograms) = 32,
+    PICOGRAMS      SWIFT_NAME(picograms) = 33,
+    SHORTTONS      SWIFT_NAME(shorttons) = 34,
+    CARATS      SWIFT_NAME(carats) = 35,
+    OUNCESTROY      SWIFT_NAME(ouncestroy) = 36,
+    SLUGS      SWIFT_NAME(slugs) = 37,
+    SECONDS      SWIFT_NAME(seconds) = 38,
+    MINUTES      SWIFT_NAME(minutes) = 39,
+    HOURS      SWIFT_NAME(hours) = 40,
+    MILLISECONDS      SWIFT_NAME(milliseconds) = 41,
+    MICROSECONDS      SWIFT_NAME(microseconds) = 42,
+    NANOSECONDS      SWIFT_NAME(nanoseconds) = 43,
+    PICOSECONDS      SWIFT_NAME(picoseconds) = 44,
+    METERSPERSECOND      SWIFT_NAME(meterspersecond) = 45,
+    KILOMETERSPERHOUR      SWIFT_NAME(kilometersperhour) = 46,
+    MILESPERHOUR      SWIFT_NAME(milesperhour) = 47,
+    KNOTS      SWIFT_NAME(knots) = 48,
+    CELSIUS      SWIFT_NAME(celsius) = 49,
+    FAHRENHEIT      SWIFT_NAME(fahrenheit) = 50,
+    KELVIN      SWIFT_NAME(kelvin) = 51,
+    SQUAREMETERS      SWIFT_NAME(squaremeters) = 52,
+    SQUAREKILOMETERS      SWIFT_NAME(squarekilometers) = 53,
+    SQUAREMILES      SWIFT_NAME(squaremiles) = 54,
+    SQUAREFEET      SWIFT_NAME(squarefeet) = 55,
+    HECTARES      SWIFT_NAME(hectares) = 56,
+    ACRES      SWIFT_NAME(acres) = 57,
+    SQUAREMEGAMETERS      SWIFT_NAME(squaremegameters) = 58,
+    SQUARECENTIMETERS      SWIFT_NAME(squarecentimeters) = 59,
+    SQUAREMILLIMETERS      SWIFT_NAME(squaremillimeters) = 60,
+    SQUAREMICROMETERS      SWIFT_NAME(squaremicrometers) = 61,
+    SQUARENANOMETERS      SWIFT_NAME(squarenanometers) = 62,
+    SQUAREINCHES      SWIFT_NAME(squareinches) = 63,
+    SQUAREYARDS      SWIFT_NAME(squareyards) = 64,
+    ARES      SWIFT_NAME(ares) = 65,
+    LITERS      SWIFT_NAME(liters) = 66,
+    MILLILITERS      SWIFT_NAME(milliliters) = 67,
+    GALLONS      SWIFT_NAME(gallons) = 68,
+    CUPS      SWIFT_NAME(cups) = 69,
+    FLUIDOUNCES      SWIFT_NAME(fluidounces) = 70,
+    CUBICMETERS      SWIFT_NAME(cubicmeters) = 71,
+    MEGALITERS      SWIFT_NAME(megaliters) = 72,
+    KILOLITERS      SWIFT_NAME(kiloliters) = 73,
+    DECILITERS      SWIFT_NAME(deciliters) = 74,
+    CENTILITERS      SWIFT_NAME(centiliters) = 75,
+    CUBICKILOMETERS      SWIFT_NAME(cubickilometers) = 76,
+    CUBICDECIMETERS      SWIFT_NAME(cubicdecimeters) = 77,
+    CUBICCENTIMETERS      SWIFT_NAME(cubiccentimeters) = 78,
+    CUBICMILLIMETERS      SWIFT_NAME(cubicmillimeters) = 79,
+    CUBICINCHES      SWIFT_NAME(cubicinches) = 80,
+    CUBICFEET      SWIFT_NAME(cubicfeet) = 81,
+    CUBICYARDS      SWIFT_NAME(cubicyards) = 82,
+    CUBICMILES      SWIFT_NAME(cubicmiles) = 83,
+    ACREFEET      SWIFT_NAME(acrefeet) = 84,
+    BUSHELS      SWIFT_NAME(bushels) = 85,
+    TEASPOONS      SWIFT_NAME(teaspoons) = 86,
+    TABLESPOONS      SWIFT_NAME(tablespoons) = 87,
+    PINTS      SWIFT_NAME(pints) = 88,
+    QUARTS      SWIFT_NAME(quarts) = 89,
+    IMPERIALTEASPOONS      SWIFT_NAME(imperialteaspoons) = 90,
+    IMPERIALTABLESPOONS      SWIFT_NAME(imperialtablespoons) = 91,
+    IMPERIALFLUIDOUNCES      SWIFT_NAME(imperialfluidounces) = 92,
+    IMPERIALPINTS      SWIFT_NAME(imperialpints) = 93,
+    IMPERIALQUARTS      SWIFT_NAME(imperialquarts) = 94,
+    IMPERIALGALLONS      SWIFT_NAME(imperialgallons) = 95,
+    METRICCUPS      SWIFT_NAME(metriccups) = 96,
+    JOULES      SWIFT_NAME(joules) = 97,
+    CALORIES      SWIFT_NAME(calories) = 98,
+    KILOCALORIES      SWIFT_NAME(kilocalories) = 99,
+    KILOWATTHOURS      SWIFT_NAME(kilowatthours) = 100,
+    KILOJOULES      SWIFT_NAME(kilojoules) = 101,
+    WATTS      SWIFT_NAME(watts) = 102,
+    KILOWATTS      SWIFT_NAME(kilowatts) = 103,
+    HORSEPOWER      SWIFT_NAME(horsepower) = 104,
+    TERAWATTS      SWIFT_NAME(terawatts) = 105,
+    GIGAWATTS      SWIFT_NAME(gigawatts) = 106,
+    MEGAWATTS      SWIFT_NAME(megawatts) = 107,
+    MILLIWATTS      SWIFT_NAME(milliwatts) = 108,
+    MICROWATTS      SWIFT_NAME(microwatts) = 109,
+    NANOWATTS      SWIFT_NAME(nanowatts) = 110,
+    PICOWATTS      SWIFT_NAME(picowatts) = 111,
+    FEMTOWATTS      SWIFT_NAME(femtowatts) = 112,
+    HERTZ      SWIFT_NAME(hertz) = 113,
+    KILOHERTZ      SWIFT_NAME(kilohertz) = 114,
+    MEGAHERTZ      SWIFT_NAME(megahertz) = 115,
+    GIGAHERTZ      SWIFT_NAME(gigahertz) = 116,
+    TERAHERTZ      SWIFT_NAME(terahertz) = 117,
+    MILLIHERTZ      SWIFT_NAME(millihertz) = 118,
+    MICROHERTZ      SWIFT_NAME(microhertz) = 119,
+    NANOHERTZ      SWIFT_NAME(nanohertz) = 120,
+    DEGREES      SWIFT_NAME(degrees) = 121,
+    RADIANS      SWIFT_NAME(radians) = 122,
+    ARCMINUTES      SWIFT_NAME(arcminutes) = 123,
+    ARCSECONDS      SWIFT_NAME(arcseconds) = 124,
+    GRADIANS      SWIFT_NAME(gradians) = 125,
+    REVOLUTIONS      SWIFT_NAME(revolutions) = 126,
+    NEWTONSPERMETERSSQUARED      SWIFT_NAME(newtonspermeterssquared) = 127,
+    BARS      SWIFT_NAME(bars) = 128,
+    MILLIBARS      SWIFT_NAME(millibars) = 129,
+    ATMOSPHERES      SWIFT_NAME(atmospheres) = 130,
+    POUNDSPERSQUAREINCH      SWIFT_NAME(poundspersquareinch) = 131,
+    GIGAPASCALS      SWIFT_NAME(gigapascals) = 132,
+    MEGAPASCALS      SWIFT_NAME(megapascals) = 133,
+    KILOPASCALS      SWIFT_NAME(kilopascals) = 134,
+    HECTOPASCALS      SWIFT_NAME(hectopascals) = 135,
+    INCHESOFMERCURY      SWIFT_NAME(inchesofmercury) = 136,
+    MILLIMETERSOFMERCURY      SWIFT_NAME(millimetersofmercury) = 137,
   } CLOSED_ENUM;
 
 } // namespace margelo::nitro::nitromeasurements
@@ -106,6 +188,19 @@ namespace margelo::nitro {
         case hashString("feet"): return margelo::nitro::nitromeasurements::AnyUnit::FEET;
         case hashString("inches"): return margelo::nitro::nitromeasurements::AnyUnit::INCHES;
         case hashString("nauticalMiles"): return margelo::nitro::nitromeasurements::AnyUnit::NAUTICALMILES;
+        case hashString("micrometers"): return margelo::nitro::nitromeasurements::AnyUnit::MICROMETERS;
+        case hashString("nanometers"): return margelo::nitro::nitromeasurements::AnyUnit::NANOMETERS;
+        case hashString("picometers"): return margelo::nitro::nitromeasurements::AnyUnit::PICOMETERS;
+        case hashString("megameters"): return margelo::nitro::nitromeasurements::AnyUnit::MEGAMETERS;
+        case hashString("hectometers"): return margelo::nitro::nitromeasurements::AnyUnit::HECTOMETERS;
+        case hashString("decameters"): return margelo::nitro::nitromeasurements::AnyUnit::DECAMETERS;
+        case hashString("decimeters"): return margelo::nitro::nitromeasurements::AnyUnit::DECIMETERS;
+        case hashString("scandinavianMiles"): return margelo::nitro::nitromeasurements::AnyUnit::SCANDINAVIANMILES;
+        case hashString("lightyears"): return margelo::nitro::nitromeasurements::AnyUnit::LIGHTYEARS;
+        case hashString("fathoms"): return margelo::nitro::nitromeasurements::AnyUnit::FATHOMS;
+        case hashString("furlongs"): return margelo::nitro::nitromeasurements::AnyUnit::FURLONGS;
+        case hashString("astronomicalUnits"): return margelo::nitro::nitromeasurements::AnyUnit::ASTRONOMICALUNITS;
+        case hashString("parsecs"): return margelo::nitro::nitromeasurements::AnyUnit::PARSECS;
         case hashString("kilograms"): return margelo::nitro::nitromeasurements::AnyUnit::KILOGRAMS;
         case hashString("grams"): return margelo::nitro::nitromeasurements::AnyUnit::GRAMS;
         case hashString("milligrams"): return margelo::nitro::nitromeasurements::AnyUnit::MILLIGRAMS;
@@ -113,9 +208,22 @@ namespace margelo::nitro {
         case hashString("ounces"): return margelo::nitro::nitromeasurements::AnyUnit::OUNCES;
         case hashString("stones"): return margelo::nitro::nitromeasurements::AnyUnit::STONES;
         case hashString("metricTons"): return margelo::nitro::nitromeasurements::AnyUnit::METRICTONS;
+        case hashString("decigrams"): return margelo::nitro::nitromeasurements::AnyUnit::DECIGRAMS;
+        case hashString("centigrams"): return margelo::nitro::nitromeasurements::AnyUnit::CENTIGRAMS;
+        case hashString("micrograms"): return margelo::nitro::nitromeasurements::AnyUnit::MICROGRAMS;
+        case hashString("nanograms"): return margelo::nitro::nitromeasurements::AnyUnit::NANOGRAMS;
+        case hashString("picograms"): return margelo::nitro::nitromeasurements::AnyUnit::PICOGRAMS;
+        case hashString("shortTons"): return margelo::nitro::nitromeasurements::AnyUnit::SHORTTONS;
+        case hashString("carats"): return margelo::nitro::nitromeasurements::AnyUnit::CARATS;
+        case hashString("ouncesTroy"): return margelo::nitro::nitromeasurements::AnyUnit::OUNCESTROY;
+        case hashString("slugs"): return margelo::nitro::nitromeasurements::AnyUnit::SLUGS;
         case hashString("seconds"): return margelo::nitro::nitromeasurements::AnyUnit::SECONDS;
         case hashString("minutes"): return margelo::nitro::nitromeasurements::AnyUnit::MINUTES;
         case hashString("hours"): return margelo::nitro::nitromeasurements::AnyUnit::HOURS;
+        case hashString("milliseconds"): return margelo::nitro::nitromeasurements::AnyUnit::MILLISECONDS;
+        case hashString("microseconds"): return margelo::nitro::nitromeasurements::AnyUnit::MICROSECONDS;
+        case hashString("nanoseconds"): return margelo::nitro::nitromeasurements::AnyUnit::NANOSECONDS;
+        case hashString("picoseconds"): return margelo::nitro::nitromeasurements::AnyUnit::PICOSECONDS;
         case hashString("metersPerSecond"): return margelo::nitro::nitromeasurements::AnyUnit::METERSPERSECOND;
         case hashString("kilometersPerHour"): return margelo::nitro::nitromeasurements::AnyUnit::KILOMETERSPERHOUR;
         case hashString("milesPerHour"): return margelo::nitro::nitromeasurements::AnyUnit::MILESPERHOUR;
@@ -129,30 +237,86 @@ namespace margelo::nitro {
         case hashString("squareFeet"): return margelo::nitro::nitromeasurements::AnyUnit::SQUAREFEET;
         case hashString("hectares"): return margelo::nitro::nitromeasurements::AnyUnit::HECTARES;
         case hashString("acres"): return margelo::nitro::nitromeasurements::AnyUnit::ACRES;
+        case hashString("squareMegameters"): return margelo::nitro::nitromeasurements::AnyUnit::SQUAREMEGAMETERS;
+        case hashString("squareCentimeters"): return margelo::nitro::nitromeasurements::AnyUnit::SQUARECENTIMETERS;
+        case hashString("squareMillimeters"): return margelo::nitro::nitromeasurements::AnyUnit::SQUAREMILLIMETERS;
+        case hashString("squareMicrometers"): return margelo::nitro::nitromeasurements::AnyUnit::SQUAREMICROMETERS;
+        case hashString("squareNanometers"): return margelo::nitro::nitromeasurements::AnyUnit::SQUARENANOMETERS;
+        case hashString("squareInches"): return margelo::nitro::nitromeasurements::AnyUnit::SQUAREINCHES;
+        case hashString("squareYards"): return margelo::nitro::nitromeasurements::AnyUnit::SQUAREYARDS;
+        case hashString("ares"): return margelo::nitro::nitromeasurements::AnyUnit::ARES;
         case hashString("liters"): return margelo::nitro::nitromeasurements::AnyUnit::LITERS;
         case hashString("milliliters"): return margelo::nitro::nitromeasurements::AnyUnit::MILLILITERS;
         case hashString("gallons"): return margelo::nitro::nitromeasurements::AnyUnit::GALLONS;
         case hashString("cups"): return margelo::nitro::nitromeasurements::AnyUnit::CUPS;
         case hashString("fluidOunces"): return margelo::nitro::nitromeasurements::AnyUnit::FLUIDOUNCES;
         case hashString("cubicMeters"): return margelo::nitro::nitromeasurements::AnyUnit::CUBICMETERS;
+        case hashString("megaliters"): return margelo::nitro::nitromeasurements::AnyUnit::MEGALITERS;
+        case hashString("kiloliters"): return margelo::nitro::nitromeasurements::AnyUnit::KILOLITERS;
+        case hashString("deciliters"): return margelo::nitro::nitromeasurements::AnyUnit::DECILITERS;
+        case hashString("centiliters"): return margelo::nitro::nitromeasurements::AnyUnit::CENTILITERS;
+        case hashString("cubicKilometers"): return margelo::nitro::nitromeasurements::AnyUnit::CUBICKILOMETERS;
+        case hashString("cubicDecimeters"): return margelo::nitro::nitromeasurements::AnyUnit::CUBICDECIMETERS;
+        case hashString("cubicCentimeters"): return margelo::nitro::nitromeasurements::AnyUnit::CUBICCENTIMETERS;
+        case hashString("cubicMillimeters"): return margelo::nitro::nitromeasurements::AnyUnit::CUBICMILLIMETERS;
+        case hashString("cubicInches"): return margelo::nitro::nitromeasurements::AnyUnit::CUBICINCHES;
+        case hashString("cubicFeet"): return margelo::nitro::nitromeasurements::AnyUnit::CUBICFEET;
+        case hashString("cubicYards"): return margelo::nitro::nitromeasurements::AnyUnit::CUBICYARDS;
+        case hashString("cubicMiles"): return margelo::nitro::nitromeasurements::AnyUnit::CUBICMILES;
+        case hashString("acreFeet"): return margelo::nitro::nitromeasurements::AnyUnit::ACREFEET;
+        case hashString("bushels"): return margelo::nitro::nitromeasurements::AnyUnit::BUSHELS;
+        case hashString("teaspoons"): return margelo::nitro::nitromeasurements::AnyUnit::TEASPOONS;
+        case hashString("tablespoons"): return margelo::nitro::nitromeasurements::AnyUnit::TABLESPOONS;
+        case hashString("pints"): return margelo::nitro::nitromeasurements::AnyUnit::PINTS;
+        case hashString("quarts"): return margelo::nitro::nitromeasurements::AnyUnit::QUARTS;
+        case hashString("imperialTeaspoons"): return margelo::nitro::nitromeasurements::AnyUnit::IMPERIALTEASPOONS;
+        case hashString("imperialTablespoons"): return margelo::nitro::nitromeasurements::AnyUnit::IMPERIALTABLESPOONS;
+        case hashString("imperialFluidOunces"): return margelo::nitro::nitromeasurements::AnyUnit::IMPERIALFLUIDOUNCES;
+        case hashString("imperialPints"): return margelo::nitro::nitromeasurements::AnyUnit::IMPERIALPINTS;
+        case hashString("imperialQuarts"): return margelo::nitro::nitromeasurements::AnyUnit::IMPERIALQUARTS;
+        case hashString("imperialGallons"): return margelo::nitro::nitromeasurements::AnyUnit::IMPERIALGALLONS;
+        case hashString("metricCups"): return margelo::nitro::nitromeasurements::AnyUnit::METRICCUPS;
         case hashString("joules"): return margelo::nitro::nitromeasurements::AnyUnit::JOULES;
         case hashString("calories"): return margelo::nitro::nitromeasurements::AnyUnit::CALORIES;
         case hashString("kilocalories"): return margelo::nitro::nitromeasurements::AnyUnit::KILOCALORIES;
         case hashString("kilowattHours"): return margelo::nitro::nitromeasurements::AnyUnit::KILOWATTHOURS;
+        case hashString("kilojoules"): return margelo::nitro::nitromeasurements::AnyUnit::KILOJOULES;
         case hashString("watts"): return margelo::nitro::nitromeasurements::AnyUnit::WATTS;
         case hashString("kilowatts"): return margelo::nitro::nitromeasurements::AnyUnit::KILOWATTS;
         case hashString("horsepower"): return margelo::nitro::nitromeasurements::AnyUnit::HORSEPOWER;
+        case hashString("terawatts"): return margelo::nitro::nitromeasurements::AnyUnit::TERAWATTS;
+        case hashString("gigawatts"): return margelo::nitro::nitromeasurements::AnyUnit::GIGAWATTS;
+        case hashString("megawatts"): return margelo::nitro::nitromeasurements::AnyUnit::MEGAWATTS;
+        case hashString("milliwatts"): return margelo::nitro::nitromeasurements::AnyUnit::MILLIWATTS;
+        case hashString("microwatts"): return margelo::nitro::nitromeasurements::AnyUnit::MICROWATTS;
+        case hashString("nanowatts"): return margelo::nitro::nitromeasurements::AnyUnit::NANOWATTS;
+        case hashString("picowatts"): return margelo::nitro::nitromeasurements::AnyUnit::PICOWATTS;
+        case hashString("femtowatts"): return margelo::nitro::nitromeasurements::AnyUnit::FEMTOWATTS;
         case hashString("hertz"): return margelo::nitro::nitromeasurements::AnyUnit::HERTZ;
         case hashString("kilohertz"): return margelo::nitro::nitromeasurements::AnyUnit::KILOHERTZ;
         case hashString("megahertz"): return margelo::nitro::nitromeasurements::AnyUnit::MEGAHERTZ;
         case hashString("gigahertz"): return margelo::nitro::nitromeasurements::AnyUnit::GIGAHERTZ;
+        case hashString("terahertz"): return margelo::nitro::nitromeasurements::AnyUnit::TERAHERTZ;
+        case hashString("millihertz"): return margelo::nitro::nitromeasurements::AnyUnit::MILLIHERTZ;
+        case hashString("microhertz"): return margelo::nitro::nitromeasurements::AnyUnit::MICROHERTZ;
+        case hashString("nanohertz"): return margelo::nitro::nitromeasurements::AnyUnit::NANOHERTZ;
         case hashString("degrees"): return margelo::nitro::nitromeasurements::AnyUnit::DEGREES;
         case hashString("radians"): return margelo::nitro::nitromeasurements::AnyUnit::RADIANS;
+        case hashString("arcMinutes"): return margelo::nitro::nitromeasurements::AnyUnit::ARCMINUTES;
+        case hashString("arcSeconds"): return margelo::nitro::nitromeasurements::AnyUnit::ARCSECONDS;
+        case hashString("gradians"): return margelo::nitro::nitromeasurements::AnyUnit::GRADIANS;
+        case hashString("revolutions"): return margelo::nitro::nitromeasurements::AnyUnit::REVOLUTIONS;
         case hashString("newtonsPerMetersSquared"): return margelo::nitro::nitromeasurements::AnyUnit::NEWTONSPERMETERSSQUARED;
         case hashString("bars"): return margelo::nitro::nitromeasurements::AnyUnit::BARS;
         case hashString("millibars"): return margelo::nitro::nitromeasurements::AnyUnit::MILLIBARS;
         case hashString("atmospheres"): return margelo::nitro::nitromeasurements::AnyUnit::ATMOSPHERES;
         case hashString("poundsPerSquareInch"): return margelo::nitro::nitromeasurements::AnyUnit::POUNDSPERSQUAREINCH;
+        case hashString("gigapascals"): return margelo::nitro::nitromeasurements::AnyUnit::GIGAPASCALS;
+        case hashString("megapascals"): return margelo::nitro::nitromeasurements::AnyUnit::MEGAPASCALS;
+        case hashString("kilopascals"): return margelo::nitro::nitromeasurements::AnyUnit::KILOPASCALS;
+        case hashString("hectopascals"): return margelo::nitro::nitromeasurements::AnyUnit::HECTOPASCALS;
+        case hashString("inchesOfMercury"): return margelo::nitro::nitromeasurements::AnyUnit::INCHESOFMERCURY;
+        case hashString("millimetersOfMercury"): return margelo::nitro::nitromeasurements::AnyUnit::MILLIMETERSOFMERCURY;
         default: [[unlikely]]
           throw std::invalid_argument("Cannot convert \"" + unionValue + "\" to enum AnyUnit - invalid value!");
       }
@@ -168,6 +332,19 @@ namespace margelo::nitro {
         case margelo::nitro::nitromeasurements::AnyUnit::FEET: return JSIConverter<std::string>::toJSI(runtime, "feet");
         case margelo::nitro::nitromeasurements::AnyUnit::INCHES: return JSIConverter<std::string>::toJSI(runtime, "inches");
         case margelo::nitro::nitromeasurements::AnyUnit::NAUTICALMILES: return JSIConverter<std::string>::toJSI(runtime, "nauticalMiles");
+        case margelo::nitro::nitromeasurements::AnyUnit::MICROMETERS: return JSIConverter<std::string>::toJSI(runtime, "micrometers");
+        case margelo::nitro::nitromeasurements::AnyUnit::NANOMETERS: return JSIConverter<std::string>::toJSI(runtime, "nanometers");
+        case margelo::nitro::nitromeasurements::AnyUnit::PICOMETERS: return JSIConverter<std::string>::toJSI(runtime, "picometers");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEGAMETERS: return JSIConverter<std::string>::toJSI(runtime, "megameters");
+        case margelo::nitro::nitromeasurements::AnyUnit::HECTOMETERS: return JSIConverter<std::string>::toJSI(runtime, "hectometers");
+        case margelo::nitro::nitromeasurements::AnyUnit::DECAMETERS: return JSIConverter<std::string>::toJSI(runtime, "decameters");
+        case margelo::nitro::nitromeasurements::AnyUnit::DECIMETERS: return JSIConverter<std::string>::toJSI(runtime, "decimeters");
+        case margelo::nitro::nitromeasurements::AnyUnit::SCANDINAVIANMILES: return JSIConverter<std::string>::toJSI(runtime, "scandinavianMiles");
+        case margelo::nitro::nitromeasurements::AnyUnit::LIGHTYEARS: return JSIConverter<std::string>::toJSI(runtime, "lightyears");
+        case margelo::nitro::nitromeasurements::AnyUnit::FATHOMS: return JSIConverter<std::string>::toJSI(runtime, "fathoms");
+        case margelo::nitro::nitromeasurements::AnyUnit::FURLONGS: return JSIConverter<std::string>::toJSI(runtime, "furlongs");
+        case margelo::nitro::nitromeasurements::AnyUnit::ASTRONOMICALUNITS: return JSIConverter<std::string>::toJSI(runtime, "astronomicalUnits");
+        case margelo::nitro::nitromeasurements::AnyUnit::PARSECS: return JSIConverter<std::string>::toJSI(runtime, "parsecs");
         case margelo::nitro::nitromeasurements::AnyUnit::KILOGRAMS: return JSIConverter<std::string>::toJSI(runtime, "kilograms");
         case margelo::nitro::nitromeasurements::AnyUnit::GRAMS: return JSIConverter<std::string>::toJSI(runtime, "grams");
         case margelo::nitro::nitromeasurements::AnyUnit::MILLIGRAMS: return JSIConverter<std::string>::toJSI(runtime, "milligrams");
@@ -175,9 +352,22 @@ namespace margelo::nitro {
         case margelo::nitro::nitromeasurements::AnyUnit::OUNCES: return JSIConverter<std::string>::toJSI(runtime, "ounces");
         case margelo::nitro::nitromeasurements::AnyUnit::STONES: return JSIConverter<std::string>::toJSI(runtime, "stones");
         case margelo::nitro::nitromeasurements::AnyUnit::METRICTONS: return JSIConverter<std::string>::toJSI(runtime, "metricTons");
+        case margelo::nitro::nitromeasurements::AnyUnit::DECIGRAMS: return JSIConverter<std::string>::toJSI(runtime, "decigrams");
+        case margelo::nitro::nitromeasurements::AnyUnit::CENTIGRAMS: return JSIConverter<std::string>::toJSI(runtime, "centigrams");
+        case margelo::nitro::nitromeasurements::AnyUnit::MICROGRAMS: return JSIConverter<std::string>::toJSI(runtime, "micrograms");
+        case margelo::nitro::nitromeasurements::AnyUnit::NANOGRAMS: return JSIConverter<std::string>::toJSI(runtime, "nanograms");
+        case margelo::nitro::nitromeasurements::AnyUnit::PICOGRAMS: return JSIConverter<std::string>::toJSI(runtime, "picograms");
+        case margelo::nitro::nitromeasurements::AnyUnit::SHORTTONS: return JSIConverter<std::string>::toJSI(runtime, "shortTons");
+        case margelo::nitro::nitromeasurements::AnyUnit::CARATS: return JSIConverter<std::string>::toJSI(runtime, "carats");
+        case margelo::nitro::nitromeasurements::AnyUnit::OUNCESTROY: return JSIConverter<std::string>::toJSI(runtime, "ouncesTroy");
+        case margelo::nitro::nitromeasurements::AnyUnit::SLUGS: return JSIConverter<std::string>::toJSI(runtime, "slugs");
         case margelo::nitro::nitromeasurements::AnyUnit::SECONDS: return JSIConverter<std::string>::toJSI(runtime, "seconds");
         case margelo::nitro::nitromeasurements::AnyUnit::MINUTES: return JSIConverter<std::string>::toJSI(runtime, "minutes");
         case margelo::nitro::nitromeasurements::AnyUnit::HOURS: return JSIConverter<std::string>::toJSI(runtime, "hours");
+        case margelo::nitro::nitromeasurements::AnyUnit::MILLISECONDS: return JSIConverter<std::string>::toJSI(runtime, "milliseconds");
+        case margelo::nitro::nitromeasurements::AnyUnit::MICROSECONDS: return JSIConverter<std::string>::toJSI(runtime, "microseconds");
+        case margelo::nitro::nitromeasurements::AnyUnit::NANOSECONDS: return JSIConverter<std::string>::toJSI(runtime, "nanoseconds");
+        case margelo::nitro::nitromeasurements::AnyUnit::PICOSECONDS: return JSIConverter<std::string>::toJSI(runtime, "picoseconds");
         case margelo::nitro::nitromeasurements::AnyUnit::METERSPERSECOND: return JSIConverter<std::string>::toJSI(runtime, "metersPerSecond");
         case margelo::nitro::nitromeasurements::AnyUnit::KILOMETERSPERHOUR: return JSIConverter<std::string>::toJSI(runtime, "kilometersPerHour");
         case margelo::nitro::nitromeasurements::AnyUnit::MILESPERHOUR: return JSIConverter<std::string>::toJSI(runtime, "milesPerHour");
@@ -191,30 +381,86 @@ namespace margelo::nitro {
         case margelo::nitro::nitromeasurements::AnyUnit::SQUAREFEET: return JSIConverter<std::string>::toJSI(runtime, "squareFeet");
         case margelo::nitro::nitromeasurements::AnyUnit::HECTARES: return JSIConverter<std::string>::toJSI(runtime, "hectares");
         case margelo::nitro::nitromeasurements::AnyUnit::ACRES: return JSIConverter<std::string>::toJSI(runtime, "acres");
+        case margelo::nitro::nitromeasurements::AnyUnit::SQUAREMEGAMETERS: return JSIConverter<std::string>::toJSI(runtime, "squareMegameters");
+        case margelo::nitro::nitromeasurements::AnyUnit::SQUARECENTIMETERS: return JSIConverter<std::string>::toJSI(runtime, "squareCentimeters");
+        case margelo::nitro::nitromeasurements::AnyUnit::SQUAREMILLIMETERS: return JSIConverter<std::string>::toJSI(runtime, "squareMillimeters");
+        case margelo::nitro::nitromeasurements::AnyUnit::SQUAREMICROMETERS: return JSIConverter<std::string>::toJSI(runtime, "squareMicrometers");
+        case margelo::nitro::nitromeasurements::AnyUnit::SQUARENANOMETERS: return JSIConverter<std::string>::toJSI(runtime, "squareNanometers");
+        case margelo::nitro::nitromeasurements::AnyUnit::SQUAREINCHES: return JSIConverter<std::string>::toJSI(runtime, "squareInches");
+        case margelo::nitro::nitromeasurements::AnyUnit::SQUAREYARDS: return JSIConverter<std::string>::toJSI(runtime, "squareYards");
+        case margelo::nitro::nitromeasurements::AnyUnit::ARES: return JSIConverter<std::string>::toJSI(runtime, "ares");
         case margelo::nitro::nitromeasurements::AnyUnit::LITERS: return JSIConverter<std::string>::toJSI(runtime, "liters");
         case margelo::nitro::nitromeasurements::AnyUnit::MILLILITERS: return JSIConverter<std::string>::toJSI(runtime, "milliliters");
         case margelo::nitro::nitromeasurements::AnyUnit::GALLONS: return JSIConverter<std::string>::toJSI(runtime, "gallons");
         case margelo::nitro::nitromeasurements::AnyUnit::CUPS: return JSIConverter<std::string>::toJSI(runtime, "cups");
         case margelo::nitro::nitromeasurements::AnyUnit::FLUIDOUNCES: return JSIConverter<std::string>::toJSI(runtime, "fluidOunces");
         case margelo::nitro::nitromeasurements::AnyUnit::CUBICMETERS: return JSIConverter<std::string>::toJSI(runtime, "cubicMeters");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEGALITERS: return JSIConverter<std::string>::toJSI(runtime, "megaliters");
+        case margelo::nitro::nitromeasurements::AnyUnit::KILOLITERS: return JSIConverter<std::string>::toJSI(runtime, "kiloliters");
+        case margelo::nitro::nitromeasurements::AnyUnit::DECILITERS: return JSIConverter<std::string>::toJSI(runtime, "deciliters");
+        case margelo::nitro::nitromeasurements::AnyUnit::CENTILITERS: return JSIConverter<std::string>::toJSI(runtime, "centiliters");
+        case margelo::nitro::nitromeasurements::AnyUnit::CUBICKILOMETERS: return JSIConverter<std::string>::toJSI(runtime, "cubicKilometers");
+        case margelo::nitro::nitromeasurements::AnyUnit::CUBICDECIMETERS: return JSIConverter<std::string>::toJSI(runtime, "cubicDecimeters");
+        case margelo::nitro::nitromeasurements::AnyUnit::CUBICCENTIMETERS: return JSIConverter<std::string>::toJSI(runtime, "cubicCentimeters");
+        case margelo::nitro::nitromeasurements::AnyUnit::CUBICMILLIMETERS: return JSIConverter<std::string>::toJSI(runtime, "cubicMillimeters");
+        case margelo::nitro::nitromeasurements::AnyUnit::CUBICINCHES: return JSIConverter<std::string>::toJSI(runtime, "cubicInches");
+        case margelo::nitro::nitromeasurements::AnyUnit::CUBICFEET: return JSIConverter<std::string>::toJSI(runtime, "cubicFeet");
+        case margelo::nitro::nitromeasurements::AnyUnit::CUBICYARDS: return JSIConverter<std::string>::toJSI(runtime, "cubicYards");
+        case margelo::nitro::nitromeasurements::AnyUnit::CUBICMILES: return JSIConverter<std::string>::toJSI(runtime, "cubicMiles");
+        case margelo::nitro::nitromeasurements::AnyUnit::ACREFEET: return JSIConverter<std::string>::toJSI(runtime, "acreFeet");
+        case margelo::nitro::nitromeasurements::AnyUnit::BUSHELS: return JSIConverter<std::string>::toJSI(runtime, "bushels");
+        case margelo::nitro::nitromeasurements::AnyUnit::TEASPOONS: return JSIConverter<std::string>::toJSI(runtime, "teaspoons");
+        case margelo::nitro::nitromeasurements::AnyUnit::TABLESPOONS: return JSIConverter<std::string>::toJSI(runtime, "tablespoons");
+        case margelo::nitro::nitromeasurements::AnyUnit::PINTS: return JSIConverter<std::string>::toJSI(runtime, "pints");
+        case margelo::nitro::nitromeasurements::AnyUnit::QUARTS: return JSIConverter<std::string>::toJSI(runtime, "quarts");
+        case margelo::nitro::nitromeasurements::AnyUnit::IMPERIALTEASPOONS: return JSIConverter<std::string>::toJSI(runtime, "imperialTeaspoons");
+        case margelo::nitro::nitromeasurements::AnyUnit::IMPERIALTABLESPOONS: return JSIConverter<std::string>::toJSI(runtime, "imperialTablespoons");
+        case margelo::nitro::nitromeasurements::AnyUnit::IMPERIALFLUIDOUNCES: return JSIConverter<std::string>::toJSI(runtime, "imperialFluidOunces");
+        case margelo::nitro::nitromeasurements::AnyUnit::IMPERIALPINTS: return JSIConverter<std::string>::toJSI(runtime, "imperialPints");
+        case margelo::nitro::nitromeasurements::AnyUnit::IMPERIALQUARTS: return JSIConverter<std::string>::toJSI(runtime, "imperialQuarts");
+        case margelo::nitro::nitromeasurements::AnyUnit::IMPERIALGALLONS: return JSIConverter<std::string>::toJSI(runtime, "imperialGallons");
+        case margelo::nitro::nitromeasurements::AnyUnit::METRICCUPS: return JSIConverter<std::string>::toJSI(runtime, "metricCups");
         case margelo::nitro::nitromeasurements::AnyUnit::JOULES: return JSIConverter<std::string>::toJSI(runtime, "joules");
         case margelo::nitro::nitromeasurements::AnyUnit::CALORIES: return JSIConverter<std::string>::toJSI(runtime, "calories");
         case margelo::nitro::nitromeasurements::AnyUnit::KILOCALORIES: return JSIConverter<std::string>::toJSI(runtime, "kilocalories");
         case margelo::nitro::nitromeasurements::AnyUnit::KILOWATTHOURS: return JSIConverter<std::string>::toJSI(runtime, "kilowattHours");
+        case margelo::nitro::nitromeasurements::AnyUnit::KILOJOULES: return JSIConverter<std::string>::toJSI(runtime, "kilojoules");
         case margelo::nitro::nitromeasurements::AnyUnit::WATTS: return JSIConverter<std::string>::toJSI(runtime, "watts");
         case margelo::nitro::nitromeasurements::AnyUnit::KILOWATTS: return JSIConverter<std::string>::toJSI(runtime, "kilowatts");
         case margelo::nitro::nitromeasurements::AnyUnit::HORSEPOWER: return JSIConverter<std::string>::toJSI(runtime, "horsepower");
+        case margelo::nitro::nitromeasurements::AnyUnit::TERAWATTS: return JSIConverter<std::string>::toJSI(runtime, "terawatts");
+        case margelo::nitro::nitromeasurements::AnyUnit::GIGAWATTS: return JSIConverter<std::string>::toJSI(runtime, "gigawatts");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEGAWATTS: return JSIConverter<std::string>::toJSI(runtime, "megawatts");
+        case margelo::nitro::nitromeasurements::AnyUnit::MILLIWATTS: return JSIConverter<std::string>::toJSI(runtime, "milliwatts");
+        case margelo::nitro::nitromeasurements::AnyUnit::MICROWATTS: return JSIConverter<std::string>::toJSI(runtime, "microwatts");
+        case margelo::nitro::nitromeasurements::AnyUnit::NANOWATTS: return JSIConverter<std::string>::toJSI(runtime, "nanowatts");
+        case margelo::nitro::nitromeasurements::AnyUnit::PICOWATTS: return JSIConverter<std::string>::toJSI(runtime, "picowatts");
+        case margelo::nitro::nitromeasurements::AnyUnit::FEMTOWATTS: return JSIConverter<std::string>::toJSI(runtime, "femtowatts");
         case margelo::nitro::nitromeasurements::AnyUnit::HERTZ: return JSIConverter<std::string>::toJSI(runtime, "hertz");
         case margelo::nitro::nitromeasurements::AnyUnit::KILOHERTZ: return JSIConverter<std::string>::toJSI(runtime, "kilohertz");
         case margelo::nitro::nitromeasurements::AnyUnit::MEGAHERTZ: return JSIConverter<std::string>::toJSI(runtime, "megahertz");
         case margelo::nitro::nitromeasurements::AnyUnit::GIGAHERTZ: return JSIConverter<std::string>::toJSI(runtime, "gigahertz");
+        case margelo::nitro::nitromeasurements::AnyUnit::TERAHERTZ: return JSIConverter<std::string>::toJSI(runtime, "terahertz");
+        case margelo::nitro::nitromeasurements::AnyUnit::MILLIHERTZ: return JSIConverter<std::string>::toJSI(runtime, "millihertz");
+        case margelo::nitro::nitromeasurements::AnyUnit::MICROHERTZ: return JSIConverter<std::string>::toJSI(runtime, "microhertz");
+        case margelo::nitro::nitromeasurements::AnyUnit::NANOHERTZ: return JSIConverter<std::string>::toJSI(runtime, "nanohertz");
         case margelo::nitro::nitromeasurements::AnyUnit::DEGREES: return JSIConverter<std::string>::toJSI(runtime, "degrees");
         case margelo::nitro::nitromeasurements::AnyUnit::RADIANS: return JSIConverter<std::string>::toJSI(runtime, "radians");
+        case margelo::nitro::nitromeasurements::AnyUnit::ARCMINUTES: return JSIConverter<std::string>::toJSI(runtime, "arcMinutes");
+        case margelo::nitro::nitromeasurements::AnyUnit::ARCSECONDS: return JSIConverter<std::string>::toJSI(runtime, "arcSeconds");
+        case margelo::nitro::nitromeasurements::AnyUnit::GRADIANS: return JSIConverter<std::string>::toJSI(runtime, "gradians");
+        case margelo::nitro::nitromeasurements::AnyUnit::REVOLUTIONS: return JSIConverter<std::string>::toJSI(runtime, "revolutions");
         case margelo::nitro::nitromeasurements::AnyUnit::NEWTONSPERMETERSSQUARED: return JSIConverter<std::string>::toJSI(runtime, "newtonsPerMetersSquared");
         case margelo::nitro::nitromeasurements::AnyUnit::BARS: return JSIConverter<std::string>::toJSI(runtime, "bars");
         case margelo::nitro::nitromeasurements::AnyUnit::MILLIBARS: return JSIConverter<std::string>::toJSI(runtime, "millibars");
         case margelo::nitro::nitromeasurements::AnyUnit::ATMOSPHERES: return JSIConverter<std::string>::toJSI(runtime, "atmospheres");
         case margelo::nitro::nitromeasurements::AnyUnit::POUNDSPERSQUAREINCH: return JSIConverter<std::string>::toJSI(runtime, "poundsPerSquareInch");
+        case margelo::nitro::nitromeasurements::AnyUnit::GIGAPASCALS: return JSIConverter<std::string>::toJSI(runtime, "gigapascals");
+        case margelo::nitro::nitromeasurements::AnyUnit::MEGAPASCALS: return JSIConverter<std::string>::toJSI(runtime, "megapascals");
+        case margelo::nitro::nitromeasurements::AnyUnit::KILOPASCALS: return JSIConverter<std::string>::toJSI(runtime, "kilopascals");
+        case margelo::nitro::nitromeasurements::AnyUnit::HECTOPASCALS: return JSIConverter<std::string>::toJSI(runtime, "hectopascals");
+        case margelo::nitro::nitromeasurements::AnyUnit::INCHESOFMERCURY: return JSIConverter<std::string>::toJSI(runtime, "inchesOfMercury");
+        case margelo::nitro::nitromeasurements::AnyUnit::MILLIMETERSOFMERCURY: return JSIConverter<std::string>::toJSI(runtime, "millimetersOfMercury");
         default: [[unlikely]]
           throw std::invalid_argument("Cannot convert AnyUnit to JS - invalid value: "
                                     + std::to_string(static_cast<int>(arg)) + "!");
@@ -235,6 +481,19 @@ namespace margelo::nitro {
         case hashString("feet"):
         case hashString("inches"):
         case hashString("nauticalMiles"):
+        case hashString("micrometers"):
+        case hashString("nanometers"):
+        case hashString("picometers"):
+        case hashString("megameters"):
+        case hashString("hectometers"):
+        case hashString("decameters"):
+        case hashString("decimeters"):
+        case hashString("scandinavianMiles"):
+        case hashString("lightyears"):
+        case hashString("fathoms"):
+        case hashString("furlongs"):
+        case hashString("astronomicalUnits"):
+        case hashString("parsecs"):
         case hashString("kilograms"):
         case hashString("grams"):
         case hashString("milligrams"):
@@ -242,9 +501,22 @@ namespace margelo::nitro {
         case hashString("ounces"):
         case hashString("stones"):
         case hashString("metricTons"):
+        case hashString("decigrams"):
+        case hashString("centigrams"):
+        case hashString("micrograms"):
+        case hashString("nanograms"):
+        case hashString("picograms"):
+        case hashString("shortTons"):
+        case hashString("carats"):
+        case hashString("ouncesTroy"):
+        case hashString("slugs"):
         case hashString("seconds"):
         case hashString("minutes"):
         case hashString("hours"):
+        case hashString("milliseconds"):
+        case hashString("microseconds"):
+        case hashString("nanoseconds"):
+        case hashString("picoseconds"):
         case hashString("metersPerSecond"):
         case hashString("kilometersPerHour"):
         case hashString("milesPerHour"):
@@ -258,30 +530,86 @@ namespace margelo::nitro {
         case hashString("squareFeet"):
         case hashString("hectares"):
         case hashString("acres"):
+        case hashString("squareMegameters"):
+        case hashString("squareCentimeters"):
+        case hashString("squareMillimeters"):
+        case hashString("squareMicrometers"):
+        case hashString("squareNanometers"):
+        case hashString("squareInches"):
+        case hashString("squareYards"):
+        case hashString("ares"):
         case hashString("liters"):
         case hashString("milliliters"):
         case hashString("gallons"):
         case hashString("cups"):
         case hashString("fluidOunces"):
         case hashString("cubicMeters"):
+        case hashString("megaliters"):
+        case hashString("kiloliters"):
+        case hashString("deciliters"):
+        case hashString("centiliters"):
+        case hashString("cubicKilometers"):
+        case hashString("cubicDecimeters"):
+        case hashString("cubicCentimeters"):
+        case hashString("cubicMillimeters"):
+        case hashString("cubicInches"):
+        case hashString("cubicFeet"):
+        case hashString("cubicYards"):
+        case hashString("cubicMiles"):
+        case hashString("acreFeet"):
+        case hashString("bushels"):
+        case hashString("teaspoons"):
+        case hashString("tablespoons"):
+        case hashString("pints"):
+        case hashString("quarts"):
+        case hashString("imperialTeaspoons"):
+        case hashString("imperialTablespoons"):
+        case hashString("imperialFluidOunces"):
+        case hashString("imperialPints"):
+        case hashString("imperialQuarts"):
+        case hashString("imperialGallons"):
+        case hashString("metricCups"):
         case hashString("joules"):
         case hashString("calories"):
         case hashString("kilocalories"):
         case hashString("kilowattHours"):
+        case hashString("kilojoules"):
         case hashString("watts"):
         case hashString("kilowatts"):
         case hashString("horsepower"):
+        case hashString("terawatts"):
+        case hashString("gigawatts"):
+        case hashString("megawatts"):
+        case hashString("milliwatts"):
+        case hashString("microwatts"):
+        case hashString("nanowatts"):
+        case hashString("picowatts"):
+        case hashString("femtowatts"):
         case hashString("hertz"):
         case hashString("kilohertz"):
         case hashString("megahertz"):
         case hashString("gigahertz"):
+        case hashString("terahertz"):
+        case hashString("millihertz"):
+        case hashString("microhertz"):
+        case hashString("nanohertz"):
         case hashString("degrees"):
         case hashString("radians"):
+        case hashString("arcMinutes"):
+        case hashString("arcSeconds"):
+        case hashString("gradians"):
+        case hashString("revolutions"):
         case hashString("newtonsPerMetersSquared"):
         case hashString("bars"):
         case hashString("millibars"):
         case hashString("atmospheres"):
         case hashString("poundsPerSquareInch"):
+        case hashString("gigapascals"):
+        case hashString("megapascals"):
+        case hashString("kilopascals"):
+        case hashString("hectopascals"):
+        case hashString("inchesOfMercury"):
+        case hashString("millimetersOfMercury"):
           return true;
         default:
           return false;

@@ -34,6 +34,19 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
     case .feet:                     return UnitLength.feet
     case .inches:                   return UnitLength.inches
     case .nauticalmiles:            return UnitLength.nauticalMiles
+    case .micrometers:              return UnitLength.micrometers
+    case .nanometers:               return UnitLength.nanometers
+    case .picometers:               return UnitLength.picometers
+    case .megameters:               return UnitLength.megameters
+    case .hectometers:              return UnitLength.hectometers
+    case .decameters:               return UnitLength.decameters
+    case .decimeters:               return UnitLength.decimeters
+    case .scandinavianmiles:        return UnitLength.scandinavianMiles
+    case .lightyears:               return UnitLength.lightyears
+    case .fathoms:                  return UnitLength.fathoms
+    case .furlongs:                 return UnitLength.furlongs
+    case .astronomicalunits:        return UnitLength.astronomicalUnits
+    case .parsecs:                  return UnitLength.parsecs
     // Mass
     case .kilograms:                return UnitMass.kilograms
     case .grams:                    return UnitMass.grams
@@ -42,10 +55,23 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
     case .ounces:                   return UnitMass.ounces
     case .stones:                   return UnitMass.stones
     case .metrictons:               return UnitMass.metricTons
+    case .decigrams:                return UnitMass.decigrams
+    case .centigrams:               return UnitMass.centigrams
+    case .micrograms:               return UnitMass.micrograms
+    case .nanograms:                return UnitMass.nanograms
+    case .picograms:                return UnitMass.picograms
+    case .shorttons:                return UnitMass.shortTons
+    case .carats:                   return UnitMass.carats
+    case .ouncestroy:               return UnitMass.ouncesTroy
+    case .slugs:                    return UnitMass.slugs
     // Duration
     case .seconds:                  return UnitDuration.seconds
     case .minutes:                  return UnitDuration.minutes
     case .hours:                    return UnitDuration.hours
+    case .milliseconds:             return UnitDuration.milliseconds
+    case .microseconds:             return UnitDuration.microseconds
+    case .nanoseconds:              return UnitDuration.nanoseconds
+    case .picoseconds:              return UnitDuration.picoseconds
     // Speed
     case .meterspersecond:          return UnitSpeed.metersPerSecond
     case .kilometersperhour:        return UnitSpeed.kilometersPerHour
@@ -62,6 +88,14 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
     case .squarefeet:               return UnitArea.squareFeet
     case .hectares:                 return UnitArea.hectares
     case .acres:                    return UnitArea.acres
+    case .squaremegameters:         return UnitArea.squareMegameters
+    case .squarecentimeters:        return UnitArea.squareCentimeters
+    case .squaremillimeters:        return UnitArea.squareMillimeters
+    case .squaremicrometers:        return UnitArea.squareMicrometers
+    case .squarenanometers:         return UnitArea.squareNanometers
+    case .squareinches:             return UnitArea.squareInches
+    case .squareyards:              return UnitArea.squareYards
+    case .ares:                     return UnitArea.ares
     // Volume
     case .liters:                   return UnitVolume.liters
     case .milliliters:              return UnitVolume.milliliters
@@ -69,74 +103,162 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
     case .cups:                     return UnitVolume.cups
     case .fluidounces:              return UnitVolume.fluidOunces
     case .cubicmeters:              return UnitVolume.cubicMeters
+    case .megaliters:               return UnitVolume.megaliters
+    case .kiloliters:               return UnitVolume.kiloliters
+    case .deciliters:               return UnitVolume.deciliters
+    case .centiliters:              return UnitVolume.centiliters
+    case .cubickilometers:          return UnitVolume.cubicKilometers
+    case .cubicdecimeters:          return UnitVolume.cubicDecimeters
+    case .cubiccentimeters:         return UnitVolume.cubicCentimeters
+    case .cubicmillimeters:         return UnitVolume.cubicMillimeters
+    case .cubicinches:              return UnitVolume.cubicInches
+    case .cubicfeet:                return UnitVolume.cubicFeet
+    case .cubicyards:               return UnitVolume.cubicYards
+    case .cubicmiles:               return UnitVolume.cubicMiles
+    case .acrefeet:                 return UnitVolume.acreFeet
+    case .bushels:                  return UnitVolume.bushels
+    case .teaspoons:                return UnitVolume.teaspoons
+    case .tablespoons:              return UnitVolume.tablespoons
+    case .pints:                    return UnitVolume.pints
+    case .quarts:                   return UnitVolume.quarts
+    case .imperialteaspoons:        return UnitVolume.imperialTeaspoons
+    case .imperialtablespoons:      return UnitVolume.imperialTablespoons
+    case .imperialfluidounces:      return UnitVolume.imperialFluidOunces
+    case .imperialpints:            return UnitVolume.imperialPints
+    case .imperialquarts:           return UnitVolume.imperialQuarts
+    case .imperialgallons:          return UnitVolume.imperialGallons
+    case .metriccups:               return UnitVolume.metricCups
     // Energy
     case .joules:                   return UnitEnergy.joules
     case .calories:                 return UnitEnergy.calories
     case .kilocalories:             return UnitEnergy.kilocalories
     case .kilowatthours:            return UnitEnergy.kilowattHours
+    case .kilojoules:               return UnitEnergy.kilojoules
     // Power
     case .watts:                    return UnitPower.watts
     case .kilowatts:                return UnitPower.kilowatts
     case .horsepower:               return UnitPower.horsepower
+    case .terawatts:                return UnitPower.terawatts
+    case .gigawatts:                return UnitPower.gigawatts
+    case .megawatts:                return UnitPower.megawatts
+    case .milliwatts:               return UnitPower.milliwatts
+    case .microwatts:               return UnitPower.microwatts
+    case .nanowatts:                return UnitPower.nanowatts
+    case .picowatts:                return UnitPower.picowatts
+    case .femtowatts:               return UnitPower.femtowatts
     // Frequency
     case .hertz:                    return UnitFrequency.hertz
     case .kilohertz:                return UnitFrequency.kilohertz
     case .megahertz:                return UnitFrequency.megahertz
     case .gigahertz:                return UnitFrequency.gigahertz
+    case .terahertz:                return UnitFrequency.terahertz
+    case .millihertz:               return UnitFrequency.millihertz
+    case .microhertz:               return UnitFrequency.microhertz
+    case .nanohertz:                return UnitFrequency.nanohertz
     // Angle
     case .degrees:                  return UnitAngle.degrees
     case .radians:                  return UnitAngle.radians
+    case .arcminutes:               return UnitAngle.arcMinutes
+    case .arcseconds:               return UnitAngle.arcSeconds
+    case .gradians:                 return UnitAngle.gradians
+    case .revolutions:              return UnitAngle.revolutions
     // Pressure
     case .newtonspermeterssquared:  return UnitPressure.newtonsPerMetersSquared
     case .bars:                     return UnitPressure.bars
     case .millibars:                return UnitPressure.millibars
     case .atmospheres:              return Self.atmosphereUnit
     case .poundspersquareinch:      return UnitPressure.poundsForcePerSquareInch
+    case .gigapascals:              return UnitPressure.gigapascals
+    case .megapascals:              return UnitPressure.megapascals
+    case .kilopascals:              return UnitPressure.kilopascals
+    case .hectopascals:             return UnitPressure.hectopascals
+    case .inchesofmercury:          return UnitPressure.inchesOfMercury
+    case .millimetersofmercury:     return UnitPressure.millimetersOfMercury
     }
   }
 
   private func categoryFor(_ unit: AnyUnit) -> UnitCategory {
     switch unit {
-    case .meters, .kilometers, .centimeters, .millimeters, .miles, .yards, .feet, .inches, .nauticalmiles:
+    case .meters, .kilometers, .centimeters, .millimeters, .miles, .yards, .feet, .inches, .nauticalmiles,
+         .micrometers, .nanometers, .picometers, .megameters, .hectometers, .decameters, .decimeters,
+         .scandinavianmiles, .lightyears, .fathoms, .furlongs, .astronomicalunits, .parsecs:
       return .length
-    case .kilograms, .grams, .milligrams, .pounds, .ounces, .stones, .metrictons:
+    case .kilograms, .grams, .milligrams, .pounds, .ounces, .stones, .metrictons,
+         .decigrams, .centigrams, .micrograms, .nanograms, .picograms, .shorttons, .carats, .ouncestroy, .slugs:
       return .mass
-    case .seconds, .minutes, .hours:
+    case .seconds, .minutes, .hours, .milliseconds, .microseconds, .nanoseconds, .picoseconds:
       return .duration
     case .meterspersecond, .kilometersperhour, .milesperhour, .knots:
       return .speed
     case .celsius, .fahrenheit, .kelvin:
       return .temperature
-    case .squaremeters, .squarekilometers, .squaremiles, .squarefeet, .hectares, .acres:
+    case .squaremeters, .squarekilometers, .squaremiles, .squarefeet, .hectares, .acres,
+         .squaremegameters, .squarecentimeters, .squaremillimeters, .squaremicrometers, .squarenanometers,
+         .squareinches, .squareyards, .ares:
       return .area
-    case .liters, .milliliters, .gallons, .cups, .fluidounces, .cubicmeters:
+    case .liters, .milliliters, .gallons, .cups, .fluidounces, .cubicmeters,
+         .megaliters, .kiloliters, .deciliters, .centiliters,
+         .cubickilometers, .cubicdecimeters, .cubiccentimeters, .cubicmillimeters,
+         .cubicinches, .cubicfeet, .cubicyards, .cubicmiles, .acrefeet, .bushels,
+         .teaspoons, .tablespoons, .pints, .quarts,
+         .imperialteaspoons, .imperialtablespoons, .imperialfluidounces,
+         .imperialpints, .imperialquarts, .imperialgallons, .metriccups:
       return .volume
-    case .joules, .calories, .kilocalories, .kilowatthours:
+    case .joules, .calories, .kilocalories, .kilowatthours, .kilojoules:
       return .energy
-    case .watts, .kilowatts, .horsepower:
+    case .watts, .kilowatts, .horsepower,
+         .terawatts, .gigawatts, .megawatts, .milliwatts, .microwatts, .nanowatts, .picowatts, .femtowatts:
       return .power
-    case .hertz, .kilohertz, .megahertz, .gigahertz:
+    case .hertz, .kilohertz, .megahertz, .gigahertz, .terahertz, .millihertz, .microhertz, .nanohertz:
       return .frequency
-    case .degrees, .radians:
+    case .degrees, .radians, .arcminutes, .arcseconds, .gradians, .revolutions:
       return .angle
-    case .newtonspermeterssquared, .bars, .millibars, .atmospheres, .poundspersquareinch:
+    case .newtonspermeterssquared, .bars, .millibars, .atmospheres, .poundspersquareinch,
+         .gigapascals, .megapascals, .kilopascals, .hectopascals, .inchesofmercury, .millimetersofmercury:
       return .pressure
     }
   }
 
   private static let unitsByCategory: [UnitCategory: [AnyUnit]] = [
-    .length: [.meters, .kilometers, .centimeters, .millimeters, .miles, .yards, .feet, .inches, .nauticalmiles],
-    .mass: [.kilograms, .grams, .milligrams, .pounds, .ounces, .stones, .metrictons],
-    .duration: [.seconds, .minutes, .hours],
+    .length: [
+      .meters, .kilometers, .centimeters, .millimeters, .miles, .yards, .feet, .inches, .nauticalmiles,
+      .micrometers, .nanometers, .picometers, .megameters, .hectometers, .decameters, .decimeters,
+      .scandinavianmiles, .lightyears, .fathoms, .furlongs, .astronomicalunits, .parsecs,
+    ],
+    .mass: [
+      .kilograms, .grams, .milligrams, .pounds, .ounces, .stones, .metrictons,
+      .decigrams, .centigrams, .micrograms, .nanograms, .picograms, .shorttons, .carats, .ouncestroy, .slugs,
+    ],
+    .duration: [
+      .seconds, .minutes, .hours, .milliseconds, .microseconds, .nanoseconds, .picoseconds,
+    ],
     .speed: [.meterspersecond, .kilometersperhour, .milesperhour, .knots],
     .temperature: [.celsius, .fahrenheit, .kelvin],
-    .area: [.squaremeters, .squarekilometers, .squaremiles, .squarefeet, .hectares, .acres],
-    .volume: [.liters, .milliliters, .gallons, .cups, .fluidounces, .cubicmeters],
-    .energy: [.joules, .calories, .kilocalories, .kilowatthours],
-    .power: [.watts, .kilowatts, .horsepower],
-    .frequency: [.hertz, .kilohertz, .megahertz, .gigahertz],
-    .angle: [.degrees, .radians],
-    .pressure: [.newtonspermeterssquared, .bars, .millibars, .atmospheres, .poundspersquareinch],
+    .area: [
+      .squaremeters, .squarekilometers, .squaremiles, .squarefeet, .hectares, .acres,
+      .squaremegameters, .squarecentimeters, .squaremillimeters, .squaremicrometers, .squarenanometers,
+      .squareinches, .squareyards, .ares,
+    ],
+    .volume: [
+      .liters, .milliliters, .gallons, .cups, .fluidounces, .cubicmeters,
+      .megaliters, .kiloliters, .deciliters, .centiliters,
+      .cubickilometers, .cubicdecimeters, .cubiccentimeters, .cubicmillimeters,
+      .cubicinches, .cubicfeet, .cubicyards, .cubicmiles, .acrefeet, .bushels,
+      .teaspoons, .tablespoons, .pints, .quarts,
+      .imperialteaspoons, .imperialtablespoons, .imperialfluidounces,
+      .imperialpints, .imperialquarts, .imperialgallons, .metriccups,
+    ],
+    .energy: [.joules, .calories, .kilocalories, .kilowatthours, .kilojoules],
+    .power: [
+      .watts, .kilowatts, .horsepower,
+      .terawatts, .gigawatts, .megawatts, .milliwatts, .microwatts, .nanowatts, .picowatts, .femtowatts,
+    ],
+    .frequency: [.hertz, .kilohertz, .megahertz, .gigahertz, .terahertz, .millihertz, .microhertz, .nanohertz],
+    .angle: [.degrees, .radians, .arcminutes, .arcseconds, .gradians, .revolutions],
+    .pressure: [
+      .newtonspermeterssquared, .bars, .millibars, .atmospheres, .poundspersquareinch,
+      .gigapascals, .megapascals, .kilopascals, .hectopascals, .inchesofmercury, .millimetersofmercury,
+    ],
   ]
 
   private static let allCategories: [UnitCategory] = [

@@ -35,6 +35,32 @@ public extension AnyUnit {
         self = .inches
       case "nauticalMiles":
         self = .nauticalmiles
+      case "micrometers":
+        self = .micrometers
+      case "nanometers":
+        self = .nanometers
+      case "picometers":
+        self = .picometers
+      case "megameters":
+        self = .megameters
+      case "hectometers":
+        self = .hectometers
+      case "decameters":
+        self = .decameters
+      case "decimeters":
+        self = .decimeters
+      case "scandinavianMiles":
+        self = .scandinavianmiles
+      case "lightyears":
+        self = .lightyears
+      case "fathoms":
+        self = .fathoms
+      case "furlongs":
+        self = .furlongs
+      case "astronomicalUnits":
+        self = .astronomicalunits
+      case "parsecs":
+        self = .parsecs
       case "kilograms":
         self = .kilograms
       case "grams":
@@ -49,12 +75,38 @@ public extension AnyUnit {
         self = .stones
       case "metricTons":
         self = .metrictons
+      case "decigrams":
+        self = .decigrams
+      case "centigrams":
+        self = .centigrams
+      case "micrograms":
+        self = .micrograms
+      case "nanograms":
+        self = .nanograms
+      case "picograms":
+        self = .picograms
+      case "shortTons":
+        self = .shorttons
+      case "carats":
+        self = .carats
+      case "ouncesTroy":
+        self = .ouncestroy
+      case "slugs":
+        self = .slugs
       case "seconds":
         self = .seconds
       case "minutes":
         self = .minutes
       case "hours":
         self = .hours
+      case "milliseconds":
+        self = .milliseconds
+      case "microseconds":
+        self = .microseconds
+      case "nanoseconds":
+        self = .nanoseconds
+      case "picoseconds":
+        self = .picoseconds
       case "metersPerSecond":
         self = .meterspersecond
       case "kilometersPerHour":
@@ -81,6 +133,22 @@ public extension AnyUnit {
         self = .hectares
       case "acres":
         self = .acres
+      case "squareMegameters":
+        self = .squaremegameters
+      case "squareCentimeters":
+        self = .squarecentimeters
+      case "squareMillimeters":
+        self = .squaremillimeters
+      case "squareMicrometers":
+        self = .squaremicrometers
+      case "squareNanometers":
+        self = .squarenanometers
+      case "squareInches":
+        self = .squareinches
+      case "squareYards":
+        self = .squareyards
+      case "ares":
+        self = .ares
       case "liters":
         self = .liters
       case "milliliters":
@@ -93,6 +161,56 @@ public extension AnyUnit {
         self = .fluidounces
       case "cubicMeters":
         self = .cubicmeters
+      case "megaliters":
+        self = .megaliters
+      case "kiloliters":
+        self = .kiloliters
+      case "deciliters":
+        self = .deciliters
+      case "centiliters":
+        self = .centiliters
+      case "cubicKilometers":
+        self = .cubickilometers
+      case "cubicDecimeters":
+        self = .cubicdecimeters
+      case "cubicCentimeters":
+        self = .cubiccentimeters
+      case "cubicMillimeters":
+        self = .cubicmillimeters
+      case "cubicInches":
+        self = .cubicinches
+      case "cubicFeet":
+        self = .cubicfeet
+      case "cubicYards":
+        self = .cubicyards
+      case "cubicMiles":
+        self = .cubicmiles
+      case "acreFeet":
+        self = .acrefeet
+      case "bushels":
+        self = .bushels
+      case "teaspoons":
+        self = .teaspoons
+      case "tablespoons":
+        self = .tablespoons
+      case "pints":
+        self = .pints
+      case "quarts":
+        self = .quarts
+      case "imperialTeaspoons":
+        self = .imperialteaspoons
+      case "imperialTablespoons":
+        self = .imperialtablespoons
+      case "imperialFluidOunces":
+        self = .imperialfluidounces
+      case "imperialPints":
+        self = .imperialpints
+      case "imperialQuarts":
+        self = .imperialquarts
+      case "imperialGallons":
+        self = .imperialgallons
+      case "metricCups":
+        self = .metriccups
       case "joules":
         self = .joules
       case "calories":
@@ -101,12 +219,30 @@ public extension AnyUnit {
         self = .kilocalories
       case "kilowattHours":
         self = .kilowatthours
+      case "kilojoules":
+        self = .kilojoules
       case "watts":
         self = .watts
       case "kilowatts":
         self = .kilowatts
       case "horsepower":
         self = .horsepower
+      case "terawatts":
+        self = .terawatts
+      case "gigawatts":
+        self = .gigawatts
+      case "megawatts":
+        self = .megawatts
+      case "milliwatts":
+        self = .milliwatts
+      case "microwatts":
+        self = .microwatts
+      case "nanowatts":
+        self = .nanowatts
+      case "picowatts":
+        self = .picowatts
+      case "femtowatts":
+        self = .femtowatts
       case "hertz":
         self = .hertz
       case "kilohertz":
@@ -115,10 +251,26 @@ public extension AnyUnit {
         self = .megahertz
       case "gigahertz":
         self = .gigahertz
+      case "terahertz":
+        self = .terahertz
+      case "millihertz":
+        self = .millihertz
+      case "microhertz":
+        self = .microhertz
+      case "nanohertz":
+        self = .nanohertz
       case "degrees":
         self = .degrees
       case "radians":
         self = .radians
+      case "arcMinutes":
+        self = .arcminutes
+      case "arcSeconds":
+        self = .arcseconds
+      case "gradians":
+        self = .gradians
+      case "revolutions":
+        self = .revolutions
       case "newtonsPerMetersSquared":
         self = .newtonspermeterssquared
       case "bars":
@@ -129,6 +281,18 @@ public extension AnyUnit {
         self = .atmospheres
       case "poundsPerSquareInch":
         self = .poundspersquareinch
+      case "gigapascals":
+        self = .gigapascals
+      case "megapascals":
+        self = .megapascals
+      case "kilopascals":
+        self = .kilopascals
+      case "hectopascals":
+        self = .hectopascals
+      case "inchesOfMercury":
+        self = .inchesofmercury
+      case "millimetersOfMercury":
+        self = .millimetersofmercury
       default:
         return nil
     }
@@ -157,6 +321,32 @@ public extension AnyUnit {
         return "inches"
       case .nauticalmiles:
         return "nauticalMiles"
+      case .micrometers:
+        return "micrometers"
+      case .nanometers:
+        return "nanometers"
+      case .picometers:
+        return "picometers"
+      case .megameters:
+        return "megameters"
+      case .hectometers:
+        return "hectometers"
+      case .decameters:
+        return "decameters"
+      case .decimeters:
+        return "decimeters"
+      case .scandinavianmiles:
+        return "scandinavianMiles"
+      case .lightyears:
+        return "lightyears"
+      case .fathoms:
+        return "fathoms"
+      case .furlongs:
+        return "furlongs"
+      case .astronomicalunits:
+        return "astronomicalUnits"
+      case .parsecs:
+        return "parsecs"
       case .kilograms:
         return "kilograms"
       case .grams:
@@ -171,12 +361,38 @@ public extension AnyUnit {
         return "stones"
       case .metrictons:
         return "metricTons"
+      case .decigrams:
+        return "decigrams"
+      case .centigrams:
+        return "centigrams"
+      case .micrograms:
+        return "micrograms"
+      case .nanograms:
+        return "nanograms"
+      case .picograms:
+        return "picograms"
+      case .shorttons:
+        return "shortTons"
+      case .carats:
+        return "carats"
+      case .ouncestroy:
+        return "ouncesTroy"
+      case .slugs:
+        return "slugs"
       case .seconds:
         return "seconds"
       case .minutes:
         return "minutes"
       case .hours:
         return "hours"
+      case .milliseconds:
+        return "milliseconds"
+      case .microseconds:
+        return "microseconds"
+      case .nanoseconds:
+        return "nanoseconds"
+      case .picoseconds:
+        return "picoseconds"
       case .meterspersecond:
         return "metersPerSecond"
       case .kilometersperhour:
@@ -203,6 +419,22 @@ public extension AnyUnit {
         return "hectares"
       case .acres:
         return "acres"
+      case .squaremegameters:
+        return "squareMegameters"
+      case .squarecentimeters:
+        return "squareCentimeters"
+      case .squaremillimeters:
+        return "squareMillimeters"
+      case .squaremicrometers:
+        return "squareMicrometers"
+      case .squarenanometers:
+        return "squareNanometers"
+      case .squareinches:
+        return "squareInches"
+      case .squareyards:
+        return "squareYards"
+      case .ares:
+        return "ares"
       case .liters:
         return "liters"
       case .milliliters:
@@ -215,6 +447,56 @@ public extension AnyUnit {
         return "fluidOunces"
       case .cubicmeters:
         return "cubicMeters"
+      case .megaliters:
+        return "megaliters"
+      case .kiloliters:
+        return "kiloliters"
+      case .deciliters:
+        return "deciliters"
+      case .centiliters:
+        return "centiliters"
+      case .cubickilometers:
+        return "cubicKilometers"
+      case .cubicdecimeters:
+        return "cubicDecimeters"
+      case .cubiccentimeters:
+        return "cubicCentimeters"
+      case .cubicmillimeters:
+        return "cubicMillimeters"
+      case .cubicinches:
+        return "cubicInches"
+      case .cubicfeet:
+        return "cubicFeet"
+      case .cubicyards:
+        return "cubicYards"
+      case .cubicmiles:
+        return "cubicMiles"
+      case .acrefeet:
+        return "acreFeet"
+      case .bushels:
+        return "bushels"
+      case .teaspoons:
+        return "teaspoons"
+      case .tablespoons:
+        return "tablespoons"
+      case .pints:
+        return "pints"
+      case .quarts:
+        return "quarts"
+      case .imperialteaspoons:
+        return "imperialTeaspoons"
+      case .imperialtablespoons:
+        return "imperialTablespoons"
+      case .imperialfluidounces:
+        return "imperialFluidOunces"
+      case .imperialpints:
+        return "imperialPints"
+      case .imperialquarts:
+        return "imperialQuarts"
+      case .imperialgallons:
+        return "imperialGallons"
+      case .metriccups:
+        return "metricCups"
       case .joules:
         return "joules"
       case .calories:
@@ -223,12 +505,30 @@ public extension AnyUnit {
         return "kilocalories"
       case .kilowatthours:
         return "kilowattHours"
+      case .kilojoules:
+        return "kilojoules"
       case .watts:
         return "watts"
       case .kilowatts:
         return "kilowatts"
       case .horsepower:
         return "horsepower"
+      case .terawatts:
+        return "terawatts"
+      case .gigawatts:
+        return "gigawatts"
+      case .megawatts:
+        return "megawatts"
+      case .milliwatts:
+        return "milliwatts"
+      case .microwatts:
+        return "microwatts"
+      case .nanowatts:
+        return "nanowatts"
+      case .picowatts:
+        return "picowatts"
+      case .femtowatts:
+        return "femtowatts"
       case .hertz:
         return "hertz"
       case .kilohertz:
@@ -237,10 +537,26 @@ public extension AnyUnit {
         return "megahertz"
       case .gigahertz:
         return "gigahertz"
+      case .terahertz:
+        return "terahertz"
+      case .millihertz:
+        return "millihertz"
+      case .microhertz:
+        return "microhertz"
+      case .nanohertz:
+        return "nanohertz"
       case .degrees:
         return "degrees"
       case .radians:
         return "radians"
+      case .arcminutes:
+        return "arcMinutes"
+      case .arcseconds:
+        return "arcSeconds"
+      case .gradians:
+        return "gradians"
+      case .revolutions:
+        return "revolutions"
       case .newtonspermeterssquared:
         return "newtonsPerMetersSquared"
       case .bars:
@@ -251,6 +567,18 @@ public extension AnyUnit {
         return "atmospheres"
       case .poundspersquareinch:
         return "poundsPerSquareInch"
+      case .gigapascals:
+        return "gigapascals"
+      case .megapascals:
+        return "megapascals"
+      case .kilopascals:
+        return "kilopascals"
+      case .hectopascals:
+        return "hectopascals"
+      case .inchesofmercury:
+        return "inchesOfMercury"
+      case .millimetersofmercury:
+        return "millimetersOfMercury"
     }
   }
 }
