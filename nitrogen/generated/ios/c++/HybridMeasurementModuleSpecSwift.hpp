@@ -12,10 +12,10 @@
 // Forward declaration of `HybridMeasurementModuleSpec_cxx` to properly resolve imports.
 namespace NitroMeasurements { class HybridMeasurementModuleSpec_cxx; }
 
-// Forward declaration of `LengthUnit` to properly resolve imports.
-namespace margelo::nitro::nitromeasurements { enum class LengthUnit; }
+// Forward declaration of `AnyUnit` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { enum class AnyUnit; }
 
-#include "LengthUnit.hpp"
+#include "AnyUnit.hpp"
 
 #include "NitroMeasurements-Swift-Cxx-Umbrella.hpp"
 
@@ -67,7 +67,7 @@ namespace margelo::nitro::nitromeasurements {
 
   public:
     // Methods
-    inline double convert(double value, LengthUnit from, LengthUnit to) override {
+    inline double convert(double value, AnyUnit from, AnyUnit to) override {
       auto __result = _swiftPart.convert(std::forward<decltype(value)>(value), static_cast<int>(from), static_cast<int>(to));
       if (__result.hasError()) [[unlikely]] {
         std::rethrow_exception(__result.error());

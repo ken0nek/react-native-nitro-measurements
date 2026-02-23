@@ -1,8 +1,39 @@
 import { NitroModules } from 'react-native-nitro-modules'
 import type { MeasurementModule } from './specs/Measurement.nitro'
-import type { LengthUnit, AnyUnit } from './specs/Units.nitro'
+import type {
+  LengthUnit,
+  MassUnit,
+  DurationUnit,
+  SpeedUnit,
+  TemperatureUnit,
+  AreaUnit,
+  VolumeUnit,
+  EnergyUnit,
+  PowerUnit,
+  FrequencyUnit,
+  AngleUnit,
+  PressureUnit,
+  AnyUnit,
+  UnitCategory,
+} from './specs/Units.nitro'
 
-export type { LengthUnit, AnyUnit, MeasurementModule }
+export type {
+  LengthUnit,
+  MassUnit,
+  DurationUnit,
+  SpeedUnit,
+  TemperatureUnit,
+  AreaUnit,
+  VolumeUnit,
+  EnergyUnit,
+  PowerUnit,
+  FrequencyUnit,
+  AngleUnit,
+  PressureUnit,
+  AnyUnit,
+  UnitCategory,
+  MeasurementModule,
+}
 
 const _module =
   NitroModules.createHybridObject<MeasurementModule>('MeasurementModule')

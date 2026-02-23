@@ -13,7 +13,7 @@ public protocol HybridMeasurementModuleSpec_protocol: HybridObject {
   
 
   // Methods
-  func convert(value: Double, from: LengthUnit, to: LengthUnit) throws -> Double
+  func convert(value: Double, from: AnyUnit, to: AnyUnit) throws -> Double
 }
 
 public extension HybridMeasurementModuleSpec_protocol {

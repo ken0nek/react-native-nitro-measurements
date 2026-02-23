@@ -8,14 +8,14 @@
 #pragma once
 
 // Forward declarations of C++ defined types
+// Forward declaration of `AnyUnit` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { enum class AnyUnit; }
 // Forward declaration of `HybridMeasurementModuleSpec` to properly resolve imports.
 namespace margelo::nitro::nitromeasurements { class HybridMeasurementModuleSpec; }
-// Forward declaration of `LengthUnit` to properly resolve imports.
-namespace margelo::nitro::nitromeasurements { enum class LengthUnit; }
 
 // Include C++ defined types
+#include "AnyUnit.hpp"
 #include "HybridMeasurementModuleSpec.hpp"
-#include "LengthUnit.hpp"
 #include <NitroModules/Result.hpp>
 #include <exception>
 #include <memory>

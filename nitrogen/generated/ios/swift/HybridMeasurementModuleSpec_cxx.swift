@@ -127,7 +127,7 @@ open class HybridMeasurementModuleSpec_cxx {
   @inline(__always)
   public final func convert(value: Double, from: Int32, to: Int32) -> bridge.Result_double_ {
     do {
-      let __result = try self.__implementation.convert(value: value, from: margelo.nitro.nitromeasurements.LengthUnit(rawValue: from)!, to: margelo.nitro.nitromeasurements.LengthUnit(rawValue: to)!)
+      let __result = try self.__implementation.convert(value: value, from: margelo.nitro.nitromeasurements.AnyUnit(rawValue: from)!, to: margelo.nitro.nitromeasurements.AnyUnit(rawValue: to)!)
       let __resultCpp = __result
       return bridge.create_Result_double_(__resultCpp)
     } catch (let __error) {

@@ -13,10 +13,10 @@
 #error NitroModules cannot be found! Are you sure you installed NitroModules properly?
 #endif
 
-// Forward declaration of `LengthUnit` to properly resolve imports.
-namespace margelo::nitro::nitromeasurements { enum class LengthUnit; }
+// Forward declaration of `AnyUnit` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { enum class AnyUnit; }
 
-#include "LengthUnit.hpp"
+#include "AnyUnit.hpp"
 
 namespace margelo::nitro::nitromeasurements {
 
@@ -49,7 +49,7 @@ namespace margelo::nitro::nitromeasurements {
 
     public:
       // Methods
-      virtual double convert(double value, LengthUnit from, LengthUnit to) = 0;
+      virtual double convert(double value, AnyUnit from, AnyUnit to) = 0;
 
     protected:
       // Hybrid Setup
