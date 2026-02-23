@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import { convert, convertFull, getSymbol, getUnitsForCategory, getCategories } from 'react-native-nitro-measurements';
+import { convert, convertFull, getSymbol, getUnitsForCategory, getCategories, add, subtract } from 'react-native-nitro-measurements';
 
 const results = [
   // Length
@@ -44,6 +44,18 @@ const nmiSymbol = getSymbol('nauticalMiles');
 const lengthUnits = getUnitsForCategory('length');
 const allCategories = getCategories();
 
+// M4: Same-category arithmetic
+const addResult = add(1, 'kilometers', 500, 'meters', 'meters');
+const subtractResult = subtract(1, 'miles', 1, 'kilometers', 'meters');
+const tempAddResult = add(0, 'celsius', 100, 'celsius', 'fahrenheit');
+
+let crossCategoryAddError = '';
+try {
+  add(1, 'miles', 1, 'celsius', 'meters');
+} catch (e: any) {
+  crossCategoryAddError = e.message;
+}
+
 export default function App() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -69,6 +81,20 @@ export default function App() {
       </Text>
       <Text style={styles.row}>
         categories ({allCategories.length}): {allCategories.join(', ')}
+      </Text>
+
+      <Text style={styles.subtitle}>M4: Arithmetic</Text>
+      <Text style={styles.row}>
+        1 km + 500 m → m: {addResult}
+      </Text>
+      <Text style={styles.row}>
+        1 mi − 1 km → m: {subtractResult}
+      </Text>
+      <Text style={styles.row}>
+        0°C + 100°C → °F: {tempAddResult}
+      </Text>
+      <Text style={[styles.row, styles.error]}>
+        add(miles, celsius): {crossCategoryAddError}
       </Text>
 
       <StatusBar style="auto" />

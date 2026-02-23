@@ -171,4 +171,28 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
   func getCategories() throws -> [UnitCategory] {
     return Self.allCategories
   }
+
+  func add(valueA: Double, unitA: AnyUnit, valueB: Double, unitB: AnyUnit, resultUnit: AnyUnit) throws -> Double {
+    let catA = categoryFor(unitA)
+    let catB = categoryFor(unitB)
+    let catResult = categoryFor(resultUnit)
+    guard catA == catB, catB == catResult else {
+      throw MeasurementError.categoryMismatch(from: catA.stringValue, to: catB.stringValue)
+    }
+    let a = try convert(value: valueA, from: unitA, to: resultUnit)
+    let b = try convert(value: valueB, from: unitB, to: resultUnit)
+    return a + b
+  }
+
+  func subtract(valueA: Double, unitA: AnyUnit, valueB: Double, unitB: AnyUnit, resultUnit: AnyUnit) throws -> Double {
+    let catA = categoryFor(unitA)
+    let catB = categoryFor(unitB)
+    let catResult = categoryFor(resultUnit)
+    guard catA == catB, catB == catResult else {
+      throw MeasurementError.categoryMismatch(from: catA.stringValue, to: catB.stringValue)
+    }
+    let a = try convert(value: valueA, from: unitA, to: resultUnit)
+    let b = try convert(value: valueB, from: unitB, to: resultUnit)
+    return a - b
+  }
 }

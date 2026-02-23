@@ -67,4 +67,24 @@ export function getCategories(): UnitCategory[] {
   return _module.getCategories()
 }
 
+export function add(
+  valueA: number,
+  unitA: AnyUnit,
+  valueB: number,
+  unitB: AnyUnit,
+  resultUnit: AnyUnit
+): number {
+  return _module.add(valueA, unitA, valueB, unitB, resultUnit)
+}
+
+export function subtract(
+  valueA: number,
+  unitA: AnyUnit,
+  valueB: number,
+  unitB: AnyUnit,
+  resultUnit: AnyUnit
+): number {
+  return _module.subtract(valueA, unitA, valueB, unitB, resultUnit)
+}
+
 export { _module as MeasurementModule }

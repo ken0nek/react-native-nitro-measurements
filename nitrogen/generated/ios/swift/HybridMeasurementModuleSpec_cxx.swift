@@ -195,4 +195,28 @@ open class HybridMeasurementModuleSpec_cxx {
       return bridge.create_Result_std__vector_UnitCategory__(__exceptionPtr)
     }
   }
+  
+  @inline(__always)
+  public final func add(valueA: Double, unitA: Int32, valueB: Double, unitB: Int32, resultUnit: Int32) -> bridge.Result_double_ {
+    do {
+      let __result = try self.__implementation.add(valueA: valueA, unitA: margelo.nitro.nitromeasurements.AnyUnit(rawValue: unitA)!, valueB: valueB, unitB: margelo.nitro.nitromeasurements.AnyUnit(rawValue: unitB)!, resultUnit: margelo.nitro.nitromeasurements.AnyUnit(rawValue: resultUnit)!)
+      let __resultCpp = __result
+      return bridge.create_Result_double_(__resultCpp)
+    } catch (let __error) {
+      let __exceptionPtr = __error.toCpp()
+      return bridge.create_Result_double_(__exceptionPtr)
+    }
+  }
+  
+  @inline(__always)
+  public final func subtract(valueA: Double, unitA: Int32, valueB: Double, unitB: Int32, resultUnit: Int32) -> bridge.Result_double_ {
+    do {
+      let __result = try self.__implementation.subtract(valueA: valueA, unitA: margelo.nitro.nitromeasurements.AnyUnit(rawValue: unitA)!, valueB: valueB, unitB: margelo.nitro.nitromeasurements.AnyUnit(rawValue: unitB)!, resultUnit: margelo.nitro.nitromeasurements.AnyUnit(rawValue: resultUnit)!)
+      let __resultCpp = __result
+      return bridge.create_Result_double_(__resultCpp)
+    } catch (let __error) {
+      let __exceptionPtr = __error.toCpp()
+      return bridge.create_Result_double_(__exceptionPtr)
+    }
+  }
 }

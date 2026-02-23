@@ -18,6 +18,8 @@ public protocol HybridMeasurementModuleSpec_protocol: HybridObject {
   func getSymbol(unit: AnyUnit) throws -> String
   func getUnitsForCategory(category: UnitCategory) throws -> [AnyUnit]
   func getCategories() throws -> [UnitCategory]
+  func add(valueA: Double, unitA: AnyUnit, valueB: Double, unitB: AnyUnit, resultUnit: AnyUnit) throws -> Double
+  func subtract(valueA: Double, unitA: AnyUnit, valueB: Double, unitB: AnyUnit, resultUnit: AnyUnit) throws -> Double
 }
 
 public extension HybridMeasurementModuleSpec_protocol {

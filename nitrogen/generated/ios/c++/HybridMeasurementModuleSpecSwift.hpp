@@ -115,6 +115,22 @@ namespace margelo::nitro::nitromeasurements {
       auto __value = std::move(__result.value());
       return __value;
     }
+    inline double add(double valueA, AnyUnit unitA, double valueB, AnyUnit unitB, AnyUnit resultUnit) override {
+      auto __result = _swiftPart.add(std::forward<decltype(valueA)>(valueA), static_cast<int>(unitA), std::forward<decltype(valueB)>(valueB), static_cast<int>(unitB), static_cast<int>(resultUnit));
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
+      auto __value = std::move(__result.value());
+      return __value;
+    }
+    inline double subtract(double valueA, AnyUnit unitA, double valueB, AnyUnit unitB, AnyUnit resultUnit) override {
+      auto __result = _swiftPart.subtract(std::forward<decltype(valueA)>(valueA), static_cast<int>(unitA), std::forward<decltype(valueB)>(valueB), static_cast<int>(unitB), static_cast<int>(resultUnit));
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
+      auto __value = std::move(__result.value());
+      return __value;
+    }
 
   private:
     NitroMeasurements::HybridMeasurementModuleSpec_cxx _swiftPart;

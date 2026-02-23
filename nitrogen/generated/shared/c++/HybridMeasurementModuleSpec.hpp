@@ -62,6 +62,8 @@ namespace margelo::nitro::nitromeasurements {
       virtual std::string getSymbol(AnyUnit unit) = 0;
       virtual std::vector<AnyUnit> getUnitsForCategory(UnitCategory category) = 0;
       virtual std::vector<UnitCategory> getCategories() = 0;
+      virtual double add(double valueA, AnyUnit unitA, double valueB, AnyUnit unitB, AnyUnit resultUnit) = 0;
+      virtual double subtract(double valueA, AnyUnit unitA, double valueB, AnyUnit unitB, AnyUnit resultUnit) = 0;
 
     protected:
       // Hybrid Setup

@@ -15,4 +15,6 @@ export interface MeasurementModule
   getSymbol(unit: AnyUnit): string
   getUnitsForCategory(category: UnitCategory): AnyUnit[]
   getCategories(): UnitCategory[]
+  add(valueA: number, unitA: AnyUnit, valueB: number, unitB: AnyUnit, resultUnit: AnyUnit): number
+  subtract(valueA: number, unitA: AnyUnit, valueB: number, unitB: AnyUnit, resultUnit: AnyUnit): number
 }
