@@ -12,7 +12,11 @@
     ],
     "androidCxxLibName": "NitroMeasurements"
   },
-  "autolinking": {},
+  "autolinking": {
+    "MeasurementModule": {
+      "swift": "HybridMeasurementModule"
+    }
+  },
   "ignorePaths": [
     "**/node_modules"
   ]
