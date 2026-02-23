@@ -19,12 +19,16 @@ namespace margelo::nitro::nitromeasurements { enum class AnyUnit; }
 namespace margelo::nitro::nitromeasurements { struct MeasurementResult; }
 // Forward declaration of `UnitCategory` to properly resolve imports.
 namespace margelo::nitro::nitromeasurements { enum class UnitCategory; }
+// Forward declaration of `DimensionalResult` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { struct DimensionalResult; }
 
 #include "AnyUnit.hpp"
 #include "MeasurementResult.hpp"
 #include <string>
 #include <vector>
 #include "UnitCategory.hpp"
+#include "DimensionalResult.hpp"
+#include <optional>
 
 namespace margelo::nitro::nitromeasurements {
 
@@ -64,6 +68,9 @@ namespace margelo::nitro::nitromeasurements {
       virtual std::vector<UnitCategory> getCategories() = 0;
       virtual double add(double valueA, AnyUnit unitA, double valueB, AnyUnit unitB, AnyUnit resultUnit) = 0;
       virtual double subtract(double valueA, AnyUnit unitA, double valueB, AnyUnit unitB, AnyUnit resultUnit) = 0;
+      virtual DimensionalResult multiply(double valueA, AnyUnit unitA, double valueB, AnyUnit unitB) = 0;
+      virtual DimensionalResult divide(double valueA, AnyUnit unitA, double valueB, AnyUnit unitB) = 0;
+      virtual std::optional<MeasurementResult> resolveDimension(double value, const std::vector<double>& dimensions, AnyUnit targetUnit) = 0;
 
     protected:
       // Hybrid Setup

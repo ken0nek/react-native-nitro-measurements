@@ -10,6 +10,8 @@
 // Forward declarations of C++ defined types
 // Forward declaration of `AnyUnit` to properly resolve imports.
 namespace margelo::nitro::nitromeasurements { enum class AnyUnit; }
+// Forward declaration of `DimensionalResult` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { struct DimensionalResult; }
 // Forward declaration of `HybridMeasurementModuleSpec` to properly resolve imports.
 namespace margelo::nitro::nitromeasurements { class HybridMeasurementModuleSpec; }
 // Forward declaration of `MeasurementResult` to properly resolve imports.
@@ -19,12 +21,14 @@ namespace margelo::nitro::nitromeasurements { enum class UnitCategory; }
 
 // Include C++ defined types
 #include "AnyUnit.hpp"
+#include "DimensionalResult.hpp"
 #include "HybridMeasurementModuleSpec.hpp"
 #include "MeasurementResult.hpp"
 #include "UnitCategory.hpp"
 #include <NitroModules/Result.hpp>
 #include <exception>
 #include <memory>
+#include <optional>
 #include <string>
 #include <vector>
 

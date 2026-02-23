@@ -3,11 +3,14 @@ import NitroModules
 
 enum MeasurementError: LocalizedError {
   case categoryMismatch(from: String, to: String)
+  case divisionByZero
 
   var errorDescription: String? {
     switch self {
     case .categoryMismatch(let from, let to):
       return "Cannot convert between different categories: \(from) and \(to)"
+    case .divisionByZero:
+      return "Division by zero"
     }
   }
 }
@@ -141,6 +144,53 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
     .volume, .energy, .power, .frequency, .angle, .pressure,
   ]
 
+  // SI 7-vector: [L, M, T, I, Θ, N, J]
+  private static let categoryDimensions: [UnitCategory: [Double]] = [
+    .length:      [1, 0, 0, 0, 0, 0, 0],
+    .mass:        [0, 1, 0, 0, 0, 0, 0],
+    .duration:    [0, 0, 1, 0, 0, 0, 0],
+    .speed:       [1, 0, -1, 0, 0, 0, 0],
+    .temperature: [0, 0, 0, 0, 1, 0, 0],
+    .area:        [2, 0, 0, 0, 0, 0, 0],
+    .volume:      [3, 0, 0, 0, 0, 0, 0],
+    .energy:      [2, 1, -2, 0, 0, 0, 0],
+    .power:       [2, 1, -3, 0, 0, 0, 0],
+    .frequency:   [0, 0, -1, 0, 0, 0, 0],
+    .angle:       [0, 0, 0, 0, 0, 0, 0],
+    .pressure:    [-1, 1, -2, 0, 0, 0, 0],
+  ]
+
+  private static let dimensionLabels = ["L", "M", "T", "I", "Θ", "N", "J"]
+
+  private func convertToBase(value: Double, unit: AnyUnit) -> Double {
+    let dim = resolveUnit(unit)
+    return Measurement(value: value, unit: dim).converted(to: type(of: dim).baseUnit()).value
+  }
+
+  private func dimensionLabel(_ dims: [Double]) -> String {
+    var numerator: [String] = []
+    var denominator: [String] = []
+    for (i, exp) in dims.enumerated() {
+      if exp == 1 {
+        numerator.append(Self.dimensionLabels[i])
+      } else if exp > 1 {
+        numerator.append("\(Self.dimensionLabels[i])^\(Int(exp))")
+      } else if exp == -1 {
+        denominator.append(Self.dimensionLabels[i])
+      } else if exp < -1 {
+        denominator.append("\(Self.dimensionLabels[i])^\(Int(-exp))")
+      }
+    }
+    if numerator.isEmpty && denominator.isEmpty {
+      return "dimensionless"
+    }
+    let num = numerator.isEmpty ? "1" : numerator.joined(separator: "·")
+    if denominator.isEmpty {
+      return num
+    }
+    return "\(num)/\(denominator.joined(separator: "·"))"
+  }
+
   func convert(value: Double, from fromUnit: AnyUnit, to toUnit: AnyUnit) throws -> Double {
     let fromCategory = categoryFor(fromUnit)
     let toCategory = categoryFor(toUnit)
@@ -194,5 +244,53 @@ class HybridMeasurementModule: HybridMeasurementModuleSpec {
     let a = try convert(value: valueA, from: unitA, to: resultUnit)
     let b = try convert(value: valueB, from: unitB, to: resultUnit)
     return a - b
+  }
+
+  func multiply(valueA: Double, unitA: AnyUnit, valueB: Double, unitB: AnyUnit) throws -> DimensionalResult {
+    let baseA = convertToBase(value: valueA, unit: unitA)
+    let baseB = convertToBase(value: valueB, unit: unitB)
+    let catA = categoryFor(unitA)
+    let catB = categoryFor(unitB)
+    let dimsA = Self.categoryDimensions[catA]!
+    let dimsB = Self.categoryDimensions[catB]!
+    let dims = zip(dimsA, dimsB).map { $0 + $1 }
+    return DimensionalResult(value: baseA * baseB, dimensions: dims, dimensionLabel: dimensionLabel(dims))
+  }
+
+  func divide(valueA: Double, unitA: AnyUnit, valueB: Double, unitB: AnyUnit) throws -> DimensionalResult {
+    let baseB = convertToBase(value: valueB, unit: unitB)
+    guard baseB != 0 else {
+      throw MeasurementError.divisionByZero
+    }
+    let baseA = convertToBase(value: valueA, unit: unitA)
+    let catA = categoryFor(unitA)
+    let catB = categoryFor(unitB)
+    let dimsA = Self.categoryDimensions[catA]!
+    let dimsB = Self.categoryDimensions[catB]!
+    let dims = zip(dimsA, dimsB).map { $0 - $1 }
+    return DimensionalResult(value: baseA / baseB, dimensions: dims, dimensionLabel: dimensionLabel(dims))
+  }
+
+  func resolveDimension(value: Double, dimensions: [Double], targetUnit: AnyUnit) throws -> MeasurementResult? {
+    let targetCat = categoryFor(targetUnit)
+    guard let targetDims = Self.categoryDimensions[targetCat] else {
+      return nil
+    }
+    // Check if dimensions match within tolerance
+    guard dimensions.count == targetDims.count else {
+      return nil
+    }
+    for i in 0..<dimensions.count {
+      let diff: Double = Swift.abs(dimensions[i] - targetDims[i])
+      if diff > 1e-10 {
+        return nil
+      }
+    }
+    // Value is in SI base units — convert from base to target unit
+    let targetDim = resolveUnit(targetUnit)
+    let baseUnit = type(of: targetDim).baseUnit()
+    let converted = Measurement(value: value, unit: baseUnit).converted(to: targetDim).value
+    let symbol = targetDim.symbol
+    return MeasurementResult(value: converted, unit: targetUnit, category: targetCat, symbol: symbol)
   }
 }

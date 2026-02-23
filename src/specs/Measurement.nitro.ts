@@ -8,6 +8,12 @@ export interface MeasurementResult {
   symbol: string
 }
 
+export interface DimensionalResult {
+  value: number
+  dimensions: number[]
+  dimensionLabel: string
+}
+
 export interface MeasurementModule
   extends HybridObject<{ ios: 'swift' }> {
   convert(value: number, from: AnyUnit, to: AnyUnit): number
@@ -17,4 +23,7 @@ export interface MeasurementModule
   getCategories(): UnitCategory[]
   add(valueA: number, unitA: AnyUnit, valueB: number, unitB: AnyUnit, resultUnit: AnyUnit): number
   subtract(valueA: number, unitA: AnyUnit, valueB: number, unitB: AnyUnit, resultUnit: AnyUnit): number
+  multiply(valueA: number, unitA: AnyUnit, valueB: number, unitB: AnyUnit): DimensionalResult
+  divide(valueA: number, unitA: AnyUnit, valueB: number, unitB: AnyUnit): DimensionalResult
+  resolveDimension(value: number, dimensions: number[], targetUnit: AnyUnit): MeasurementResult | undefined
 }

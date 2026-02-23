@@ -18,12 +18,16 @@ namespace margelo::nitro::nitromeasurements { enum class AnyUnit; }
 namespace margelo::nitro::nitromeasurements { struct MeasurementResult; }
 // Forward declaration of `UnitCategory` to properly resolve imports.
 namespace margelo::nitro::nitromeasurements { enum class UnitCategory; }
+// Forward declaration of `DimensionalResult` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { struct DimensionalResult; }
 
 #include "AnyUnit.hpp"
 #include "MeasurementResult.hpp"
 #include "UnitCategory.hpp"
 #include <string>
 #include <vector>
+#include "DimensionalResult.hpp"
+#include <optional>
 
 #include "NitroMeasurements-Swift-Cxx-Umbrella.hpp"
 
@@ -125,6 +129,30 @@ namespace margelo::nitro::nitromeasurements {
     }
     inline double subtract(double valueA, AnyUnit unitA, double valueB, AnyUnit unitB, AnyUnit resultUnit) override {
       auto __result = _swiftPart.subtract(std::forward<decltype(valueA)>(valueA), static_cast<int>(unitA), std::forward<decltype(valueB)>(valueB), static_cast<int>(unitB), static_cast<int>(resultUnit));
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
+      auto __value = std::move(__result.value());
+      return __value;
+    }
+    inline DimensionalResult multiply(double valueA, AnyUnit unitA, double valueB, AnyUnit unitB) override {
+      auto __result = _swiftPart.multiply(std::forward<decltype(valueA)>(valueA), static_cast<int>(unitA), std::forward<decltype(valueB)>(valueB), static_cast<int>(unitB));
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
+      auto __value = std::move(__result.value());
+      return __value;
+    }
+    inline DimensionalResult divide(double valueA, AnyUnit unitA, double valueB, AnyUnit unitB) override {
+      auto __result = _swiftPart.divide(std::forward<decltype(valueA)>(valueA), static_cast<int>(unitA), std::forward<decltype(valueB)>(valueB), static_cast<int>(unitB));
+      if (__result.hasError()) [[unlikely]] {
+        std::rethrow_exception(__result.error());
+      }
+      auto __value = std::move(__result.value());
+      return __value;
+    }
+    inline std::optional<MeasurementResult> resolveDimension(double value, const std::vector<double>& dimensions, AnyUnit targetUnit) override {
+      auto __result = _swiftPart.resolveDimension(std::forward<decltype(value)>(value), dimensions, static_cast<int>(targetUnit));
       if (__result.hasError()) [[unlikely]] {
         std::rethrow_exception(__result.error());
       }

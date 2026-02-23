@@ -219,4 +219,46 @@ open class HybridMeasurementModuleSpec_cxx {
       return bridge.create_Result_double_(__exceptionPtr)
     }
   }
+  
+  @inline(__always)
+  public final func multiply(valueA: Double, unitA: Int32, valueB: Double, unitB: Int32) -> bridge.Result_DimensionalResult_ {
+    do {
+      let __result = try self.__implementation.multiply(valueA: valueA, unitA: margelo.nitro.nitromeasurements.AnyUnit(rawValue: unitA)!, valueB: valueB, unitB: margelo.nitro.nitromeasurements.AnyUnit(rawValue: unitB)!)
+      let __resultCpp = __result
+      return bridge.create_Result_DimensionalResult_(__resultCpp)
+    } catch (let __error) {
+      let __exceptionPtr = __error.toCpp()
+      return bridge.create_Result_DimensionalResult_(__exceptionPtr)
+    }
+  }
+  
+  @inline(__always)
+  public final func divide(valueA: Double, unitA: Int32, valueB: Double, unitB: Int32) -> bridge.Result_DimensionalResult_ {
+    do {
+      let __result = try self.__implementation.divide(valueA: valueA, unitA: margelo.nitro.nitromeasurements.AnyUnit(rawValue: unitA)!, valueB: valueB, unitB: margelo.nitro.nitromeasurements.AnyUnit(rawValue: unitB)!)
+      let __resultCpp = __result
+      return bridge.create_Result_DimensionalResult_(__resultCpp)
+    } catch (let __error) {
+      let __exceptionPtr = __error.toCpp()
+      return bridge.create_Result_DimensionalResult_(__exceptionPtr)
+    }
+  }
+  
+  @inline(__always)
+  public final func resolveDimension(value: Double, dimensions: bridge.std__vector_double_, targetUnit: Int32) -> bridge.Result_std__optional_MeasurementResult__ {
+    do {
+      let __result = try self.__implementation.resolveDimension(value: value, dimensions: dimensions.map({ __item in __item }), targetUnit: margelo.nitro.nitromeasurements.AnyUnit(rawValue: targetUnit)!)
+      let __resultCpp = { () -> bridge.std__optional_MeasurementResult_ in
+        if let __unwrappedValue = __result {
+          return bridge.create_std__optional_MeasurementResult_(__unwrappedValue)
+        } else {
+          return .init()
+        }
+      }()
+      return bridge.create_Result_std__optional_MeasurementResult__(__resultCpp)
+    } catch (let __error) {
+      let __exceptionPtr = __error.toCpp()
+      return bridge.create_Result_std__optional_MeasurementResult__(__exceptionPtr)
+    }
+  }
 }

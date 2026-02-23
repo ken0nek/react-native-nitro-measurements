@@ -1,5 +1,5 @@
 import { NitroModules } from 'react-native-nitro-modules'
-import type { MeasurementModule, MeasurementResult } from './specs/Measurement.nitro'
+import type { MeasurementModule, MeasurementResult, DimensionalResult } from './specs/Measurement.nitro'
 import type {
   LengthUnit,
   MassUnit,
@@ -34,6 +34,7 @@ export type {
   UnitCategory,
   MeasurementModule,
   MeasurementResult,
+  DimensionalResult,
 }
 
 const _module =
@@ -85,6 +86,32 @@ export function subtract(
   resultUnit: AnyUnit
 ): number {
   return _module.subtract(valueA, unitA, valueB, unitB, resultUnit)
+}
+
+export function multiply(
+  valueA: number,
+  unitA: AnyUnit,
+  valueB: number,
+  unitB: AnyUnit
+): DimensionalResult {
+  return _module.multiply(valueA, unitA, valueB, unitB)
+}
+
+export function divide(
+  valueA: number,
+  unitA: AnyUnit,
+  valueB: number,
+  unitB: AnyUnit
+): DimensionalResult {
+  return _module.divide(valueA, unitA, valueB, unitB)
+}
+
+export function resolveDimension(
+  value: number,
+  dimensions: number[],
+  targetUnit: AnyUnit
+): MeasurementResult | undefined {
+  return _module.resolveDimension(value, dimensions, targetUnit)
 }
 
 export { _module as MeasurementModule }

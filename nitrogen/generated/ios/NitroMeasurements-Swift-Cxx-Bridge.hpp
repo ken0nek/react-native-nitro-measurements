@@ -10,6 +10,8 @@
 // Forward declarations of C++ defined types
 // Forward declaration of `AnyUnit` to properly resolve imports.
 namespace margelo::nitro::nitromeasurements { enum class AnyUnit; }
+// Forward declaration of `DimensionalResult` to properly resolve imports.
+namespace margelo::nitro::nitromeasurements { struct DimensionalResult; }
 // Forward declaration of `HybridMeasurementModuleSpec` to properly resolve imports.
 namespace margelo::nitro::nitromeasurements { class HybridMeasurementModuleSpec; }
 // Forward declaration of `MeasurementResult` to properly resolve imports.
@@ -23,12 +25,14 @@ namespace NitroMeasurements { class HybridMeasurementModuleSpec_cxx; }
 
 // Include C++ defined types
 #include "AnyUnit.hpp"
+#include "DimensionalResult.hpp"
 #include "HybridMeasurementModuleSpec.hpp"
 #include "MeasurementResult.hpp"
 #include "UnitCategory.hpp"
 #include <NitroModules/Result.hpp>
 #include <exception>
 #include <memory>
+#include <optional>
 #include <string>
 #include <vector>
 
@@ -58,6 +62,32 @@ namespace margelo::nitro::nitromeasurements::bridge::swift {
     std::vector<UnitCategory> vector;
     vector.reserve(size);
     return vector;
+  }
+  
+  // pragma MARK: std::vector<double>
+  /**
+   * Specialized version of `std::vector<double>`.
+   */
+  using std__vector_double_ = std::vector<double>;
+  inline std::vector<double> create_std__vector_double_(size_t size) noexcept {
+    std::vector<double> vector;
+    vector.reserve(size);
+    return vector;
+  }
+  
+  // pragma MARK: std::optional<MeasurementResult>
+  /**
+   * Specialized version of `std::optional<MeasurementResult>`.
+   */
+  using std__optional_MeasurementResult_ = std::optional<MeasurementResult>;
+  inline std::optional<MeasurementResult> create_std__optional_MeasurementResult_(const MeasurementResult& value) noexcept {
+    return std::optional<MeasurementResult>(value);
+  }
+  inline bool has_value_std__optional_MeasurementResult_(const std::optional<MeasurementResult>& optional) noexcept {
+    return optional.has_value();
+  }
+  inline MeasurementResult get_std__optional_MeasurementResult_(const std::optional<MeasurementResult>& optional) noexcept {
+    return optional.value();
   }
   
   // pragma MARK: std::shared_ptr<HybridMeasurementModuleSpec>
@@ -115,6 +145,24 @@ namespace margelo::nitro::nitromeasurements::bridge::swift {
   }
   inline Result_std__vector_UnitCategory__ create_Result_std__vector_UnitCategory__(const std::exception_ptr& error) noexcept {
     return Result<std::vector<UnitCategory>>::withError(error);
+  }
+  
+  // pragma MARK: Result<DimensionalResult>
+  using Result_DimensionalResult_ = Result<DimensionalResult>;
+  inline Result_DimensionalResult_ create_Result_DimensionalResult_(const DimensionalResult& value) noexcept {
+    return Result<DimensionalResult>::withValue(value);
+  }
+  inline Result_DimensionalResult_ create_Result_DimensionalResult_(const std::exception_ptr& error) noexcept {
+    return Result<DimensionalResult>::withError(error);
+  }
+  
+  // pragma MARK: Result<std::optional<MeasurementResult>>
+  using Result_std__optional_MeasurementResult__ = Result<std::optional<MeasurementResult>>;
+  inline Result_std__optional_MeasurementResult__ create_Result_std__optional_MeasurementResult__(const std::optional<MeasurementResult>& value) noexcept {
+    return Result<std::optional<MeasurementResult>>::withValue(value);
+  }
+  inline Result_std__optional_MeasurementResult__ create_Result_std__optional_MeasurementResult__(const std::exception_ptr& error) noexcept {
+    return Result<std::optional<MeasurementResult>>::withError(error);
   }
 
 } // namespace margelo::nitro::nitromeasurements::bridge::swift

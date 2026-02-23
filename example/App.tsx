@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
-import { convert, convertFull, getSymbol, getUnitsForCategory, getCategories, add, subtract } from 'react-native-nitro-measurements';
+import { convert, convertFull, getSymbol, getUnitsForCategory, getCategories, add, subtract, multiply, divide, resolveDimension } from 'react-native-nitro-measurements';
 
 const results = [
   // Length
@@ -56,6 +56,19 @@ try {
   crossCategoryAddError = e.message;
 }
 
+// M5: Dimensional analysis
+const multiplyResult = multiply(60, 'kilometersPerHour', 2, 'hours');
+const divideResult = divide(100, 'kilometers', 2, 'hours');
+const resolvedResult = resolveDimension(120000, [1, 0, 0, 0, 0, 0, 0], 'kilometers');
+const mismatchResult = resolveDimension(120000, [1, 0, 0, 0, 0, 0, 0], 'celsius');
+
+let divisionByZeroError = '';
+try {
+  divide(100, 'kilometers', 0, 'hours');
+} catch (e: any) {
+  divisionByZeroError = e.message;
+}
+
 export default function App() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -95,6 +108,23 @@ export default function App() {
       </Text>
       <Text style={[styles.row, styles.error]}>
         add(miles, celsius): {crossCategoryAddError}
+      </Text>
+
+      <Text style={styles.subtitle}>M5: Dimensional Analysis</Text>
+      <Text style={styles.row}>
+        60 km/h × 2 h: {multiplyResult.value} dims={JSON.stringify(multiplyResult.dimensions)} ({multiplyResult.dimensionLabel})
+      </Text>
+      <Text style={styles.row}>
+        100 km ÷ 2 h: {divideResult.value} dims={JSON.stringify(divideResult.dimensions)} ({divideResult.dimensionLabel})
+      </Text>
+      <Text style={styles.row}>
+        resolve 120000 [L] → km: {resolvedResult ? `${resolvedResult.value} ${resolvedResult.symbol}` : 'undefined'}
+      </Text>
+      <Text style={styles.row}>
+        resolve 120000 [L] → °C: {mismatchResult ? `${mismatchResult.value}` : 'undefined (mismatch)'}
+      </Text>
+      <Text style={[styles.row, styles.error]}>
+        divide by zero: {divisionByZeroError}
       </Text>
 
       <StatusBar style="auto" />

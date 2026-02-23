@@ -21,6 +21,9 @@ namespace margelo::nitro::nitromeasurements {
       prototype.registerHybridMethod("getCategories", &HybridMeasurementModuleSpec::getCategories);
       prototype.registerHybridMethod("add", &HybridMeasurementModuleSpec::add);
       prototype.registerHybridMethod("subtract", &HybridMeasurementModuleSpec::subtract);
+      prototype.registerHybridMethod("multiply", &HybridMeasurementModuleSpec::multiply);
+      prototype.registerHybridMethod("divide", &HybridMeasurementModuleSpec::divide);
+      prototype.registerHybridMethod("resolveDimension", &HybridMeasurementModuleSpec::resolveDimension);
     });
   }
 

@@ -20,6 +20,9 @@ public protocol HybridMeasurementModuleSpec_protocol: HybridObject {
   func getCategories() throws -> [UnitCategory]
   func add(valueA: Double, unitA: AnyUnit, valueB: Double, unitB: AnyUnit, resultUnit: AnyUnit) throws -> Double
   func subtract(valueA: Double, unitA: AnyUnit, valueB: Double, unitB: AnyUnit, resultUnit: AnyUnit) throws -> Double
+  func multiply(valueA: Double, unitA: AnyUnit, valueB: Double, unitB: AnyUnit) throws -> DimensionalResult
+  func divide(valueA: Double, unitA: AnyUnit, valueB: Double, unitB: AnyUnit) throws -> DimensionalResult
+  func resolveDimension(value: Double, dimensions: [Double], targetUnit: AnyUnit) throws -> MeasurementResult?
 }
 
 public extension HybridMeasurementModuleSpec_protocol {
