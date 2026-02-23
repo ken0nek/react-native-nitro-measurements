@@ -5,11 +5,11 @@ Type-safe unit conversion and dimensional analysis for React Native, powered by 
 ## Features
 
 - **Compile-time category safety** — TypeScript overloads prevent cross-category conversions (`miles` to `celsius` is a TS error, not a runtime crash)
-- **12 unit categories, 56 units** — length, mass, duration, speed, temperature, area, volume, energy, power, frequency, angle, pressure
+- **12 unit categories, 138 units** — length, mass, duration, speed, temperature, area, volume, energy, power, frequency, angle, pressure
 - **SI dimensional analysis** — `speed * time = distance` with full dimension tracking
 - **Zero JS bundle cost** — all conversion logic runs in native code (Swift Foundation)
 - **Synchronous JSI** — no bridge serialization, no async overhead
-- **Autocomplete** — `as const satisfies` objects provide full IDE support (`Length.` shows all 9 length units)
+- **Autocomplete** — `as const satisfies` objects provide full IDE support (`Length.` shows all 22 length units)
 
 ## Installation
 
@@ -178,20 +178,20 @@ The `as const satisfies` objects (`Length`, `Mass`, `Speed`, etc.) provide full 
 
 ## Unit Categories
 
-| Category | Units |
-|---|---|
-| **Length** | meters, kilometers, centimeters, millimeters, miles, yards, feet, inches, nauticalMiles |
-| **Mass** | kilograms, grams, milligrams, pounds, ounces, stones, metricTons |
-| **Duration** | seconds, minutes, hours |
-| **Speed** | metersPerSecond, kilometersPerHour, milesPerHour, knots |
-| **Temperature** | celsius, fahrenheit, kelvin |
-| **Area** | squareMeters, squareKilometers, squareMiles, squareFeet, hectares, acres |
-| **Volume** | liters, milliliters, gallons, cups, fluidOunces, cubicMeters |
-| **Energy** | joules, calories, kilocalories, kilowattHours |
-| **Power** | watts, kilowatts, horsepower |
-| **Frequency** | hertz, kilohertz, megahertz, gigahertz |
-| **Angle** | degrees, radians |
-| **Pressure** | newtonsPerMetersSquared, bars, millibars, atmospheres, poundsPerSquareInch |
+| Category | # | Units |
+|---|---|---|
+| **Length** | 22 | meters, kilometers, centimeters, millimeters, miles, yards, feet, inches, nauticalMiles, micrometers, nanometers, picometers, megameters, hectometers, decameters, decimeters, scandinavianMiles, lightyears, fathoms, furlongs, astronomicalUnits, parsecs |
+| **Mass** | 16 | kilograms, grams, milligrams, pounds, ounces, stones, metricTons, decigrams, centigrams, micrograms, nanograms, picograms, shortTons, carats, ouncesTroy, slugs |
+| **Duration** | 7 | seconds, minutes, hours, milliseconds, microseconds, nanoseconds, picoseconds |
+| **Speed** | 4 | metersPerSecond, kilometersPerHour, milesPerHour, knots |
+| **Temperature** | 3 | celsius, fahrenheit, kelvin |
+| **Area** | 14 | squareMeters, squareKilometers, squareMiles, squareFeet, hectares, acres, squareMegameters, squareCentimeters, squareMillimeters, squareMicrometers, squareNanometers, squareInches, squareYards, ares |
+| **Volume** | 31 | liters, milliliters, gallons, cups, fluidOunces, cubicMeters, megaliters, kiloliters, deciliters, centiliters, cubicKilometers, cubicDecimeters, cubicCentimeters, cubicMillimeters, cubicInches, cubicFeet, cubicYards, cubicMiles, acreFeet, bushels, teaspoons, tablespoons, pints, quarts, imperialTeaspoons, imperialTablespoons, imperialFluidOunces, imperialPints, imperialQuarts, imperialGallons, metricCups |
+| **Energy** | 5 | joules, calories, kilocalories, kilowattHours, kilojoules |
+| **Power** | 11 | watts, kilowatts, horsepower, terawatts, gigawatts, megawatts, milliwatts, microwatts, nanowatts, picowatts, femtowatts |
+| **Frequency** | 8 | hertz, kilohertz, megahertz, gigahertz, terahertz, millihertz, microhertz, nanohertz |
+| **Angle** | 6 | degrees, radians, arcMinutes, arcSeconds, gradians, revolutions |
+| **Pressure** | 11 | newtonsPerMetersSquared, bars, millibars, atmospheres, poundsPerSquareInch, gigapascals, megapascals, kilopascals, hectopascals, inchesOfMercury, millimetersOfMercury |
 
 ## License
 

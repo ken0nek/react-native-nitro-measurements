@@ -81,6 +81,20 @@ const fluentDimResult = measurement(60, Speed.kilometersPerHour).times(2, Durati
 
 // Type safety: convert(42, Length.miles, Temperature.celsius) is a compile-time error!
 
+// M8a: Expanded unit conversions (one new unit per expanded category)
+const m8aResults = [
+  { label: '1 ly → km', value: convert(1, 'lightyears', 'kilometers') },
+  { label: '1 carat → g', value: convert(1, 'carats', 'grams') },
+  { label: '1 s → ms', value: convert(1, 'seconds', 'milliseconds') },
+  { label: '1 yd² → ft²', value: convert(1, 'squareYards', 'squareFeet') },
+  { label: '1 gal → pints', value: convert(1, 'gallons', 'pints') },
+  { label: '1 kJ → J', value: convert(1, 'kilojoules', 'joules') },
+  { label: '1 MW → kW', value: convert(1, 'megawatts', 'kilowatts') },
+  { label: '1 THz → GHz', value: convert(1, 'terahertz', 'gigahertz') },
+  { label: '1 rev → °', value: convert(1, 'revolutions', 'degrees') },
+  { label: '1 kPa → N/m²', value: convert(1, 'kilopascals', 'newtonsPerMetersSquared') },
+];
+
 export default function App() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
@@ -158,6 +172,13 @@ export default function App() {
       <Text style={styles.row}>
         fluent 60 km/h × 2 h: {fluentDimResult.value} ({fluentDimResult.dimensionLabel})
       </Text>
+
+      <Text style={styles.subtitle}>M8a: Expanded Units</Text>
+      {m8aResults.map((r) => (
+        <Text key={r.label} style={styles.row}>
+          {r.label}: {r.value}
+        </Text>
+      ))}
 
       <StatusBar style="auto" />
     </ScrollView>
