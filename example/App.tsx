@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { ConvertScreen } from './src/screens/ConvertScreen'
 import { ArithmeticScreen } from './src/screens/ArithmeticScreen'
 import { DimensionalScreen } from './src/screens/DimensionalScreen'
+import { BenchmarkScreen } from './src/screens/BenchmarkScreen'
 import { lightTheme, darkTheme } from './src/theme'
 
 const Tab = createBottomTabNavigator()
@@ -71,6 +72,15 @@ export default function App() {
             options={{
               tabBarIcon: ({ color, size }) => (
                 <Ionicons name="cube" size={size} color={color} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="Benchmark"
+            component={BenchmarkScreen}
+            options={{
+              tabBarIcon: ({ color, size }) => (
+                <Ionicons name="speedometer" size={size} color={color} />
               ),
             }}
           />

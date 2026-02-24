@@ -203,6 +203,22 @@ The `as const satisfies` objects (`Length`, `Mass`, `Speed`, etc.) provide full 
 | **Illuminance** | 1 | lux |
 | **InformationStorage** | 35 | bytes, bits, nibbles, yottabytes, zettabytes, exabytes, petabytes, terabytes, gigabytes, megabytes, kilobytes, yottabits, zettabits, exabits, petabits, terabits, gigabits, megabits, kilobits, yobibytes, zebibytes, exbibytes, pebibytes, tebibytes, gibibytes, mebibytes, kibibytes, yobibits, zebibits, exbibits, pebibits, tebibits, gibibits, mebibits, kibibits |
 
+## Benchmark
+
+Sub-microsecond JSI-native conversions with type safety and dimensional analysis — comparable to lightweight JS math, 6–34x faster than `convert-units`.
+
+| Benchmark | nitro | convert-units | convert | Raw Math |
+|---|---|---|---|---|
+| 4 in → mm | 0.7 µs | 4.3 µs | 0.7 µs | 0.3 µs |
+| 100°C → °F | 0.7 µs | 24.0 µs | 0.8 µs | 0.3 µs |
+| km→mi × 1000 | 0.56 ms | 4.79 ms | 0.62 ms | 0.20 ms |
+| 1 km + 500 m | 1.0 µs | — | — | 0.4 µs |
+
+> **Environment:** iPhone 16 Pro simulator, React Native 0.81, 5000 iterations with 50 warm-up.
+> `nitro` = this library, `convert-units` = [convert-units](https://www.npmjs.com/package/convert-units), `convert` = [convert](https://www.npmjs.com/package/convert), Raw Math = inline JS arithmetic.
+
+Full results across iteration counts in [`benchmark/`](./benchmark/).
+
 ## License
 
 MIT
