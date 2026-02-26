@@ -1,5 +1,7 @@
 # react-native-nitro-measurements
 
+[![npm](https://img.shields.io/npm/v/react-native-nitro-measurements)](https://www.npmjs.com/package/react-native-nitro-measurements)
+
 Type-safe unit conversion and dimensional analysis for React Native, powered by [NitroModules](https://nitro.margelo.com).
 
 ## Features
